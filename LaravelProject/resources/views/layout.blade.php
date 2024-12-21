@@ -7,6 +7,10 @@
 
     <!-- Custom CSS -->
     <link href="/css/layout.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+
 
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -18,19 +22,20 @@
 
         <div class="navbar">
             <div class="logo">
-                <a href="/">
+                <a href="{{ url('/') }}">
                     <img src="/images/logobook.jpg" alt="BookStore Logo" class="main-logo">
+
                 </a>
+
             </div>
 
 
             <nav class="navbar-links">
                 <ul>
 
-                    <li><a href="/" class="home-link">Home</a></li>
-                    <li><a href="/about-us">About Us</a></li>
-                    <li><a href="/contact-us">Contact Us</a></li>
-
+                    <li><a href="{{ url('/home') }}" class="home-link">Home</a></li>
+                    <li><a href="{{ url('/contact') }}" class="contact-us">Contact Us</a></li>
+                    <li><a href="{{ url('/about') }}" class="about-us">About Us</a></li>
 
 
                     <form class="search-form" action="/search" method="GET">
@@ -43,21 +48,17 @@
                             Books <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="#">Fictional</a>
-                            <a href="#">Psychological</a>
-                            <a href="#">Literature</a>
+
+                            <a href="{{ url('/adult') }}">Adult</a>
+                            <a href="{{ url('/children') }}">Children</a>
+
                         </div>
                     </div>
 
 
-                    <li><a href="/favorites" title="Favorites"><i class="fas fa-heart"></i></a></li>
-                    <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
-                    <li><a href="/profile" title="Profile"><i class="fas fa-user-circle"></i></a></li>
-
-
-
-
-
+                    <li><a href="/fav" title="Favorites"><i class="fas fa-heart"></i></a></li>
+                    <li><a href="/cart" title="cart"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="/login" title="login"><i class="fas fa-user-circle"></i></a></li>
 
 
 
@@ -113,6 +114,7 @@
 
     <!-- Custom JS -->
     <script src="/js/layout.js"></script>
+
 
 
 </body>

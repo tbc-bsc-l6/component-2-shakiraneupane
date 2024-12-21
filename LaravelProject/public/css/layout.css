@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 /* Navbar Styling */
@@ -32,7 +33,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-right: 150px;
+
 }
 
 .navbar-links li {
@@ -225,6 +226,7 @@ footer {
     margin-bottom: 15px;
     font-size: 18px;
     color: #ff9800;
+    margin-left: 30px;
 }
 
 .footer-section p,
@@ -237,10 +239,12 @@ footer {
 .footer-section ul {
     list-style: none;
     padding: 0;
+    margin-left: 10px;
 }
 
 .footer-section ul li {
     margin-bottom: 10px;
+    margin-left: 30px;
 }
 
 .footer-section ul li a:hover {
