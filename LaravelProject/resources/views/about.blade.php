@@ -5,5 +5,4 @@
 @section('content')
     <h1>Welcome to Our Online Bookstore</h1>
     <p>Explore our wide selection of books!</p>
-    <!-- Display books here (if applicable) -->
 @endsection

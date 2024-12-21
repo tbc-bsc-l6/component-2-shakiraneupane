@@ -1,0 +1,281 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #333;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.main-logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 150px;
+}
+
+.navbar-links li {
+    margin: 0 15px;
+    position: relative; /* Added for dropdown positioning */
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a:hover {
+    color: #ff9800;
+    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7);
+}
+
+.navbar-links li.dropdown {
+    position: relative;
+}
+
+
+.navbar-links a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #ff9800;
+    transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+
+.navbar-links a i {
+    margin: 0;
+    font-size: 22px; /* Larger icon size for a professional look */
+
+}
+
+
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+    color: #ff9800;
+    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 180px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu a {
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+    color: #ff9800;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Initial state of the arrow icon */
+.dropbtn i {
+    opacity: 1; /* Icon is visible */
+    transform: translateY(0); /* Default position */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Show movement on hover */
+.dropbtn:hover i {
+    transform: translateY(-3px); /* Moves the icon upward */
+    color: #ff9800; /* Optional: Change icon color on hover */
+}
+
+
+
+
+/* Logo inside Home link */
+.nav-logo {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Search form styling */
+.search-form input {
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff9800;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #ff5722;
+}
+
+/* Icons */
+.icon-cart, .icon-heart, .icon-user, .icon-logout {
+    font-size: 20px;
+}
+
+/* Main Content Styling */
+main {
+    padding: 30px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ff9800;
+}
+
+.footer-section p,
+.footer-section ul li a {
+    color: #fff;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+    color: #ff9800;
+}
+
+
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+
+
+
+.social-icons a {
+    text-decoration: none;
+    color: #fff; /* Icon color */
+    font-size: 20px; /* Icon size */
+    width: 40px; /* Circle size */
+    height: 40px; /* Circle size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make them circular */
+    transition: all 0.3s ease-in-out; /* Add hover transition */
+}
+
+
+/* Hover effect */
+.social-icons a:hover {
+    transform: scale(1.1); /* Slightly enlarge icon */
+    filter: brightness(1.2); /* Brighten the background color */
+}
