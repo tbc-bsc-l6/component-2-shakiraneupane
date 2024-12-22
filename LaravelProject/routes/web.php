@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\CartController;
@@ -13,7 +16,8 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
+
 
 Route::get('/contact', function () {
     return view('contact');
@@ -23,34 +27,31 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/children', function () {
-    return view('child');
-});
-
-Route::get('/adult', function () {
-    return view('adult');
-});
-
-Route::get('/adult', function () {
-    return view('adult');
-});
 
 Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
 
 
 Route::get('/fav', function () {
     return view('fav');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [AuthController::class, 'register'])->name('register.submit');
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('login', [AuthController::class, 'login'])->name('login.submit');
+/*Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('password/reset', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');*/
+
+
+
+
+
+
+
 
 
 

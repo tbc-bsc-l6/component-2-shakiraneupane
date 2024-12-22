@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
     // Example of dynamically updating the cart count from a variable
     let cartCount = 3; // You could replace this with a dynamic cart count from Laravel
     document.querySelector('.cart-count').innerText = cartCount;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
+*/
 
 //For home Page
 let currentSlide = 0;

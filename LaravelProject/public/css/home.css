@@ -1,7 +1,7 @@
 /* Slider Container */
 .slider-container {
     position: relative;
-    max-width: 80%; /* Make the slider smaller */
+    max-width: 75%; /* Make the slider smaller */
     margin: auto;
     overflow: hidden;
     max-height: 400px; /* Set a max height for the slider */
@@ -82,20 +82,155 @@
 
 
 
+.genres-section {
+    text-align: center;
+    margin: 40px 20px;
+    padding: 40px;
+    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
 
-/* Optional: Make the captions more readable on mobile */
-@media (max-width: 768px) {
-    .caption {
-        bottom: 10px; /* Adjust for smaller screens */
-        left: 10px;
-        right: 10px;
-    }
 
-    .caption h3 {
-        font-size: 1rem;
-    }
+.genres-section h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
-    .caption p {
-        font-size: 0.8rem;
-    }
+.genres-section p {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.genres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.genre-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+
+}
+
+.genre-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 2px solid #f39c12;
+}
+
+.genre-item i {
+    font-size: 2.5rem;
+    color: #f39c12;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.genre-item:hover i {
+    color: #e67e22;
+}
+
+
+.genre-item:hover span {
+    color: #e67e22;
+}
+
+
+.new-arrivals-section {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.new-arrivals-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.new-arrivals-section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.new-arrivals-section .books-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.new-arrivals-section .book-item {
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-arrivals-section .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.new-arrivals-section .book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.new-arrivals-section .book-item h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.new-arrivals-section .book-item p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.new-arrivals-section .book-item span {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.new-arrivals-section .book-item button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.new-arrivals-section .book-item button:hover {
+    background-color: #0056b3;
+}
+
+
+button.favorite-button:hover i {
+    color: #ff5722; /* Heart icon turns red on hover */
 }

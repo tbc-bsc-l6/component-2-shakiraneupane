@@ -16,10 +16,13 @@
             </div>
 
             <!-- Login Form -->
-            <form action="" method="POST">
+            <form action="{{ route('login.submit') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="Email Address" required value="{{ old('email') }}">
+                    @error('email')
+                        <div class="error-message">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <div class="password-container">
@@ -28,6 +31,9 @@
                             <i class="fas fa-eye"></i>
                         </span>
                     </div>
+                    @error('password')
+                        <div class="error-message">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn">Login</button>
             </form>
@@ -37,12 +43,12 @@
                 <label>
                     <input type="checkbox" name="remember"> Remember Me
                 </label>
-                <a href="{{ url('/forgot-password') }}">Forgot Password?</a>
+
             </div>
 
             <!-- Registration Option -->
             <p class="register-option">
-                Don't have an account? <a href="{{ url('/register') }}">Register</a>
+                Don't have an account? <a href="{{ route('register') }}">Register</a>
             </p>
 
         </div>

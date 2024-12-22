@@ -24,18 +24,19 @@
             <div class="logo">
                 <a href="{{ url('/') }}">
                     <img src="/images/logobook.jpg" alt="BookStore Logo" class="main-logo">
-
                 </a>
-
             </div>
 
+            <span><a href="{{ url('/home') }}" class="chapter-house">Chapter House</a></span>
 
-            <nav class="navbar-links">
+
+           <nav class="navbar-links">
                 <ul>
 
                     <li><a href="{{ url('/home') }}" class="home-link">Home</a></li>
                     <li><a href="{{ url('/contact') }}" class="contact-us">Contact Us</a></li>
                     <li><a href="{{ url('/about') }}" class="about-us">About Us</a></li>
+
 
 
                     <form class="search-form" action="/search" method="GET">
@@ -49,8 +50,13 @@
                         </button>
                         <div class="dropdown-menu">
 
-                            <a href="{{ url('/adult') }}">Adult</a>
-                            <a href="{{ url('/children') }}">Children</a>
+                            <a href="{{ url('/') }}">Arts & Photography</a>
+                            <a href="{{ url('') }}">Lifestyle & Wellness</a>
+                            <a href="{{ url('') }}">Fiction & Literature</a>
+                            <a href="{{ url('') }}">History,Biography & More</a>
+                            <a href="{{ url('') }}">Kids & Teens</a>
+
+
 
                         </div>
                     </div>
