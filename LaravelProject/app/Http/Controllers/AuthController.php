@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\User;
@@ -36,22 +35,23 @@ class AuthController extends Controller
 
         if ($validator->fails()) {
             return redirect()->route('register')
-                             ->withErrors($validator) // Pass validation errors
-                             ->withInput(); //retains the data
+                             ->withErrors($validator)
+                             ->withInput();
         }
 
-        // Create the user
+        // Create the customer user
         $user = User::create([
             'name' => $request->name,
             'address' => $request->address,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'customer', // Default role is 'customer'
         ]);
 
         // Log the user in
         Auth::login($user);
 
-        return redirect()->route('home'); // Redirect to a page after successful registration
+        return redirect()->route('home');
     }
 
     // Show the login form
@@ -63,21 +63,33 @@ class AuthController extends Controller
     // Handle login
     public function login(Request $request)
     {
+        // Validate the login form
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'role' => 'required|in:customer,admin',
+        ]);
+
         $credentials = $request->only('email', 'password');
+        $role = $request->input('role');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home'); // Redirect to a page after successful login
+            // Check if the user's role matches the selected role
+            if (Auth::user()->role === $role) {
+                if ($role === 'admin') {
+                    return redirect()->route('admin.dashboard');
+                }
+
+                if ($role === 'customer') {
+                    return redirect()->route('home');
+                }
+            }
+
+            // If role doesn't match, logout and return an error
+            Auth::logout();
+            return redirect()->route('login')->withErrors(['email' => 'Access denied for this role.']);
         }
 
-        return redirect()->route('login')
-                         ->withErrors(['email' => 'Invalid credentials']);
+        return redirect()->route('login')->withErrors(['email' => 'Invalid credentials.']);
     }
-
-    // Handle logout
-    /*public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('login');
-    } */
 }
-

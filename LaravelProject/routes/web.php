@@ -1,14 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\FavoriteController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', function () {
     return view('home');
@@ -19,44 +12,29 @@ Route::get('/home', function () {
 })->name('home');
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
 
-Route::get('/about', function () {
-    return view('about');
-});
+    Route::get('/home', function () {
+        return view('home');
+    })->name('home');
 
+    Route::get('/cart', function () {
+        return view('cart');
+    })->name('cart');
 
-Route::get('/cart', function () {
-    return view('cart');
-});
-
-
-
-Route::get('/fav', function () {
-    return view('fav');
-});
-
-Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [AuthController::class, 'register'])->name('register.submit');
-Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('login', [AuthController::class, 'login'])->name('login.submit');
-/*Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-Route::get('password/reset', [AuthController::class, 'showForgotPasswordForm'])->name('password.request');*/
+    Route::get('/fav', function () {
+        return view('fav');
+    })->name('fav');
 
 
+    Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::post('register', [AuthController::class, 'register'])->name('register.submit');
+    Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [AuthController::class, 'login'])->name('login.submit');
 
-
-
-
-
-
-
-
-
-
+    // Admin Routes (only accessible for admins)
+    Route::middleware(['checkRole'])->get('/admin/dashboard', function () {
+    return view('admin.dashboard'); // Admin dashboard view
+    })->name('admin.dashboard');
 
 
 

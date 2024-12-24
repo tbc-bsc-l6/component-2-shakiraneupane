@@ -35,6 +35,17 @@
                         <div class="error-message">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <label for="role">Select Role</label>
+                    <select name="role" id="role" class="form-control" required>
+                        <option value="customer" {{ old('role') == 'customer' ? 'selected' : '' }}>Customer</option>
+                        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+                    </select>
+                    @error('role')
+                        <div class="error-message">{{ $message }}</div>
+                    @enderror
+                </div>
                 <button type="submit" class="btn">Login</button>
             </form>
 
