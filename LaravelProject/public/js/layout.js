@@ -74,5 +74,7 @@ function togglePassword(id) {
     }
 }
 
-
-
+//darkmode
+function myFunction() {
+    document.body.classList.toggle('dark-mode');
+}

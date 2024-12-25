@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Bookstore</title>
+    <title>@yield('title', 'Online Bookstore')</title>
 
     <!-- Custom CSS -->
     <link href="/css/layout.css" rel="stylesheet">
@@ -22,21 +22,19 @@
 
         <div class="navbar">
             <div class="logo">
-                <a href="{{ url('/') }}">
+                <a href="{{ route('home') }}">
                     <img src="/images/logobook.jpg" alt="BookStore Logo" class="main-logo">
                 </a>
             </div>
 
-            <span><a href="{{ url('/home') }}" class="chapter-house">Chapter House</a></span>
+            <span><a href="{{ route('home') }}" class="chapter-house">Chapter House</a></span>
 
 
            <nav class="navbar-links">
                 <ul>
 
-                    <li><a href="{{ url('/home') }}" class="home-link">Home</a></li>
-                    <li><a href="{{ url('/contact') }}" class="contact-us">Contact Us</a></li>
-                    <li><a href="{{ url('/about') }}" class="about-us">About Us</a></li>
-
+                    <li><a href="{{ route('home') }}" class="home-link">Home</a></li>
+                    <li><a href="{{ route('contact') }}" class="contact-us">Contact Us</a></li>
 
 
                     <form class="search-form" action="/search" method="GET">
@@ -50,11 +48,11 @@
                         </button>
                         <div class="dropdown-menu">
 
-                            <a href="{{ url('/') }}">Arts & Photography</a>
-                            <a href="{{ url('') }}">Lifestyle & Wellness</a>
-                            <a href="{{ url('') }}">Fiction & Literature</a>
-                            <a href="{{ url('') }}">History,Biography & More</a>
-                            <a href="{{ url('') }}">Kids & Teens</a>
+                            <a href="{{ route('genre.show', ['genre' => 'arts']) }}">Arts & Photography</a>
+                            <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">Lifestyle & Wellness</a>
+                            <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">Fiction & Literature</a>
+                            <a href="{{ route('genre.show', ['genre' => 'history']) }}">History,Biography & More</a>
+                            <a href="{{ route('genre.show', ['genre' => 'kids']) }}">Kids & Teens</a>
 
 
 
@@ -65,6 +63,10 @@
                     <li><a href="/fav" title="Favorites"><i class="fas fa-heart"></i></a></li>
                     <li><a href="/cart" title="cart"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="/login" title="login"><i class="fas fa-user-circle"></i></a></li>
+                    <li>
+                        <button onclick="myFunction()"><i id="toggleIcon" class="fas fa-moon"></i></button>
+                    </li>
+
 
 
 
@@ -76,6 +78,7 @@
     <!-- Main Content -->
     <main>
         @yield('content')
+
     </main>
 
 

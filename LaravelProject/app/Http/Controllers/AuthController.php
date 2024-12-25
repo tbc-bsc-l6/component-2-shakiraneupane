@@ -18,18 +18,17 @@ class AuthController extends Controller
     // Handle registration
     public function register(Request $request)
     {
-        // Validate the data
         $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'address' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => [
                 'required',
-                'min:8',  //password must be 8 characters long
-                'regex:/[A-Z]/',   // Password must contain at least one uppercase letter
-                'regex:/[0-9]/',  //// Password must contain at least one number
-                'regex:/[!@#$%^&*(),.?":{}|<>]/',  // Password must contain at least one special character
-                'confirmed',   // Password must match the confirmation field
+                'min:8',
+                'regex:/[A-Z]/',
+                'regex:/[0-9]/',
+                'regex:/[!@#$%^&*(),.?":{}|<>]/',
+                'confirmed',
             ],
         ]);
 
@@ -39,16 +38,14 @@ class AuthController extends Controller
                              ->withInput();
         }
 
-        // Create the customer user
         $user = User::create([
             'name' => $request->name,
             'address' => $request->address,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'customer', // Default role is 'customer'
+            'role' => 'customer',
         ]);
 
-        // Log the user in
         Auth::login($user);
 
         return redirect()->route('home');
@@ -63,33 +60,35 @@ class AuthController extends Controller
     // Handle login
     public function login(Request $request)
     {
-        // Validate the login form
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'role' => 'required|in:customer,admin',
         ]);
 
         $credentials = $request->only('email', 'password');
-        $role = $request->input('role');
 
         if (Auth::attempt($credentials)) {
-            // Check if the user's role matches the selected role
-            if (Auth::user()->role === $role) {
-                if ($role === 'admin') {
-                    return redirect()->route('admin.dashboard');
-                }
-
-                if ($role === 'customer') {
-                    return redirect()->route('home');
-                }
+            // Check the role of the user (admin or customer)
+            if (Auth::user()->role === 'admin') {
+                return redirect()->route('admin.dashboard');
             }
 
-            // If role doesn't match, logout and return an error
-            Auth::logout();
-            return redirect()->route('login')->withErrors(['email' => 'Access denied for this role.']);
+            // Default to customer dashboard
+            return redirect()->route('customer.dashboard');
         }
 
         return redirect()->route('login')->withErrors(['email' => 'Invalid credentials.']);
+    }
+
+    // Show customer dashboard
+    public function customerDashboard()
+    {
+        // Ensure the user is logged in
+        if (Auth::check()) {
+            return view('customer.dashboard');
+        }
+
+        // If the user is not logged in, redirect them to the login page
+        return redirect()->route('login')->withErrors(['message' => 'You need to login first.']);
     }
 }

@@ -26,7 +26,6 @@
     object-fit: cover; /* Maintain aspect ratio */
 }
 
-
 /* Navigation Arrows */
 .prev, .next {
     position: absolute;
@@ -80,21 +79,19 @@
     background-color: #333;
 }
 
-
-
+/* Genres Section */
 .genres-section {
     text-align: center;
     margin: 40px 20px;
     padding: 40px;
-    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    background: black;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-
 .genres-section h2 {
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: white;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -102,7 +99,7 @@
 
 .genres-section p {
     font-size: 1.2rem;
-    color: #34495e;
+    color: white;
     margin-bottom: 30px;
     line-height: 1.5;
 }
@@ -118,18 +115,13 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border: 2px solid transparent;
     border-radius: 20px;
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-
 }
 
 .genre-item:hover {
     transform: translateY(-8px) scale(1.03);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    border: 2px solid #f39c12;
 }
 
 .genre-item i {
@@ -143,30 +135,36 @@
     color: #e67e22;
 }
 
-
-.genre-item:hover span {
-    color: #e67e22;
+.genre-item a {
+    text-decoration: none; /* Remove underline */
+    color: #e67e22; /* Match surrounding text color */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
-
+/* New Arrivals Section */
 .new-arrivals-section {
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
+    background-color: #fff; /* Default background color */
+    color: #333; /* Default text color */
 }
 
+/* New Arrivals Section Title */
 .new-arrivals-section h2 {
     font-size: 24px;
-    color: #333;
+    color: #000; /* Default color for the title */
     margin-bottom: 10px;
 }
 
+/* New Arrivals Section Paragraph */
 .new-arrivals-section p {
     font-size: 16px;
-    color: #555;
+    color: #000; /* Default color for the description */
     margin-bottom: 20px;
 }
 
+/* Book Grid */
 .new-arrivals-section .books-grid {
     display: flex;
     justify-content: center;
@@ -174,6 +172,7 @@
     flex-wrap: wrap;
 }
 
+/* Book Item Style */
 .new-arrivals-section .book-item {
     width: 200px;
     text-align: center;
@@ -197,13 +196,13 @@
 
 .new-arrivals-section .book-item h3 {
     font-size: 16px;
-    color: #333;
+    color: #000;
     margin: 10px 0;
 }
 
 .new-arrivals-section .book-item p {
     font-size: 14px;
-    color: #777;
+    color: #000;
     margin-bottom: 10px;
 }
 
@@ -230,7 +229,8 @@
     background-color: #0056b3;
 }
 
-
+/* Heart Icon Hover Effect */
 button.favorite-button:hover i {
     color: #ff5722; /* Heart icon turns red on hover */
 }
+

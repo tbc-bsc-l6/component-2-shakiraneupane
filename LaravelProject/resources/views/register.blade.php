@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Register')
 @section('content')
     <div class="auth-container">
         <!-- Registration Form -->

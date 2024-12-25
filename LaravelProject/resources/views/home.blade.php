@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Home')
 @section('content')
     <section><div class="slider-container">
         <div class="slider">
@@ -34,25 +34,38 @@
     <p>Browse Our Extensive Collection of Books Across Different Genres.</p>
     <div class="genres-grid">
         <div class="genre-item">
-            <i class="fas fa-palette"></i>
-            <span>Arts & Photography</span>
+            <a href="{{ route('genre.show', ['genre' => 'arts']) }}">
+                <i class="fas fa-palette"></i>
+                <span>Arts & Photography</span>
+            </a>
         </div>
         <div class="genre-item">
-            <i class="fas fa-running"></i>
-            <span>Lifestyle and wellness</span>
+            <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">
+                <i class="fas fa-running"></i>
+                <span>Lifestyle and Wellness</span>
+            </a>
         </div>
         <div class="genre-item">
-            <i class="fas fa-theater-masks"></i>
-            <span>Fiction and Literature</span>
+            <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">
+                <i class="fas fa-theater-masks"></i>
+                <span>Fiction and Literature</span>
+            </a>
         </div>
         <div class="genre-item">
-            <i class="fas fa-book-open"></i>
-            <span>History, Biography, and More</span>
+            <a href="{{ route('genre.show', ['genre' => 'history']) }}">
+                <i class="fas fa-book-open"></i>
+                <span>History, Biography, and More</span>
+            </a>
         </div>
         <div class="genre-item">
-            <i class="fas fa-child"></i>
-            <span>Kids and Teens</span>
+            <a href="{{ route('genre.show', ['genre' => 'kids']) }}">
+                <i class="fas fa-child"></i>
+                <span>Kids and Teens</span>
+            </a>
         </div>
+    </div>
+</div>
+
 
     </div>
 </div>

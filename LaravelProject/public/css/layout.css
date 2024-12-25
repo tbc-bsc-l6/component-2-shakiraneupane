@@ -6,6 +6,39 @@
 
 }
 
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212; /* Dark background */
+
+}
+
+
+/* Remove background and make the button transparent */
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the icon */
+#toggleIcon {
+    font-size: 24px; /* Adjust size as needed */
+    color: white; /* Dark color for a professional look */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Add a hover effect for better interactivity */
+button:hover #toggleIcon {
+    color: orange; /* Change color on hover (e.g., blue) */
+    transform: scale(1.1); /* Slightly increase the icon size on hover */
+}
+
+
+
 /* Navbar Styling */
 .navbar {
     display: flex;
@@ -297,3 +330,157 @@ footer {
     transform: scale(1.1); /* Slightly enlarge icon */
     filter: brightness(1.2); /* Brighten the background color */
 }
+
+
+/*------------------ Contact Us Section----------------- */
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.dark-mode .contact-header h1 {
+    color: #ffffff;
+}
+
+.contact-header p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.dark-mode .contact-header p {
+    color: #ffffff;
+}
+
+
+/* Contact Content */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    background-color: #F5f5f5;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    max-width: 500px;
+
+}
+
+.contact-form h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 6px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #555;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    margin-bottom: 50px;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    color: #505050;
+    margin-bottom: 20px;
+}
+
+.dark-mode .contact-info h2 {
+    color: #fff;
+}
+
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #505050;
+    margin-bottom: 20px;
+}
+
+.dark-mode .contact-info p {
+    color: #fff;
+}
+
+.contact-info .address p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dark-mode .contact-info .address p {
+    color: #fff;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.dark-mode .contact-info a {
+    color: #fff;
+}
+
+.contact-info .map {
+    margin-top: 40px;
+}
+
+
+
+
+
+
