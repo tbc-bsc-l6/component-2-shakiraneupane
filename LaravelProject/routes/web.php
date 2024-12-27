@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -51,5 +53,18 @@ Route::middleware(['checkRole'])->get('/admin/dashboard', function () {
 // Route for the customer dashboard
 Route::get('/customer/dashboard', [AuthController::class, 'customerDashboard'])->name('customer.dashboard');
 
-// Dynamic Admin Routes for Users, Products, Orders, and Reports
+// Dynamic Admin Routes for admin pages
 Route::get('/admin/{section}', [AdminController::class, 'handleSection'])->name('admin.section');
+
+
+// Route to handle form submission and store the book (POST method)
+Route::post('/admin/addBooks', [BookController::class, 'store'])->name('store');
+
+// Route to display the edit form
+Route::get('/admin/books/{book}/edit', [BookController::class, 'edit'])->name('admin.editBooks');
+
+// Route to handle the form submission and update the book
+Route::put('/admin/books/{book}', [BookController::class, 'update'])->name('admin.books.update');
+
+// Route to handle the deletion of a book
+Route::delete('/admin/books/{book}', [BookController::class, 'destroy'])->name('admin.books.destroy');

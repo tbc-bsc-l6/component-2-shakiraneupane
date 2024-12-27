@@ -6,12 +6,6 @@
 
 }
 
-/* Dark mode styles */
-.dark-mode {
-    background-color: #121212; /* Dark background */
-
-}
-
 
 /* Remove background and make the button transparent */
 button {
@@ -65,7 +59,7 @@ button:hover #toggleIcon {
     font-weight: bold;
     color: #f39c12; /* Eye-catching color, change as needed */
     text-decoration: none;
-    margin-right: 50px;
+    margin-right: 150px;
 }
 
 .chapter-house:hover {
@@ -441,19 +435,10 @@ footer {
     margin-bottom: 20px;
 }
 
-.dark-mode .contact-info h2 {
-    color: #fff;
-}
-
-
 .contact-info p {
     font-size: 1.2rem;
     color: #505050;
     margin-bottom: 20px;
-}
-
-.dark-mode .contact-info p {
-    color: #fff;
 }
 
 .contact-info .address p {
@@ -462,17 +447,10 @@ footer {
     color: #333;
 }
 
-.dark-mode .contact-info .address p {
-    color: #fff;
-}
 
 .contact-info a {
     color: #333;
     text-decoration: underline;
-}
-
-.dark-mode .contact-info a {
-    color: #fff;
 }
 
 .contact-info .map {

@@ -63,12 +63,6 @@
                     <li><a href="/fav" title="Favorites"><i class="fas fa-heart"></i></a></li>
                     <li><a href="/cart" title="cart"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="/login" title="login"><i class="fas fa-user-circle"></i></a></li>
-                    <li>
-                        <button onclick="myFunction()"><i id="toggleIcon" class="fas fa-moon"></i></button>
-                    </li>
-
-
-
 
                 </ul>
             </nav>
