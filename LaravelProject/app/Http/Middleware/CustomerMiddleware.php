@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; // Add this import
 use Symfony\Component\HttpFoundation\Response;
 
-class AdminMiddleware
+class CustomerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,12 +18,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if the user is logged in and has the 'admin' role
-        if (Auth::check() && Auth::user()->role === 'CheckAdmin') {
+        // Check if the user is logged in and has the 'customer' role
+        if (Auth::check() && Auth::user()->role === 'checkCustomer') {
             return $next($request); // Continue the request
         }
 
-        // If not an admin, redirect to the home page
+        // If not a customer, redirect to the home page
         return redirect()->route('home')->withErrors(['message' => 'Access denied for this user.']);
     }
 }

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
 
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -19,7 +19,6 @@
 
     <!-- Navbar -->
     <header>
-
         <div class="navbar">
             <div class="logo">
                 <a href="{{ route('home') }}">
@@ -29,13 +28,10 @@
 
             <span><a href="{{ route('home') }}" class="chapter-house">Chapter House</a></span>
 
-
-           <nav class="navbar-links">
+            <nav class="navbar-links">
                 <ul>
-
                     <li><a href="{{ route('home') }}" class="home-link">Home</a></li>
                     <li><a href="{{ route('contact') }}" class="contact-us">Contact Us</a></li>
-
 
                     <form class="search-form" action="/search" method="GET">
                         <input type="text" name="query" placeholder="Search Books...">
@@ -47,22 +43,50 @@
                             Books <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu">
-
                             <a href="{{ route('genre.show', ['genre' => 'arts']) }}">Arts & Photography</a>
                             <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">Lifestyle & Wellness</a>
                             <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">Fiction & Literature</a>
                             <a href="{{ route('genre.show', ['genre' => 'history']) }}">History,Biography & More</a>
                             <a href="{{ route('genre.show', ['genre' => 'kids']) }}">Kids & Teens</a>
-
-
-
                         </div>
                     </div>
 
+                    <!-- Cart Icon with Cart Count -->
+<!-- Cart Link / Cart Count -->
+<li>
+    @auth
+        <a href="{{ route('cart.index') }}" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">
+                {{ \App\Models\Cart::where('user_id', Auth::id())->sum('quantity') }}
+            </span>
+        </a>
+    @else
+        <a href="{{ route('login') }}" class="cart-link">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    @endauth
+</li>
 
-                    <li><a href="/fav" title="Favorites"><i class="fas fa-heart"></i></a></li>
-                    <li><a href="/cart" title="cart"><i class="fas fa-shopping-cart"></i></a></li>
-                    <li><a href="/login" title="login"><i class="fas fa-user-circle"></i></a></li>
+
+                   <!-- Customer Profile or Login -->
+@auth
+<!-- If the user is logged in, show the Profile and Logout links -->
+<li><a href="/profile" title="Customer Profile">
+    <img src="{{ Auth::user()->profile_image ? Storage::url(Auth::user()->profile_image) : '/images/default-profile.png' }}" alt="profile" class="profile-image">
+</a></li>
+<li>
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" title="Logout" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </form>
+</li>
+@else
+<!-- If the user is not logged in, show the Login link -->
+<li><a href="/login" title="Login"><i class="fas fa-user-circle"></i></a></li>
+@endauth
 
                 </ul>
             </nav>
@@ -72,10 +96,9 @@
     <!-- Main Content -->
     <main>
         @yield('content')
-
     </main>
 
-
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section about">
@@ -89,9 +112,6 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about-us">About Us</a></li>
                     <li><a href="/contact-us">Contact Us</a></li>
-
-
-
                 </ul>
             </div>
 
@@ -101,7 +121,6 @@
                 <p><i class="fas fa-phone"></i> +1 234 567 890</p>
                 <p><i class="fas fa-envelope"></i> support@onlinebookstore.com</p>
             </div>
-
 
             <div class="social-icons">
                 <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -117,8 +136,6 @@
 
     <!-- Custom JS -->
     <script src="/js/layout.js"></script>
-
-
 
 </body>
 </html>

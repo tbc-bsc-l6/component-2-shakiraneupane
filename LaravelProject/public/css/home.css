@@ -229,8 +229,29 @@
     background-color: #0056b3;
 }
 
-/* Heart Icon Hover Effect */
-button.favorite-button:hover i {
-    color: #ff5722; /* Heart icon turns red on hover */
+/*add to cart and fav buttons*/
+
+.add-to-cart-btn {
+    display: inline-block;
+    background-color: #007bff; /* Green color for the button */
+    color: #ffffff; /* White text color */
+    font-size: 14px; /* Font size */
+    padding: 10px 10px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline for anchor links */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effects */
 }
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+
+
+
 

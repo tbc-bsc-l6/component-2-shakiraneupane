@@ -25,11 +25,11 @@
         <label for="genre">Genre</label>
         <select name="genre" class="form-control" id="genre" required>
             <option value="" disabled selected>Select Genre</option>
-            <option value="fiction">Arts & Photography</option>
-            <option value="non-fiction">Lifestyle & Wellness</option>
-            <option value="mystery">Fiction & literature</option>
-            <option value="romance">History & biography</option>
-            <option value="science-fiction">Kids & Teens</option>
+            <option value="Arts & Photography">Arts & Photography</option>
+            <option value="Lifestyle & Wellness">Lifestyle & Wellness</option>
+            <option value="Fiction & literature">Fiction & literature</option>
+            <option value="History & biography">History & biography</option>
+            <option value="Kids & Teens">Kids & Teens</option>
         </select>
     </div>
 
@@ -39,10 +39,12 @@
     </div>
 
     <div class="form-group">
-        <label for="cover_image">Cover Image</label>
-        <input type="file" name="cover_image" class="form-control" id="cover_image" required>
+        <label for="image_url">Cover Image</label>
+        <input type="file" name="image_url" class="form-control" id="image_url" required>
     </div>
 
     <button type="submit" class="btn btn-success">Add Book</button>
 </form>
+
+
 </body>

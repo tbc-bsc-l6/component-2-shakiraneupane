@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 
     // Show the login form
@@ -90,5 +90,12 @@ class AuthController extends Controller
 
         // If the user is not logged in, redirect them to the login page
         return redirect()->route('login')->withErrors(['message' => 'You need to login first.']);
+    }
+
+
+    public function logout()
+    {
+        Auth::logout(); // Log the user out
+        return redirect('/'); // Redirect to home or login page
     }
 }

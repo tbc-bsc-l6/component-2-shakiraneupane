@@ -126,17 +126,23 @@ h1 {
     font-size: 14px;
 }
 
-.table td img {
-    border-radius: 5px;
-    width: 50px;
-    height: auto;
+/* Ensures that images inside table cells do not overflow */
+td img {
+    width: 30px; /* Set a fixed maximum width for the image */
+    height: 50px; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
+    object-fit: contain; /* Ensure the image is fully visible within its container */
 }
+
+
 
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 14px;
+    margin-top: 1px;
 }
 
 button a {
@@ -162,6 +168,7 @@ button a {
     margin: 0;              /* Remove any margin */
     padding: 0;             /* Remove any padding */
     border: none;          /* Remove border from the form */
+
 }
 
 /* Style the delete button */
@@ -173,22 +180,13 @@ button a {
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition */
 
+
 }
 
 /* Hover effect for delete button */
 .delete:hover {
     background-color: #c62828; /* Darker red on hover */
 }
-
-
-
-
-
-
-
-
-
-
 
 
 .add-btn {
@@ -296,4 +294,66 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+/*search form*/
+/* Basic styling for the search form */
+.search-form {
+    display: inline-block;  /* Makes the form inline with the button */
+    margin: 0;              /* Remove any margin */
+    padding: 0;             /* Remove any padding */
+    border: none;      /* Remove border from the form */
+    margin-bottom: 10px;
+}
+
+/* Styling the search input */
+.search-input {
+    padding: 4px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px; /* Adjust width as needed */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #454545;
+}
+
+
+/*description*/
+.description-short {
+    font-size: 13px;
+    color: #333;
+}
+
+.description-full {
+    font-size: 13px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.see-more {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.see-more:hover {
+    text-decoration: underline;
+}
+
+
 

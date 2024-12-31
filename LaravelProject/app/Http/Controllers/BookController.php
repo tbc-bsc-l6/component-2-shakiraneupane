@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,7 +8,9 @@ use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
-    // Store book details in the database
+    /**
+     * Store a new book in the database.
+     */
     public function store(Request $request)
     {
         // Validate the form input
@@ -17,11 +20,11 @@ class BookController extends Controller
             'price' => 'required|numeric|min:0',
             'genre' => 'required|string|max:255',
             'description' => 'required|string',
-            'cover_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_url' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Handle the file upload
-        $imagePath = $request->file('cover_image')->store('images', 'public');
+        $imagePath = $request->file('image_url')->store('images', 'public'); // Save in storage/app/public/images
 
         // Create a new book entry in the database
         Book::create([
@@ -30,77 +33,88 @@ class BookController extends Controller
             'price' => $request->price,
             'genre' => $request->genre,
             'description' => $request->description,
-            'image_url' => $imagePath,
+            'image_url' => $imagePath, // Store the relative path
         ]);
 
-        // Redirect to the products page with success message
-        return redirect()->route('admin.section', ['section' => 'products'])->with('success', 'Book added successfully!');
+        // Redirect with success message
+        return redirect()->route('admin.section', ['section' => 'products'])
+                         ->with('success', 'Book added successfully!');
     }
 
-    // Retrieve all books for the products page
+    /**
+     * Retrieve all books for the products page.
+     */
     public function index()
     {
         $books = Book::all();
         return view('admin.products', compact('books'));
     }
 
-/*-------------------------------for editing book details-----------------------------------------*/
+    /**
+     * Show the edit form for a book.
+     */
     public function edit(Book $book)
-{
-    // Show the edit form with the book's current details
-    return view('admin.editBooks', compact('book'));
-}
+    {
+        return view('admin.editBooks', compact('book'));
+    }
 
-public function update(Request $request, Book $book)
-{
-    // Validate the form input
-    $request->validate([
-        'title' => 'required|string|max:255',
-        'author' => 'required|string|max:255',
-        'price' => 'required|numeric|min:0',
-        'genre' => 'required|string|max:255',
-        'description' => 'required|string',
-        'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Optional image update
-    ]);
+    /**
+     * Update a book in the database.
+     */
+    public function update(Request $request, Book $book)
+    {
+        // Validate the form input
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'genre' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Optional image
+        ]);
 
-    // Update the book details
-    $book->title = $request->title;
-    $book->author = $request->author;
-    $book->price = $request->price;
-    $book->genre = $request->genre;
-    $book->description = $request->description;
+        // Update book details
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->price = $request->price;
+        $book->genre = $request->genre;
+        $book->description = $request->description;
 
-    // If a new cover image is uploaded, handle the file upload and update the image path
-    if ($request->hasFile('cover_image')) {
-        // Delete the old image if a new one is uploaded
+        // Handle the image upload if a new file is provided
+        if ($request->hasFile('image_url')) {
+            // Delete the old image if it exists
+            if ($book->image_url) {
+                Storage::delete('public/' . $book->image_url);
+            }
+
+            // Store the new image and update the path
+            $imagePath = $request->file('image_url')->store('images', 'public');
+            $book->image_url = $imagePath;
+        }
+
+        // Save the updated book
+        $book->save();
+
+        // Redirect with success message
+        return redirect()->route('admin.section', ['section' => 'products'])
+                         ->with('success', 'Book updated successfully!');
+    }
+
+    /**
+     * Delete a book from the database.
+     */
+    public function destroy(Book $book)
+    {
+        // Delete the cover image if it exists
         if ($book->image_url) {
             Storage::delete('public/' . $book->image_url);
         }
 
-        $imagePath = $request->file('cover_image')->store('images', 'public');
-        $book->image_url = $imagePath;
+        // Delete the book record
+        $book->delete();
+
+        // Redirect with success message
+        return redirect()->route('admin.section', ['section' => 'products'])
+                         ->with('success', 'Book deleted successfully!');
     }
-
-    // Save the updated book details
-    $book->save();
-
-    // Redirect to the products page with a success message
-    return redirect()->route('admin.section', ['section' => 'products'])->with('success', 'Book updated successfully!');
-}
-
-public function destroy(Book $book)
-{
-    // Delete the cover image from storage if it exists
-    if ($book->image_url) {
-        Storage::delete('public/' . $book->image_url);
-    }
-
-    // Delete the book from the database
-    $book->delete();
-
-    // Redirect back to the products page with a success message
-    return redirect()->route('admin.section', ['section' => 'products'])->with('success', 'Book deleted successfully!');
-}
-
-
 }

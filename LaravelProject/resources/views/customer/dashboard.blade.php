@@ -1,6 +1,7 @@
-@extends('layout')
+@extends('home')
+
+@section('title', 'Customer Dashboard')
 
 @section('content')
-    <h1>Welcome to Customer Dashboard</h1>
 
 @endsection

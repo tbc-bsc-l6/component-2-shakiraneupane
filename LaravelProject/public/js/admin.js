@@ -1,17 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Dashboard");
 
-    const logoutButton = document.querySelector(".logout-btn");
-    logoutButton.addEventListener("click", () => {
-        alert("You have been logged out.");
-        window.location.href = "/home"; // Redirect to login page
-    });
+    document.querySelectorAll('.see-more').forEach(function (link) {
+        link.addEventListener('click', function () {
+            var descriptionContainer = this.closest('.description-container');
+            var shortDescription = descriptionContainer.querySelector('.description-short');
+            var fullDescription = descriptionContainer.querySelector('.description-full');
 
-    const navLinks = document.querySelectorAll(".sidebar nav ul li a");
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            navLinks.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
+            // Toggle visibility
+            if (fullDescription.style.display === 'none') {
+                fullDescription.style.display = 'inline';
+                shortDescription.style.display = 'none';
+                this.textContent = 'See Less';  // Change link text to "See Less"
+            } else {
+                fullDescription.style.display = 'none';
+                shortDescription.style.display = 'inline';
+                this.textContent = 'See More';  // Change link text to "See More"
+            }
         });
     });
-});
+
+

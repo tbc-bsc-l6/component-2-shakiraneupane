@@ -31,8 +31,16 @@
                     <td>{{ $book->author }}</td>
                     <td>{{ $book->price }}</td>
                     <td>{{ $book->genre }}</td>
-                    <td>{{ $book->description }}</td>
-                    <td><img src="{{ asset('storage/images/'.$book->image_url) }}" width="100"></td>
+                    <td>
+                        <div class="description-container">
+                            <span class="description-short">{{ \Str::limit($book->description, 20) }}</span>
+                            <span class="description-full" style="display: none;">{{ $book->description }}</span>
+                            <a href="javascript:void(0);" class="see-more">See More</a>
+                        </div>
+                    </td>
+                    <td><img src="{{ asset('storage/' . $book->image_url) }}" ></td>
+
+
                     <td> <button> <a href="{{ route('admin.editBooks', $book->id) }}" class="edit">Edit</a> </button>
 
                       <!-- Delete Form -->

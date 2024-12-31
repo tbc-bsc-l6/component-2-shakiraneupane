@@ -40,8 +40,8 @@
     </div>
 
     <div class="form-group">
-        <label for="cover_image">Cover Image</label>
-        <input type="file" name="cover_image" class="form-control" id="cover_image">
+        <label for="image_url">Cover Image</label>
+        <input type="file" name="image_url" class="form-control" id="image_url">
         @if ($book->image_url)
             <img src="{{ asset('storage/' . $book->image_url) }}" alt="Book Cover" class="mt-2" style="max-width: 150px;">
         @endif

@@ -1,0 +1,125 @@
+.logout-btn i {
+    font-size: 18px; /* Adjust icon size */
+    color: white; /* Make the icon white */
+}
+
+.cart-count{
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+/* Cart Section Styling */
+.cart-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.cart-section h1{
+    margin-bottom: 10px;
+}
+
+
+/* Cart Table Styling */
+.cart-table {
+
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+}
+
+.cart-table th, .cart-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f1f1f1;
+}
+
+.cart-book-image {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+
+.cart-summary-box{
+    margin-left: 850px;
+
+
+}
+
+.cart-summary {
+    flex: 0 0 28%; /* Cart summary takes 28% of the space */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+
+}
+
+.cart-summary h2 {
+    margin-bottom: 10px;
+}
+
+.cart-summary p {
+    margin: 5px 0;
+}
+
+.cart-summary .btn-checkout {
+    display: inline-block;
+    background-color:  #007bff;
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 50px;
+    text-align: center;
+    width: 150px;
+    transition: background-color 0.3s;
+    margin-left:50px;
+}
+
+.cart-summary .btn-checkout:hover {
+    background-color: #0056b3;
+}
+
+/* Cart Quantity Control Styling */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-btn {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.quantity-display {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
