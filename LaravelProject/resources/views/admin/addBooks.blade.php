@@ -25,11 +25,11 @@
         <label for="genre">Genre</label>
         <select name="genre" class="form-control" id="genre" required>
             <option value="" disabled selected>Select Genre</option>
-            <option value="Arts & Photography">Arts & Photography</option>
-            <option value="Lifestyle & Wellness">Lifestyle & Wellness</option>
-            <option value="Fiction & literature">Fiction & literature</option>
-            <option value="History & biography">History & biography</option>
-            <option value="Kids & Teens">Kids & Teens</option>
+            <option value="arts">Arts & Photography</option>
+            <option value="lifestyle">Lifestyle & Wellness</option>
+            <option value="fiction">Fiction & literature</option>
+            <option value="history">History & Biography</option>
+            <option value="kids">Kids & Teens</option>
         </select>
     </div>
 

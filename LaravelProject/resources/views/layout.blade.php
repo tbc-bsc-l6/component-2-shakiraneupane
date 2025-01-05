@@ -46,7 +46,7 @@
                             <a href="{{ route('genre.show', ['genre' => 'arts']) }}">Arts & Photography</a>
                             <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">Lifestyle & Wellness</a>
                             <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">Fiction & Literature</a>
-                            <a href="{{ route('genre.show', ['genre' => 'history']) }}">History,Biography & More</a>
+                            <a href="{{ route('genre.show', ['genre' => 'history']) }}">History & Biography</a>
                             <a href="{{ route('genre.show', ['genre' => 'kids']) }}">Kids & Teens</a>
                         </div>
                     </div>

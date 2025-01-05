@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Book;
 
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class GenreController extends Controller
             abort(404);  // Return a 404 page if the genre doesn't exist
         }
 
-        // Return the corresponding genre Blade view
-        return view('genres.' . $genre);
+        // Fetch books based on the genre
+        $books = Book::where('genre', $genre)->get();
+        // Debug: Check if books are being retrieved
+
+
+        // Return the corresponding genre Blade view with books data
+        return view('genre', compact('books', 'genre'));  // Directly use genre.blade.php
+
+
     }
 }

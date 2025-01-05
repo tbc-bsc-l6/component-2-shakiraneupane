@@ -56,7 +56,7 @@
             <div class="genre-item">
                 <a href="{{ route('genre.show', ['genre' => 'history']) }}">
                     <i class="fas fa-book-open"></i>
-                    <span>History, Biography, and More</span>
+                    <span>History & Biography</span>
                 </a>
             </div>
             <div class="genre-item">

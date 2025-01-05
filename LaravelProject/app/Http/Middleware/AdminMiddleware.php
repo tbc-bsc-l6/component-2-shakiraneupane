@@ -1,29 +1,21 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Add this import
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): \Symfony\Component\HttpFoundation\Response  $next
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function handle(Request $request, Closure $next): Response
+    public function handle($request, Closure $next)
     {
-        // Check if the user is logged in and has the 'admin' role
-        if (Auth::check() && Auth::user()->role === 'CheckAdmin') {
-            return $next($request); // Continue the request
+        // Check if the user is authenticated and has the admin role
+        if (!Auth::check() || Auth::user()->role != 'admin') {
+            // Redirect with error message if user is not authorized
+            return redirect('/')->with('error', 'You are not authorized.');
         }
 
-        // If not an admin, redirect to the home page
-        return redirect()->route('home')->withErrors(['message' => 'Access denied for this user.']);
+        // Proceed with the request if the user is authorized
+        return $next($request);
     }
 }
+

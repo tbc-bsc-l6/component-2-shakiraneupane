@@ -19,7 +19,7 @@
                     <li><a href="{{ route('admin.section', ['section' => 'users']) }}">Users</a></li>
                     <li><a href="{{ route('admin.section', ['section' => 'products']) }}">Products</a></li>
                     <li><a href="{{ route('admin.section', ['section' => 'orders']) }}">Orders</a></li>
-                    <li><a href="{{ route('admin.section', ['section' => 'reports']) }}">Reports</a></li>
+
                 </ul>
             </nav>
         </aside>

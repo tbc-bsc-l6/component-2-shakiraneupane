@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+
 
 class AdminController extends Controller
 {
+    // Constructor to apply middleware for all methods
+
+
     // Handle dynamic sections (products, users, orders, etc.)
     public function handleSection($section)
     {
@@ -48,28 +54,21 @@ class AdminController extends Controller
         return redirect()->route('admin.section', ['section' => 'users'])->with('success', 'User deleted successfully!');
     }
 
-
-
     public function search(Request $request)
-{
-    // Get the search query from the request
-    $query = User::query();
+    {
+        // Get the search query from the request
+        $query = User::query();
 
-    // If a search term is present, filter users by name or email
-    if ($request->has('search') && $request->search) {
-        $query->where('name', 'like', '%' . $request->search . '%')
-              ->orWhere('email', 'like', '%' . $request->search . '%');
+        // If a search term is present, filter users by name or email
+        if ($request->has('search') && $request->search) {
+            $query->where('name', 'like', '%' . $request->search . '%')
+                  ->orWhere('email', 'like', '%' . $request->search . '%');
+        }
+
+        // Get the filtered users
+        $users = $query->get();
+
+        // Return the view with the filtered users
+        return view('admin.users', compact('users'));
     }
-
-    // Get the filtered users
-    $users = $query->get();
-
-    // Return the view with the filtered users
-    return view('admin.users', compact('users'));
 }
-
-
-
-}
-
-

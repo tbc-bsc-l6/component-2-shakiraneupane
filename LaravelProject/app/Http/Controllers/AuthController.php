@@ -60,24 +60,29 @@ class AuthController extends Controller
     // Handle login
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
+        // Validate the login credentials
         $credentials = $request->only('email', 'password');
 
+        // Attempt to authenticate the user
         if (Auth::attempt($credentials)) {
-            // Check the role of the user (admin or customer)
-            if (Auth::user()->role === 'admin') {
-                return redirect()->route('admin.dashboard');
+            $user = Auth::user();
+
+            // Check if the role matches the intended role
+            if ($user->role != $request->role) {
+                Auth::logout();
+                return redirect()->route('login')->withErrors(['role' => 'The selected role does not match your account role.']);
             }
 
-            // Default to customer dashboard
-            return redirect()->route('customer.dashboard');
+            // Redirect based on user role
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.dashboard'); // Redirect to admin dashboard
+            } else {
+                return redirect()->route('home'); // Redirect to customer homepage
+            }
         }
 
-        return redirect()->route('login')->withErrors(['email' => 'Invalid credentials.']);
+        // If authentication fails
+        return redirect()->route('login')->withErrors(['email' => 'Invalid Credentials.']);
     }
 
     // Show customer dashboard
@@ -92,7 +97,7 @@ class AuthController extends Controller
         return redirect()->route('login')->withErrors(['message' => 'You need to login first.']);
     }
 
-
+    // Handle logout
     public function logout()
     {
         Auth::logout(); // Log the user out

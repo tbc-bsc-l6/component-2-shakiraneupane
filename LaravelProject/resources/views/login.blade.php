@@ -5,15 +5,6 @@
         <div class="form-login">
             <h2>You must login</h2>
 
-            <!-- Social Login -->
-            <div class="social-login">
-                <button class="social-btn google">Continue with Google</button>
-                <button class="social-btn apple">Continue with Apple</button>
-            </div>
-
-            <div class="divider">
-                <span>OR</span>
-            </div>
 
             <!-- Login Form -->
             <form action="{{ route('login.submit') }}" method="POST">

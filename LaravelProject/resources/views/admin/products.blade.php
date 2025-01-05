@@ -1,6 +1,7 @@
 @extends('admin.dashboard')
 
 @section('content')
+@section('content')
 <div class="container">
     <h1>Manage Books</h1>
 
@@ -38,8 +39,8 @@
                             <a href="javascript:void(0);" class="see-more">See More</a>
                         </div>
                     </td>
-                    <td><img src="{{ asset('storage/' . $book->image_url) }}" ></td>
-
+                    <td>
+                        <img src="{{ asset('storage/' . $book->image_url) }}" ></td>
 
                     <td> <button> <a href="{{ route('admin.editBooks', $book->id) }}" class="edit">Edit</a> </button>
 

@@ -19,7 +19,7 @@ class CustomerMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         // Check if the user is logged in and has the 'customer' role
-        if (Auth::check() && Auth::user()->role === 'checkCustomer') {
+        if (Auth::check() && Auth::user()->role === 'customer') {
             return $next($request); // Continue the request
         }
 
