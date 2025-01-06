@@ -116,11 +116,7 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
-.table th {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-}
+
 
 .table td {
     font-size: 14px;
@@ -356,4 +352,94 @@ button[type="submit"]:hover {
 }
 
 
+/*for orders page*/
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+}
+
+/* Page Container */
+.order-details {
+    background-color: white;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.order-details h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.order-details h3 {
+    font-size: 20px;
+    color: #444;
+    margin-top: 20px;
+}
+
+.order-details p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.order-details strong {
+    font-weight: bold;
+}
+
+/* Table Styling */
+table.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table.table th,
+table.table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table.table th {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+table.table td {
+    background-color: #fff;
+    color: #555;
+}
+
+/* Success Message */
+.alert.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+.btn.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.btn.btn-primary:hover {
+    background-color: #0056b3;
+}
 

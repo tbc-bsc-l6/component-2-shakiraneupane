@@ -68,7 +68,9 @@
                 <h2>Cart Summary</h2>
                 <p>Total Items: {{ $cartItems->sum('quantity') }}</p>
                 <p>Total Price: Rs. {{ $cartItems->sum(fn($item) => $item->book->price * $item->quantity) }}</p>
-                <a href="/checkout" class="btn-checkout">Checkout</a>
+
+                <a href="{{ route('checkout.index') }}" class="btn-checkout">Checkout</a>
+
             </div>
             </div>
         @endif

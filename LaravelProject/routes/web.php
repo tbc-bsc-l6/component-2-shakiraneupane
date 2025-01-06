@@ -8,6 +8,9 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PaymentController;
+
 
 // Public Routes
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -58,6 +61,51 @@ Route::middleware(['auth'])->group(function () {
 
 // Creating dynamic route for genres
 Route::get('/genre/{genre}', [GenreController::class, 'show'])->name('genre.show');
+
+
+
+// In web.php
+use App\Http\Controllers\Admin\OrderController;
+
+
+
+
+
+
+
+
+use App\Http\Controllers\OrderConfirmationController;
+
+// Route to show the checkout page
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+
+// Route to process the checkout form
+Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process');
+
+// Route to show the order confirmation page
+Route::get('/order-confirmation', [OrderConfirmationController::class, 'showConfirmationPage'])->name('order.confirmation');
+
+
+
+// In web.php
+
+// Add this route for showing a specific order
+Route::get('/admin/orders/{order}', [AdminController::class, 'showOrder'])->name('admin.orders.show');
+
+
+// Route for displaying the list of orders
+Route::get('/admin/orders', [AdminController::class, 'index'])->name('admin.orders');
+
+
+
+
+
+
+
+
+
+
+
 
 
 

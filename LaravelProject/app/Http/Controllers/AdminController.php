@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -32,6 +33,13 @@ class AdminController extends Controller
             if ($section == 'products') {
                 $books = Book::all();
                 return view("admin.{$section}", compact('books'));
+            }
+
+            // Handle the 'orders' section
+            if ($section == 'orders') {
+                // Eager load the 'customer' relationship to prevent the null reference error
+                $orders = Order::with('customer')->paginate(5); // Adjust the pagination number if needed
+                return view("admin.{$section}", compact('orders'));
             }
 
             // Handle other sections (orders, reports, etc.)
@@ -71,4 +79,14 @@ class AdminController extends Controller
         // Return the view with the filtered users
         return view('admin.users', compact('users'));
     }
+
+    public function showOrder($orderId)
+{
+    // Fetch the order by its ID, including the associated order items and book information
+    $order = Order::with('orderItems.book')->findOrFail($orderId);
+
+    // Return the view with the order details
+    return view('admin.show', compact('order'));
+}
+
 }
