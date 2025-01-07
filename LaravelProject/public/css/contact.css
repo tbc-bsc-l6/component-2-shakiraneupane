@@ -1,0 +1,189 @@
+/*------------------ Contact Us Section----------------- */
+body{
+    background-color: #f4f4f4;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+
+.contact-header p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* Contact Content */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-left: 100px;
+
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    background-color: #d3d3d3;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    max-width: 500px;
+
+}
+
+.contact-form h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 6px;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/*contact info*/
+
+.contact-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.contact-info .address p {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 12px;
+}
+
+.contact-info .address p strong {
+    color: #34495e;
+}
+
+
+.contact-info .address a {
+    color: #34495e;
+    text-decoration: underline;
+    color: #1abc9c;
+}
+
+
+/*weather api*/
+
+.weather-section {
+    background: linear-gradient(to bottom, #2e466e, #1d2c47); /* Gradient background */
+    color: #fff; /* White text */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    width: 400px; /* Fixed width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    font-family: 'Arial', sans-serif;
+    margin: 20px auto; /* Center align */
+    height: 400px;
+}
+
+.weather-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between form elements */
+}
+
+.weather-section input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 20px;
+}
+
+.weather-section button {
+    padding: 10px;
+    background-color: #FF9913;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.weather-section button:hover {
+    background-color: #FF6E00;
+}
+
+.weather-info {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.weather-info h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.weather-info p {
+    margin: 5px 0;
+    margin-top: 10px;
+}
+
+.weather-info strong {
+    color: #f1c40f; /* Highlighted text color */
+}
+
+

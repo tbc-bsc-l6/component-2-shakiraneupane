@@ -1,50 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/css/admin.css">
-    <!-- Font Awesome (for icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div class="dashboard">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">Admin Dashboard</div>
-            <nav>
-                <ul>
-                    <li><a href="{{ route('admin.dashboard') }}" class="active">Dashboard</a></li>
-                    <li><a href="{{ route('admin.section', ['section' => 'users']) }}">Users</a></li>
-                    <li><a href="{{ route('admin.section', ['section' => 'products']) }}">Products</a></li>
-                    <li><a href="{{ route('admin.section', ['section' => 'orders']) }}">Orders</a></li>
+@extends('admin.layout')
 
-                </ul>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="header">
-                <h1>Welcome to the Admin Panel</h1>
-                <div class="user-info">
-                    <!-- Logout Button -->
-                    <button class="logout-btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</button>
-                </div>
-            </header>
-            @yield('content')
-            <!-- Dashboard Stats Section -->
-
-            </section>
-        </main>
-    </div>
-
-    <!-- Logout Form (Hidden) -->
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
-
-    <script src="/js/admin.js"></script>
-</body>
-</html>
+@section('content')
+    <!-- Dashboard Stats Section -->
+    <section class="stats">
+        <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <div class="stat-info">
+                <h3>{{ number_format($totalUsers) }}</h3> <!-- Display total users -->
+                <p>Total Users</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-box"></i>
+            <div class="stat-info">
+                <h3>{{ number_format($totalProducts) }}</h3> <!-- Display total products -->
+                <p>Total Products</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="stat-info">
+                <h3>{{ number_format($totalOrders) }}</h3> <!-- Display total orders -->
+                <p>Total Orders</p>
+            </div>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-dollar-sign"></i>
+            <div class="stat-info">
+                <h3>${{ number_format($totalRevenue, 2) }}</h3> <!-- Display total revenue formatted -->
+                <p>Total Revenue</p>
+            </div>
+        </div>
+    </section>
+@endsection

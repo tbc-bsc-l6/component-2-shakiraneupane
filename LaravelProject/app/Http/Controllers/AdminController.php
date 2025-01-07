@@ -89,4 +89,14 @@ class AdminController extends Controller
     return view('admin.show', compact('order'));
 }
 
+public function dashboard()
+{
+    $totalUsers = \App\Models\User::count();
+    $totalProducts = \App\Models\Book::count();
+    $totalOrders = \App\Models\Order::count();
+    $totalRevenue = \App\Models\Order::sum('total_amount'); // Assuming 'total_amount' is the column storing order total price
+
+    return view('admin.dashboard', compact('totalUsers', 'totalProducts', 'totalOrders', 'totalRevenue'));
+}
+
 }

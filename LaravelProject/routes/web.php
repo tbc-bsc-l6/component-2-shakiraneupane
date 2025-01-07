@@ -9,7 +9,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\OrderConfirmationController;
 
 
 // Public Routes
@@ -18,6 +19,8 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+// Route for the contact page with weather functionality
+Route::get('/contact', [WeatherController::class, 'index'])->name('contact');
 
 // Authentication Routes
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
@@ -31,6 +34,10 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    // In routes/web.php
+
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/admin/{section}', [AdminController::class, 'handleSection'])->name('admin.section');
     Route::get('/admin/users/search', [AdminController::class, 'search'])->name('admin.users.search');
@@ -64,17 +71,6 @@ Route::get('/genre/{genre}', [GenreController::class, 'show'])->name('genre.show
 
 
 
-// In web.php
-use App\Http\Controllers\Admin\OrderController;
-
-
-
-
-
-
-
-
-use App\Http\Controllers\OrderConfirmationController;
 
 // Route to show the checkout page
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
@@ -95,6 +91,8 @@ Route::get('/admin/orders/{order}', [AdminController::class, 'showOrder'])->name
 
 // Route for displaying the list of orders
 Route::get('/admin/orders', [AdminController::class, 'index'])->name('admin.orders');
+
+
 
 
 

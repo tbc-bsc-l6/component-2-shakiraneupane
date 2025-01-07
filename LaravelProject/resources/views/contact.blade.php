@@ -1,5 +1,7 @@
 @extends('layout')
+
 @section('title', 'Contact-us')
+
 @section('content')
     <section class="contact">
         <div class="contact-header">
@@ -28,18 +30,34 @@
                 </form>
             </div>
 
-            <div class="contact-info">
-                <h2>Our Location</h2>
-                <p>Visit us at our office or get in touch via the contact form.</p>
-                <div class="address">
-                    <p><strong>Office Address:</strong> 123 Book Street, City Name, Country</p>
-                    <p><strong>Phone:</strong> +1 234 567 890</p>
-                    <p><strong>Email:</strong> <a href="mailto:info@onlinebookstore.com">info@onlinebookstore.com</a></p>
-                </div>
+            <div class="weather-section">
+                <form method="GET" action="{{ url('/contact') }}">
+                    <label for="city"><i class="fas fa-city"></i> Enter City:</label>
+                    <input type="text" name="city" id="city" placeholder="Enter city" value="{{ request('city', 'Kathmandu') }}">
+                    <button type="submit"><i class="fas fa-search"></i> Search</button>
+                </form>
 
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=..." width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                @if(isset($weatherData))
+                    <div class="weather-info">
+                        <h2><i class="fas fa-cloud-sun"></i> Weather in {{ $weatherData['name'] }}, {{ $weatherData['sys']['country'] }}</h2>
+                        <p><i class="fas fa-cloud"></i> <strong>Condition:</strong> {{ $weatherData['weather'][0]['description'] }}</p>
+                        <p><i class="fas fa-thermometer-half"></i> <strong>Temperature:</strong> {{ $weatherData['main']['temp'] }} °C</p>
+                        <p><i class="fas fa-wind"></i> <strong>Wind Speed:</strong> {{ $weatherData['wind']['speed'] }} m/s</p>
+                        <p><i class="fas fa-tint"></i> <strong>Humidity:</strong> {{ $weatherData['main']['humidity'] }}%</p>
+                    </div>
+                @elseif(isset($error))
+                    <p style="color: red;"><i class="fas fa-exclamation-circle"></i> {{ $error }}</p>
+                @endif
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h2>Our Location</h2>
+            <p>Visit us at our office or get in touch via the contact form.</p>
+            <div class="address">
+                <p><strong> 123 Book Street, City Name, Country</strong></p>
+                <p><strong>+1 234 567 890</strong> </p>
+                <p><strong> <a href="mailto:info@onlinebookstore.com">info@onlinebookstore.com</a></strong></p>
             </div>
         </div>
     </section>

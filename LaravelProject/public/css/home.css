@@ -1,3 +1,7 @@
+
+body{
+    background-color: #f4f4f4;
+}
 /* Slider Container */
 .slider-container {
     position: relative;
