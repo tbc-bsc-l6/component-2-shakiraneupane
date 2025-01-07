@@ -53,6 +53,10 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 // Customer Routes (Protected by 'customer' middleware)
 Route::middleware(['customer'])->group(function () {
     Route::get('/customer/dashboard', [CustomerController::class, 'customerDashboard'])->name('customer.dashboard');
+
+
+
+
 });
 
 // Authenticated Routes (Shared between roles)
@@ -93,9 +97,17 @@ Route::get('/admin/orders/{order}', [AdminController::class, 'showOrder'])->name
 Route::get('/admin/orders', [AdminController::class, 'index'])->name('admin.orders');
 
 
+Route::get('/customer/profile', [CustomerController::class, 'show'])->name('customer.profile');
 
 
 
+Route::middleware('auth')->group(function () {
+    // Display the profile edit form
+    Route::get('/profile', [CustomerController::class, 'show'])->name('profile.show');
+
+    // Update the profile form submission
+    Route::put('/profile', [CustomerController::class, 'update'])->name('profile.update');
+});
 
 
 

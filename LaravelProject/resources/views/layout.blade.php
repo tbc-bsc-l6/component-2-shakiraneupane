@@ -73,9 +73,10 @@
                    <!-- Customer Profile or Login -->
 @auth
 <!-- If the user is logged in, show the Profile and Logout links -->
-<li><a href="/profile" title="Customer Profile">
-    <img src="{{ Auth::user()->profile_image ? Storage::url(Auth::user()->profile_image) : '/images/default-profile.png' }}" alt="profile" class="profile-image">
+<li><a href="{{ route('customer.profile') }}" title="Customer Profile">
+    <i class="fas fa-user-circle fa-6x" style="color: orange"></i>
 </a></li>
+
 <li>
     <form action="{{ route('logout') }}" method="POST">
         @csrf
