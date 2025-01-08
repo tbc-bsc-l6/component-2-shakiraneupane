@@ -19,6 +19,9 @@
                     <li><a href="{{ route('admin.section', ['section' => 'users']) }}"><i class="fas fa-users"></i> Users</a></li>
                     <li><a href="{{ route('admin.section', ['section' => 'products']) }}"><i class="fas fa-box"></i> Products</a></li>
                     <li><a href="{{ route('admin.section', ['section' => 'orders']) }}"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="{{ route('admin.section', ['section' => 'contacts']) }}"><i class="fas fa-envelope"></i> Contacts</a></li>
+
+
 
 
                 </ul>

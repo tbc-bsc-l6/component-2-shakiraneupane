@@ -14,17 +14,15 @@ class AdminController extends Controller
     // Constructor to apply middleware for all methods
 
 
-    // Handle dynamic sections (products, users, orders, etc.)
     public function handleSection($section)
     {
         // Define valid sections
-        $validSections = ['users', 'products', 'orders', 'reports', 'addBooks'];
+        $validSections = ['users', 'products', 'orders', 'reports', 'addBooks', 'contacts'];
 
         // Check if the requested section is valid
         if (in_array($section, $validSections)) {
             // Handle the 'users' section
             if ($section == 'users') {
-                // Fetch all users except those with 'admin' role
                 $users = User::where('role', '!=', 'admin')->get();
                 return view("admin.{$section}", compact('users'));
             }
@@ -37,18 +35,24 @@ class AdminController extends Controller
 
             // Handle the 'orders' section
             if ($section == 'orders') {
-                // Eager load the 'customer' relationship to prevent the null reference error
-                $orders = Order::with('customer')->paginate(5); // Adjust the pagination number if needed
+                $orders = Order::with('customer')->paginate(5);
                 return view("admin.{$section}", compact('orders'));
             }
 
-            // Handle other sections (orders, reports, etc.)
+            // Handle the 'contacts' section
+            if ($section == 'contacts') {
+                $contacts = \App\Models\Contact::paginate(5);  // Fetch all contact messages
+                return view("admin.{$section}", compact('contacts'));
+            }
+
+            // Handle other sections (reports, addBooks, etc.)
             return view("admin.{$section}");
         }
 
         // If the section is invalid, show a 404 error
         return abort(404, "The requested admin section does not exist.");
     }
+
 
     public function destroy($id)
     {

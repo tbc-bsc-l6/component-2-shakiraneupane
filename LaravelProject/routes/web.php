@@ -108,7 +108,10 @@ Route::put('/customer/profile', [ProfileController::class, 'update'])->name('pro
 
 
 
-Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
+
+
+
+
 
 
 
