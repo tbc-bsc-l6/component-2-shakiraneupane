@@ -1,22 +1,17 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+
+use App\Models\Book;
 
 class CustomerController extends Controller
 {
-    public function show()
+
+    public function customerDashboard()
     {
-        return view('customer.profile');
+        $newArrivals = Book::latest()->take(5)->get(); // Fetch new arrivals or mock data
+        return view('customerDashboard', compact('newArrivals'));
     }
 
-    public function update(Request $request, user $user)
-{
 
-
-
-}
 }

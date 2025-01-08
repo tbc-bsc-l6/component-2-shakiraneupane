@@ -11,6 +11,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\OrderConfirmationController;
+use App\Http\Controllers\ProfileController;
 
 
 // Public Routes
@@ -97,17 +98,12 @@ Route::get('/admin/orders/{order}', [AdminController::class, 'showOrder'])->name
 Route::get('/admin/orders', [AdminController::class, 'index'])->name('admin.orders');
 
 
-Route::get('/customer/profile', [CustomerController::class, 'show'])->name('customer.profile');
 
 
+Route::get('/customer/profile', [ProfileController::class, 'show'])->name('customer.profile');
+Route::put('/customer/profile', [ProfileController::class, 'update'])->name('profile.update');
 
-Route::middleware('auth')->group(function () {
-    // Display the profile edit form
-    Route::get('/profile', [CustomerController::class, 'show'])->name('profile.show');
 
-    // Update the profile form submission
-    Route::put('/profile', [CustomerController::class, 'update'])->name('profile.update');
-});
 
 
 
