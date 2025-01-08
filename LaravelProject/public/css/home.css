@@ -1,7 +1,4 @@
 
-body{
-    background-color: #f4f4f4;
-}
 /* Slider Container */
 .slider-container {
     position: relative;
@@ -87,7 +84,7 @@ body{
 .genres-section {
     text-align: center;
     margin: 40px 20px;
-    padding: 40px;
+    padding: 30px;
     background: black;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -192,14 +189,12 @@ body{
 }
 
 
-
-
 /* New Arrivals Section */
 .new-arrivals-section {
     text-align: center;
-    padding: 20px;
+
     font-family: Arial, sans-serif;
-    background-color: #fff; /* Default background color */
+    background-color: #fdf6e4; /* Default background color */
     color: #333; /* Default text color */
 }
 
@@ -243,7 +238,7 @@ body{
 }
 
 .new-arrivals-section .book-item img {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-radius: 10px;
 }

@@ -11,7 +11,7 @@
 /* Cart Section Styling */
 .cart-section {
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #fdf6e4;
 }
 
 .cart-section h1{
@@ -31,10 +31,17 @@
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
+
 }
 
 .cart-table th {
     background-color: #f1f1f1;
+}
+
+
+
+.cart-table td {
+    background-color: #ffffff;
 }
 
 .cart-book-image {
@@ -361,117 +368,11 @@ h3 {
     display: block;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
-.profile-container {
-    max-width: 800px;
-    margin: 50px auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-.profile-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-.profile-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-.profile-content {
-    padding: 20px;
-}
-.profile-content .field {
-    margin-bottom: 15px;
-}
-.profile-content .field label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-.profile-content .field input,
-.profile-content .field textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.profile-actions {
-    text-align: center;
-    padding: 20px;
-    background: #f9f9f9;
-    border-top: 1px solid #eee;
-}
-.profile-actions button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.profile-actions button:hover {
-    background-color: #45a049;
-}
-
-
-
-
-
-
-
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-.profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #343a40;
-    color: white;
-}
-
-.profile-header .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.profile-header .navigation ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.profile-header .navigation ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-}
-
+/*profile-section*/
 .customer-profile {
     display: flex;
     margin: 30px auto;
-    max-width: 1000px;
+    max-width: 800px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

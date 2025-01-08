@@ -38,6 +38,10 @@ class CheckoutController extends Controller
         $order->total_amount = $cartItems->sum(fn($item) => $item->book->price * $item->quantity);
         $order->save();
 
+
+        // Clear the user's cart after placing the order
+        Cart::where('user_id', Auth::id())->delete();
+
         // Redirect to the confirmation page
         return redirect()->route('order.confirmation')->with('order_id', $order->id);
     }
