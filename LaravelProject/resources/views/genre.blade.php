@@ -1,11 +1,28 @@
-@extends('layout') {{-- Assuming a common layout --}}
+@extends('layout')
 
-@section('title', ucfirst($genre) . ' Books') {{-- Dynamic title based on genre name --}}
+@section('title', ucfirst($genre) . ' Books')
 
 @section('content')
 <section class="new-arrivals-section">
-    <h2>{{ ucfirst($genre) }} Books</h2> {{-- Dynamic header based on genre name --}}
-    <p>Explore captivating books in the {{ ucfirst($genre) }} genre.</p> {{-- Dynamic paragraph text --}}
+    <h2>{{ ucfirst($genre) }} Books</h2>
+    <p>Explore captivating books in the {{ ucfirst($genre) }} genre.</p>
+
+    <!-- Sorting options -->
+    <form method="GET" action="{{ route('genre.show', ['genre' => $genre]) }}">
+        <div class="sorting-options">
+            <label for="sort">Sort by:</label>
+            <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="price" {{ request()->get('sort') == 'price' ? 'selected' : '' }}>Price</option>
+                <option value="title" {{ request()->get('sort') == 'title' ? 'selected' : '' }}>Title</option>
+            </select>
+
+            <label for="order">Order:</label>
+            <select name="order" id="order" onchange="this.form.submit()">
+                <option value="asc" {{ request()->get('order') == 'asc' ? 'selected' : '' }}>Ascending</option>
+                <option value="desc" {{ request()->get('order') == 'desc' ? 'selected' : '' }}>Descending</option>
+            </select>
+        </div>
+    </form>
 
     <div class="books-grid">
         @if($books->isEmpty())
@@ -33,6 +50,11 @@
                 </div>
             @endforeach
         @endif
+    </div>
+
+    <!-- Display pagination links -->
+    <div class="pagination-container">
+        {{ $books->links() }}
     </div>
 </section>
 @endsection

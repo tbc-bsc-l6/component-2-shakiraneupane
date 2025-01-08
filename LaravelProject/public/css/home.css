@@ -145,6 +145,55 @@ body{
     transition: color 0.3s ease; /* Smooth hover effect */
 }
 
+
+/* Container for the sorting options */
+.sorting-options {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-left:400px;
+}
+
+/* Label for the select dropdown */
+.sorting-options label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Style for the dropdown select elements */
+.sorting-options select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Style for the select elements when focused */
+.sorting-options select:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Optional: Hover effect for the select elements */
+.sorting-options select:hover {
+    border-color: #007bff;
+}
+
+/* Optional: Styling the "Sort by" and "Order" labels */
+.sorting-options select option {
+    padding: 10px;
+}
+
+
+
+
 /* New Arrivals Section */
 .new-arrivals-section {
     text-align: center;
@@ -175,6 +224,7 @@ body{
     gap: 20px;
     flex-wrap: wrap;
 }
+
 
 /* Book Item Style */
 .new-arrivals-section .book-item {

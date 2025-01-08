@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 use App\Models\Book;
-
 use Illuminate\Http\Request;
+
 
 class GenreController extends Controller
 {
-    public function show($genre)
+
+ public function show(Request $request, $genre)
     {
         // List of valid genres
         $validGenres = ['fiction', 'kids', 'arts', 'history', 'lifestyle'];
@@ -17,14 +18,18 @@ class GenreController extends Controller
             abort(404);  // Return a 404 page if the genre doesn't exist
         }
 
-        // Fetch books based on the genre
-        $books = Book::where('genre', $genre)->get();
-        // Debug: Check if books are being retrieved
+        // Get the sorting parameters from the request, default to 'price' and 'asc'
+        $sortBy = $request->get('sort', 'price');  // Default sort by 'price'
+        $sortOrder = $request->get('order', 'asc'); // Default order is ascending
 
+        // Fetch books based on the genre and apply sorting
+        $books = Book::where('genre', $genre)
+            ->orderBy($sortBy, $sortOrder)  // Apply sorting by 'price'
+            ->paginate(10);  // Paginate the results
 
         // Return the corresponding genre Blade view with books data
-        return view('genre', compact('books', 'genre'));  // Directly use genre.blade.php
-
-
+        return view('genre', compact('books', 'genre'));
     }
 }
+
+
