@@ -12,6 +12,7 @@
 
     <div class="order-details">
         <p><strong>Order ID:</strong> {{ $order->id }}</p>
+        <p><strong>User ID:</strong> {{ $order->user_id }}</p>
         <p><strong>Customer Name:</strong> {{ $order->customer ? $order->customer->name : 'No Customer' }}</p>
         <p><strong>Customer Email:</strong> {{ $order->customer ? $order->customer->email : 'No Email' }}</p>
         <p><strong>Order Date:</strong> {{ $order->created_at->format('d-m-Y') }}</p>

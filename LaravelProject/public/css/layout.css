@@ -40,6 +40,7 @@ button:hover #toggleIcon {
     align-items: center;
     padding: 15px 30px;
     background-color: #333;
+
 }
 
 .logo a {
@@ -73,21 +74,11 @@ button:hover #toggleIcon {
     align-items: center;
     width: 100%;
 
-
-
 }
 
 .navbar-links li {
     margin: 0 15px;
     position: relative; /* Added for dropdown positioning */
-}
-
-.navbar-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 19px;
-    display: flex;
-    align-items: center;
 }
 
 
@@ -103,7 +94,7 @@ button:hover #toggleIcon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 10px;
+
     transition: color 0.3s ease, transform 0.3s ease;
 }
 

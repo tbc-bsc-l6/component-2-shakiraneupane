@@ -2,23 +2,31 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Contact; // Make sure this import is here
+use App\Models\User;
+use App\Models\Order;
+
+
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
+     *
+     * @return void
      */
-    public function run(): void
+    public function run()
     {
-        // User::factory(10)->create();
+        // Seed 10 contact entries
+        Contact::factory(10)->create(); //Creates 10 contacts
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+       // Seed 30 users
+       User::factory(35)->create();  // This creates 30 user records
 
-        ]);
+       // Seed 30 orders, each associated with a random user
+       Order::factory(35)->create();  // This creates 30 orders, each linked to a random user
+
+
     }
 }

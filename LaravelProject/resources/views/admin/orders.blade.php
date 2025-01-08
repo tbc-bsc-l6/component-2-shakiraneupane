@@ -15,6 +15,7 @@
         <thead>
             <tr>
                 <th>Order ID</th>
+                <th>User ID</th>
                 <th>Customer Name</th>
                 <th>Order Date</th>
                 <th>Status</th>
@@ -25,6 +26,7 @@
             @foreach($orders as $order)
                 <tr>
                     <td>{{ $order->id }}</td>
+                    <td>{{ $order->user_id }}</td>
                     <td>{{ $order->customer ? $order->customer->name : 'No Customer' }}</td> <!-- Safe check for customer -->
                     <td>{{ $order->created_at->format('d-m-Y') }}</td>
                     <td>{{ $order->status }}</td>
@@ -37,6 +39,9 @@
         </tbody>
     </table>
 
-    <!-- Pagination -->
+ <!-- Pagination -->
+ <div class="pagination-container">
     {{ $orders->links() }}
+</div>
+
 @endsection
