@@ -12,6 +12,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\OrderConfirmationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContactsController;
 
 
 // Public Routes
@@ -104,6 +105,10 @@ Route::get('/customer/profile', [ProfileController::class, 'show'])->name('custo
 Route::put('/customer/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 
+
+
+
+Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
 
 
 

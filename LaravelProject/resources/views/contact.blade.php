@@ -12,7 +12,7 @@
         <div class="contact-content">
             <div class="contact-form">
                 <h2>Get in Touch</h2>
-                <form action="" method="POST">
+                <form action="{{ route('contacts.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="name">Full Name</label>
