@@ -34,10 +34,11 @@
                     <li><a href="{{ route('home') }}" class="home-link">Home</a></li>
                     <li><a href="{{ route('contact') }}" class="contact-us">Contact Us</a></li>
 
-                    <form class="search-form" action="/search" method="GET">
-                        <input type="text" name="query" placeholder="Search Books...">
+                    <form class="search-form" action="{{ route('search') }}" method="GET">
+                        <input type="text" name="query" placeholder="Search Books..." value="{{ request()->query('query') }}">
                         <button type="submit">Search</button>
                     </form>
+
 
                     <div class="dropdown">
                         <button class="dropbtn">

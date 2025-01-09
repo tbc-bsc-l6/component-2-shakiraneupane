@@ -117,4 +117,17 @@ class BookController extends Controller
         return redirect()->route('admin.section', ['section' => 'products'])
                          ->with('success', 'Book deleted successfully!');
     }
+
+
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+    $books = Book::where('title', 'like', '%' . $query . '%')
+                 ->orWhere('author', 'like', '%' . $query . '%')
+                 ->orWhere('description', 'like', '%' . $query . '%')
+                 ->get();
+
+    return view('search', compact('books', 'query'));
+}
 }

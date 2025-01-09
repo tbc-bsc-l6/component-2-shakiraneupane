@@ -72,6 +72,12 @@ Route::get('/genre/{genre}', [GenreController::class, 'show'])->name('genre.show
 // Contacts Routes (No Middleware)
 Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.store');
 
+
+
+Route::get('/search', [BookController::class, 'search'])->name('search');
+Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show');
+
+
 // Test email route (No Middleware)
 Route::get('/test-email', function () {
     $details = [
