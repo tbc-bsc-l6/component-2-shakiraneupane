@@ -438,7 +438,7 @@ table.table td {
 
 .stat-item {
     flex: 1;
-    min-width: 200px; /* Ensures items don't shrink too small */
+    min-width: 300px; /* Ensures items don't shrink too small */
     background: linear-gradient(145deg, #f0f3f5, #d9dee2); /* Soft gradient for background */
     padding: 25px;
     border-radius: 12px; /* Softer, more rounded corners */

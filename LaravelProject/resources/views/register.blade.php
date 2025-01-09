@@ -1,6 +1,13 @@
 @extends('layout')
 @section('title', 'Register')
 @section('content')
+<style>
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
     <div class="auth-container">
         <!-- Registration Form -->
         <div class="registration-form">
@@ -63,6 +70,18 @@
                         <div class="error">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <!-- Agree to Terms and Conditions -->
+            <div class="form-checkbox">
+                <div class="form-item">
+                    <label>
+                        <input type="checkbox" name="agree_terms" required> I agree to the terms and conditions</a>
+                    </label>
+                    @error('agree_terms')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
 
                 <button type="submit" class="btn">Register</button>
             </form>

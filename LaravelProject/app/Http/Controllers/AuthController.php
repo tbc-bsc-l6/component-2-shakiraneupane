@@ -19,7 +19,10 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string',
+            'name' =>  ['required',
+            'string',
+            'regex:/^[a-zA-Z\s]+$/', // Ensures the name contains only letters and spaces
+        ],
             'address' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => [
@@ -30,6 +33,13 @@ class AuthController extends Controller
                 'regex:/[!@#$%^&*(),.?":{}|<>]/',
                 'confirmed',
             ],
+        ], [
+            // Custom error messages
+            'name.regex' => 'The name must only contain letters and spaces',
+            'password.required' => 'The password field is required.',
+            'password.min' => 'The password must be at least 8 characters.',
+            'password.regex' => 'The password must contain at least one uppercase letter, one number, and one special character.',
+            'password.confirmed' => 'The password confirmation does not match.',
         ]);
 
         if ($validator->fails()) {

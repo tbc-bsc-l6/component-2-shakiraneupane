@@ -1,3 +1,4 @@
+
 .auth-container {
     display: flex;
     justify-content: center;
@@ -128,38 +129,23 @@
     text-decoration: underline;
 }
 
-.register-option {
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.register-option a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.register-option a:hover {
-    text-decoration: underline;
-}
-
 /* Registration Form */
 .registration-form {
     width: 100%;
-    max-width: 400px;
-    background: #ffffff;
-    padding: 30px;
+    max-width: 350px;
+    background: #f9f9f9;
+    padding: 20px; /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .registration-form h2 {
-    margin-bottom: 20px;
     color: #333333;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduced spacing between form groups */
     text-align: left;
 }
 
@@ -173,7 +159,7 @@
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 10px;
+    padding: 8px; /* Reduced input padding */
     border: 1px solid #dddddd;
     border-radius: 5px;
     font-size: 14px;
@@ -181,13 +167,13 @@
 
 .btn {
     width: 100%;
-    padding: 10px;
+    padding: 8px; /* Reduced button padding */
     background: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px; /* Reduced button font size */
 }
 
 .btn:hover {
@@ -195,8 +181,8 @@
 }
 
 .register-option {
-    margin-top: 15px;
-    font-size: 14px;
+    margin-top: 10px; /* Reduced spacing above the register option */
+    font-size: 12px; /* Reduced font size */
     color: #555555;
 }
 
