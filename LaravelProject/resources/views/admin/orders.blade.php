@@ -31,7 +31,10 @@
                     <td>{{ $order->created_at->format('d-m-Y') }}</td>
                     <td>{{ $order->status }}</td>
                     <td>
-                        <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-info">View</a>
+                        <a href="{{ route('admin.orders.show', $order->id) }}" style="transition: all 0.3s ease;">
+                            View
+                        </a>
+
                         <!-- Additional actions can go here, like edit or delete -->
                     </td>
                 </tr>
@@ -40,8 +43,8 @@
     </table>
 
  <!-- Pagination -->
- <div class="pagination-container">
+
     {{ $orders->links() }}
-</div>
+
 
 @endsection

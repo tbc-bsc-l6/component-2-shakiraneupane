@@ -25,9 +25,8 @@
                 @endforeach
             </tbody>
         </table>
-        <!-- Display pagination links -->
-        <div class="pagination-container">
+
             {{ $contacts->links() }}
-        </div>
+
     </div>
 @endsection

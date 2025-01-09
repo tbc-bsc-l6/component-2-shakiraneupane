@@ -23,7 +23,7 @@ class AdminController extends Controller
         if (in_array($section, $validSections)) {
             // Handle the 'users' section
             if ($section == 'users') {
-                $users = User::where('role', '!=', 'admin')->get();
+                $users = User::where('role', '!=', 'admin')->paginate(5);
                 return view("admin.{$section}", compact('users'));
             }
 

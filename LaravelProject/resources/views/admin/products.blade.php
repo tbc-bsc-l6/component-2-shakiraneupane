@@ -60,5 +60,7 @@
     <a href="{{ route('admin.section', ['section' => 'addBooks']) }}" class="btn btn-success add-btn">
         <i class="fas fa-plus-circle"></i> Add New Book
     </a>
+
+
 </div>
 @endsection
