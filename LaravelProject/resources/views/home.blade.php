@@ -96,4 +96,34 @@
         </div>
     </section>
 
+
+    <!-- Best Selling Section -->
+    <section class="best-selling-section">
+        <h2>Best Selling</h2>
+        <p>Browse Our Most Popular Books.</p>
+        <div class="books-grid">
+            @foreach($bestSellers as $book)
+                <div class="book-item">
+                    <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
+                    <h3>{{ $book->title }}</h3>
+                    <p>by {{ $book->author }}</p>
+                    <span>Rs. {{ $book->price }}</span>
+
+                    <!-- Add to Cart Button -->
+                    @auth
+                        <form action="{{ route('cart.add') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="book_id" value="{{ $book->id }}">
+                            <button type="submit" class="add-to-cart-btn">
+                                Add to Cart
+                            </button>
+                        </form>
+                    @else
+                        <a href="/login" class="add-to-cart-btn">Add to Cart</a>
+                    @endauth
+                </div>
+            @endforeach
+        </div>
+    </section>
+
 @endsection

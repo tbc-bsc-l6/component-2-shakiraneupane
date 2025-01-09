@@ -301,6 +301,94 @@
 
 
 
+/* Best Selling Section */
+.best-selling-section {
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    background-color: #fdf6e4; /* Default background color */
+    color: #333; /* Default text color */
+}
+
+/* Best Selling Section Title */
+.best-selling-section h2 {
+    font-size: 24px;
+    color: #000; /* Default color for the title */
+    margin-bottom: 10px;
+    margin-top:40px;
+}
+
+/* Best Selling Section Paragraph */
+.best-selling-section p {
+    font-size: 16px;
+    color: #000; /* Default color for the description */
+    margin-bottom: 20px;
+}
+
+/* Book Grid */
+.best-selling-section .books-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Book Item Style */
+.best-selling-section .book-item {
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.best-selling-section .book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.best-selling-section .book-item img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.best-selling-section .book-item h3 {
+    font-size: 16px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.best-selling-section .book-item p {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.best-selling-section .book-item span {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.best-selling-section .book-item button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.best-selling-section .book-item button:hover {
+    background-color: #0056b3;
+}
 
 
 

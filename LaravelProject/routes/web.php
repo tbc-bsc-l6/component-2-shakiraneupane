@@ -21,6 +21,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+
+
+
 // Route for the contact page with weather functionality
 Route::get('/contact', [WeatherController::class, 'index'])->name('contact');
 

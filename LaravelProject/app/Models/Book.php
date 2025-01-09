@@ -16,5 +16,6 @@ class Book extends Model
         'genre',
         'description',
         'image_url',
+        'sales_count'
     ];
 }
