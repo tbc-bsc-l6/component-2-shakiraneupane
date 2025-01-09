@@ -68,32 +68,35 @@ class AuthController extends Controller
     }
 
     // Handle login
-    public function login(Request $request)
-    {
-        // Validate the login credentials
-        $credentials = $request->only('email', 'password');
+public function login(Request $request)
+{
+    // Validate the login credentials
+    $credentials = $request->only('email', 'password');
 
-        // Attempt to authenticate the user
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
+    // Check if the 'remember' checkbox is checked
+    $remember = $request->has('remember');
 
-            // Check if the role matches the intended role
-            if ($user->role != $request->role) {
-                Auth::logout();
-                return redirect()->route('login')->withErrors(['role' => 'The selected role does not match your account role.']);
-            }
+    // Attempt to authenticate the user with the 'remember' flag
+    if (Auth::attempt($credentials, $remember)) {
+        $user = Auth::user();
 
-            // Redirect based on user role
-            if ($user->role === 'admin') {
-                return redirect()->route('admin.dashboard'); // Redirect to admin dashboard
-            } else {
-                return redirect()->route('home'); // Redirect to customer homepage
-            }
+        // Check if the role matches the intended role
+        if ($user->role != $request->role) {
+            Auth::logout();
+            return redirect()->route('login')->withErrors(['role' => 'The selected role does not match your account role.']);
         }
 
-        // If authentication fails
-        return redirect()->route('login')->withErrors(['email' => 'Invalid Credentials.']);
+        // Redirect based on user role
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard'); // Redirect to admin dashboard
+        } else {
+            return redirect()->route('home'); // Redirect to customer homepage
+        }
     }
+
+    // If authentication fails
+    return redirect()->route('login')->withErrors(['email' => 'Invalid Credentials.']);
+}
 
     // Show customer dashboard
     public function customerDashboard()
