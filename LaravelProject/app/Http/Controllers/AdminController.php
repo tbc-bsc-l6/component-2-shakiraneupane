@@ -17,7 +17,7 @@ class AdminController extends Controller
     public function handleSection($section)
     {
         // Define valid sections
-        $validSections = ['users', 'products', 'orders', 'reports', 'addBooks', 'contacts'];
+        $validSections = ['users', 'products', 'orders', 'addBooks', 'contacts'];
 
         // Check if the requested section is valid
         if (in_array($section, $validSections)) {
