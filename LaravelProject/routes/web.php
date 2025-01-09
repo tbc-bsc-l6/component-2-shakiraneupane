@@ -116,6 +116,21 @@ Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.s
 
 
 
+use Illuminate\Support\Facades\Mail;
+
+Route::get('/test-email', function () {
+    $details = [
+        'title' => 'Test Email from Laravel',
+        'body' => 'This is a test email to verify the configuration.'
+    ];
+
+    Mail::raw($details['body'], function ($message) use ($details) {
+        $message->to('sharmashakira47@gmail.com') // Replace with your email to receive the test email
+                ->subject($details['title']);
+    });
+
+    return 'Test email sent!';
+});
 
 
 
