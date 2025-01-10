@@ -1,7 +1,8 @@
 @extends('admin.layout')
 
 @section('content')
-    <h1>Orders</h1>
+    <h1 class= "text-2xl font-semibold mb-4">Orders</h1>
+
 
     <!-- Display success message if any -->
     @if(session('success'))

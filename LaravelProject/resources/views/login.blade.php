@@ -3,7 +3,7 @@
 @section('content')
     <div class="auth-container">
         <div class="form-login">
-            <h2>You must login</h2>
+            <h2 class="text-2xl font-semibold mb-4">You must login</h2>
 
 
             <!-- Login Form -->

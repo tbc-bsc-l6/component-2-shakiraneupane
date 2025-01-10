@@ -1,4 +1,6 @@
-
+body{
+    background-color: #fdf6e4;
+}
 /* Slider Container */
 .slider-container {
     position: relative;
@@ -89,6 +91,7 @@
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 
+
 }
 
 .genres-section h2 {
@@ -97,6 +100,7 @@
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
+
 }
 
 .genres-section p {
@@ -144,58 +148,25 @@
 }
 
 
-/* Container for the sorting options */
-.sorting-options {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 15px;
-    margin-left:400px;
+.home-img{
+    width: 700px;
+    height: 300px; /* Set the height */
+    margin-top: 30px;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    margin-left: 80px;
 }
 
-/* Label for the select dropdown */
-.sorting-options label {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #333;
-}
 
-/* Style for the dropdown select elements */
-.sorting-options select {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* Style for the select elements when focused */
-.sorting-options select:focus {
-    border-color: #007bff;
-    outline: none;
-    background-color: #fff;
-}
-
-/* Optional: Hover effect for the select elements */
-.sorting-options select:hover {
-    border-color: #007bff;
-}
-
-/* Optional: Styling the "Sort by" and "Order" labels */
-.sorting-options select option {
-    padding: 10px;
-}
 
 
 /* New Arrivals Section */
 .new-arrivals-section {
     text-align: center;
     font-family: Arial, sans-serif;
-    color: #333; /* Default text color */
+    color: #333;
     margin-top: 40px;
+
 }
 
 /* New Arrivals Section Title */
@@ -203,6 +174,7 @@
     font-size: 24px;
     color: #000; /* Default color for the title */
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 /* New Arrivals Section Paragraph */
@@ -222,18 +194,14 @@
 
 /* Book Item Style */
 .new-arrivals-section .book-item {
-    width: 160px; /* Reduced width to make the box smaller */
+    width: 180px;
     text-align: center;
-    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.new-arrivals-section .book-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+
 
 .new-arrivals-section .book-item img {
     width: 250px;
@@ -277,41 +245,8 @@
     background-color: #0056b3;
 }
 
-/* Books Section */
-.books-section {
-    width: 75%; /* Increased width for books section */
-    margin-left: auto; /* Align to the right */
-}
-
-.books-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for a cleaner grid */
-    gap: 30px; /* More space between books */
-}
-
-.books-grid .book-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
-}
-
-.books-grid .book-item:hover {
-    transform: translateY(-5px); /* Slight hover effect */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-}
-
-.books-grid .book-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px; /* Rounded corners for images */
-}
-
 
 /*add to cart and fav buttons*/
-
 .add-to-cart-btn {
     display: inline-block;
     background-color: #007bff; /* Green color for the button */
@@ -330,108 +265,6 @@
     background-color: #0056b3; /* Darker green on hover */
     transform: scale(1.05); /* Slight zoom effect */
 }
-
-
-
-
-
-/* Sidebar and Content Layout */
-.filter-sidebar-section {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-/* Filter Sidebar Styling */
-.filter-sidebar {
-    width: 25%; /* Adjust the width of the sidebar */
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.filter-sidebar h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.filter-item {
-    margin-bottom: 15px;
-}
-
-.filter-item label {
-    font-size: 14px;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.filter-item select,
-.filter-item input {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-
-}
-
-button:hover {
-    background-color: #34495e;
-}
-
-
-
-/* About Us Section */
-.about-us {
-    flex: 1;
-    background-color: #fbfaf0; /* Softer off-white for contrast */
-    padding: 20px; /* Reduced padding for a more compact feel */
-    border-radius: 8px; /* Subtle rounding for a clean look */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtle depth */
-    margin-left: 20px; /* Narrower margin for better fit */
-    border: 1px solid #e0e0e0; /* Subtle border for definition */
-    font-family: 'Arial', sans-serif; /* Professional font family */
-    transition: all 0.3s ease-in-out; /* Smooth transitions */
-    height:250px;
-    margin-top:30px;
-}
-
-.about-us h2 {
-    font-size: 18px; /* Reduced font size for compactness */
-    margin-bottom: 15px; /* Smaller spacing below the title */
-    color: #2c3e50; /* Darker blue-gray for a refined appearance */
-    font-weight: 600; /* Bold text for emphasis */
-    text-align: center; /* Centered for balance */
-    padding-bottom: 5px; /* Slight padding for neat alignment */
-}
-
-.about-us p {
-    font-size: 13px; /* Slightly smaller font for a compact design */
-    color: #495057; /* Medium-dark gray for readability */
-    line-height: 1.6; /* Slightly tighter line spacing */
-    margin-bottom: 10px; /* Reduced spacing between paragraphs */
-}
-
-/* Professional Hover Effect */
-.about-us:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow for hover */
-    transform: translateY(-2px); /* Subtle lift effect */
-}
-
 
 
 /* Search Results Page */

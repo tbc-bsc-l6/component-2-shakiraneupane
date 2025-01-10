@@ -202,13 +202,13 @@ button:hover #toggleIcon {
 
 /* Search form styling */
 .search-form input {
-    padding: 5px;
+    padding: 3px;
     border-radius: 7px;
     border: 1px solid #ccc;
 }
 
 .search-form button {
-    padding: 5px 10px;
+    padding: 3px 5px;
     border-radius: 5px;
     border: none;
     background-color: #ff9800;
@@ -315,6 +315,9 @@ footer {
     transform: scale(1.1); /* Slightly enlarge icon */
     filter: brightness(1.2); /* Brighten the background color */
 }
+
+
+
 
 
 

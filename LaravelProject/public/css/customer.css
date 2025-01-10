@@ -10,7 +10,7 @@
 
 /* Cart Section Styling */
 .cart-section {
-    padding: 20px;
+    padding: 10px;
     background-color: #fdf6e4;
 }
 
@@ -42,6 +42,7 @@
 
 .cart-table td {
     background-color: #ffffff;
+
 }
 
 .cart-book-image {
@@ -50,6 +51,14 @@
     border-radius: 5px;
 }
 
+.btn-remove {
+    background-color: #e74c3c;
+    padding:8px;
+}
+
+.btn-remove:hover{
+    background-color:#c0392b
+}
 
 
 .cart-summary-box{
@@ -93,6 +102,8 @@
 .cart-summary .btn-checkout:hover {
     background-color: #0056b3;
 }
+
+
 
 /* Cart Quantity Control Styling */
 .quantity-control {
@@ -265,107 +276,5 @@ h3 {
 
 .btn-checkout:hover {
     background-color: #005bb5;
-}
-
-/*profile-section*/
-.customer-profile {
-    display: flex;
-    margin: 30px auto;
-    max-width: 800px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.profile-sidebar {
-    background-color: #f1f3f5;
-    width: 25%;
-    padding: 20px;
-    border-right: 1px solid #e9ecef;
-    text-align: center;
-}
-
-.avatar {
-    margin-bottom: 20px;
-}
-
-.avatar-circle {
-    background-color: #dee2e6;
-    color: #495057;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border-radius: 50%;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0 auto;
-}
-
-.avatar h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.avatar p {
-    color: #868e96;
-    font-size: 14px;
-}
-
-.sidebar-menu {
-    list-style: none;
-    margin-top: 20px;
-    text-align: left;
-    padding: 0 20px;
-}
-
-.sidebar-menu li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #495057;
-    cursor: pointer;
-}
-
-.sidebar-menu li:hover {
-    color: #343a40;
-    font-weight: bold;
-}
-
-.profile-content {
-    width: 75%;
-    padding: 30px;
-}
-
-.profile-content h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.profile-content h2 {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.profile-content p {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #6c757d;
-}
-
-.address-card {
-    border: 1px solid #e9ecef;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.address-card h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.address-card p {
-    color: #495057;
 }
 

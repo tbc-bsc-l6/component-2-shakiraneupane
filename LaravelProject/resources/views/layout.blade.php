@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -71,7 +73,7 @@
 </li>
 
 
-                   <!-- Customer Profile or Login -->
+<!-- Customer Profile or Login -->
 @auth
 <!-- If the user is logged in, show the Profile and Logout links -->
 <li><a href="{{ route('customer.profile') }}" title="Customer Profile">
@@ -112,9 +114,9 @@
             <div class="footer-section quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about-us">About Us</a></li>
-                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a href="{{ route('home') }}" class="home-link">Home</a></li>
+                    <li><a href="{{ route('contact') }}" class="contact-us">Contact Us</a></li>
+                    <li><a href="{{ route('login') }}" class="cart-link">Login</a></li>
                 </ul>
             </div>
 

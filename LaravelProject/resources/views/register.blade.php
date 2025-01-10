@@ -1,17 +1,11 @@
 @extends('layout')
 @section('title', 'Register')
 @section('content')
-<style>
-    .error {
-        color: red;
-        font-size: 14px;
-        margin-top: 5px;
-    }
-</style>
+
     <div class="auth-container">
         <!-- Registration Form -->
         <div class="registration-form">
-            <h2>Register</h2>
+            <h2 class = "text-2xl font-semibold mb-4">Register</h2>
 
             <form action="{{ route('register.submit') }}" method="POST">
                 @csrf

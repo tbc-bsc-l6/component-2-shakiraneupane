@@ -11,7 +11,10 @@
     right: 0;
     bottom: 0;
     backdrop-filter: blur(8px); /* Adds the blur effect */
+    overflow: auto;
 }
+
+
 
 .form-login {
     width: 100%;
@@ -129,20 +132,7 @@
     text-decoration: underline;
 }
 
-/* Registration Form */
-.registration-form {
-    width: 100%;
-    max-width: 350px;
-    background: #f9f9f9;
-    padding: 20px; /* Reduced padding */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
 
-.registration-form h2 {
-    color: #333333;
-}
 
 .form-group {
     margin-bottom: 10px; /* Reduced spacing between form groups */
@@ -178,6 +168,18 @@
 
 .btn:hover {
     background: #0056b3;
+}
+
+
+.registration-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Keeps the form width reasonable */
+    width: 100%;
+    overflow-y: auto; /* Scrolls the form content if it overflows */
+    max-height: 100vh;
 }
 
 .register-option {
@@ -217,3 +219,8 @@
     color: #0056b3;
 }
 
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

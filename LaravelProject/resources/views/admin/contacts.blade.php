@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Contact Messages</h2>
+        <h2 class= "text-2xl font-semibold mb-4">Contact Messages</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>

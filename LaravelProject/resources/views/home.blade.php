@@ -30,100 +30,87 @@
         </div>
     </section>
 
-    <!-- Genres Section -->
-    <section class="genres-section">
-        <h2>Genres</h2>
-        <p>Browse Our Extensive Collection of Books Across Different Genres.</p>
-        <div class="genres-grid">
-            <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'arts']) }}">
-                    <i class="fas fa-palette"></i>
-                    <span>Arts & Photography</span>
-                </a>
-            </div>
-            <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">
-                    <i class="fas fa-running"></i>
-                    <span>Lifestyle and Wellness</span>
-                </a>
-            </div>
-            <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">
-                    <i class="fas fa-theater-masks"></i>
-                    <span>Fiction and Literature</span>
-                </a>
-            </div>
-            <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'history']) }}">
-                    <i class="fas fa-book-open"></i>
-                    <span>History & Biography</span>
-                </a>
-            </div>
-            <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'kids']) }}">
-                    <i class="fas fa-child"></i>
-                    <span>Kids and Teens</span>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <section class="filter-sidebar-section">
-        <div class="filter-sidebar">
-            <h2>Filter Books</h2>
+
+   <!-- Genres Section -->
+   <section class="genres-section">
+    <h2>Genres</h2>
+    <p>Browse Our Extensive Collection of Books Across Different Genres.</p>
+    <div class="genres-grid">
+        <div class="genre-item">
+            <a href="{{ route('genre.show', ['genre' => 'arts']) }}">
+                <i class="fas fa-palette"></i>
+                <span>Arts & Photography</span>
+            </a>
+        </div>
+        <div class="genre-item">
+            <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">
+                <i class="fas fa-running"></i>
+                <span>Lifestyle and Wellness</span>
+            </a>
+        </div>
+        <div class="genre-item">
+            <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">
+                <i class="fas fa-theater-masks"></i>
+                <span>Fiction and Literature</span>
+            </a>
+        </div>
+        <div class="genre-item">
+            <a href="{{ route('genre.show', ['genre' => 'history']) }}">
+                <i class="fas fa-book-open"></i>
+                <span>History & Biography</span>
+            </a>
+        </div>
+        <div class="genre-item">
+            <a href="{{ route('genre.show', ['genre' => 'kids']) }}">
+                <i class="fas fa-child"></i>
+                <span>Kids and Teens</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Filter Sidebar Section -->
+    <section class="filter-sidebar-section flex mb-8">
+        <div class="filter-sidebar w-1/4 bg-gray-100 p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl text-gray-800 mb-6 text-center">Filter Books</h2>
             <form action="{{ route('home') }}" method="GET">
                 <!-- Genre Filter -->
-                <div class="filter-item">
-                    <label for="genre">Genre</label>
-                    <select name="genre" id="genre">
+                <div class="filter-item mb-4">
+                    <label for="genre" class="text-sm block mb-1">Genre</label>
+                    <select name="genre" id="genre" class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md">
                         <option value="">All Genres</option>
-                        <option value="fiction">Fiction</option>
-                        <option value="history">History</option>
-                        <option value="lifestyle">Lifestyle</option>
-                        <option value="arts">Arts</option>
-                        <option value="kids">Kids</option>
+                        <option value="fiction" {{ request('genre') == 'fiction' ? 'selected' : '' }}>Fiction</option>
+                        <option value="history" {{ request('genre') == 'history' ? 'selected' : '' }}>History</option>
+                        <option value="lifestyle" {{ request('genre') == 'lifestyle' ? 'selected' : '' }}>Lifestyle</option>
+                        <option value="arts" {{ request('genre') == 'arts' ? 'selected' : '' }}>Arts</option>
+                        <option value="kids" {{ request('genre') == 'kids' ? 'selected' : '' }}>Kids</option>
                     </select>
                 </div>
 
                 <!-- Min Price Filter -->
-                <div class="filter-item">
-                    <label for="min_price">Min Price</label>
-                    <input type="number" name="min_price" id="min_price" placeholder="0" value="{{ request('min_price') }}">
+                <div class="filter-item mb-4">
+                    <label for="min_price" class="text-sm block mb-1">Min Price</label>
+                    <input type="number" name="min_price" id="min_price" placeholder="0" value="{{ request('min_price') }}" class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md">
                 </div>
 
                 <!-- Max Price Filter -->
-                <div class="filter-item">
-                    <label for="max_price">Max Price</label>
-                    <input type="number" name="max_price" id="max_price" placeholder="500" value="{{ request('max_price') }}">
+                <div class="filter-item mb-6">
+                    <label for="max_price" class="text-sm block mb-1">Max Price</label>
+                    <input type="number" name="max_price" id="max_price" placeholder="500" value="{{ request('max_price') }}" class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md">
                 </div>
 
                 <!-- Apply Filters Button -->
-                <button type="submit">Apply Filters</button>
+                <button type="submit" class="w-full bg-gray-800 text-white py-2 rounded-md text-lg cursor-pointer">
+                    Apply Filters
+                </button>
             </form>
         </div>
 
+        <img src="/images/bestbook2024.png" alt="Best Book 2024" class="home-img">
+    </section>
 
-        <!-- About Us Section -->
-    <div class="about-us">
-        <h2>About Us</h2>
-        <p>
-            Welcome to <strong>Chapter House</strong>,  We are passionate about connecting readers with their favorite books.
-            From timeless classics to the latest bestsellers, we offer a wide variety of genres to suit every taste.
-            Whether you are a bookworm, a casual reader, or looking for a gift, our collection is curated just for you.
-
-        </p>
-        <p>
-            Our mission is simple: to ignite a passion for reading and make books accessible to all. Whether you're a curious learner, an avid bookworm, or shopping for a gift,
-            we promise an unforgettable browsing experience.
-        </p>
-        <p class="about-us-highlight">
-            📚 Discover. 📖 Read. 🌟 Inspire. <br>
-            Let’s turn the pages of imagination together!
-        </p>
-    </div>
-</section>
-
-
+    <!-- New Arrivals Section -->
     <section class="new-arrivals-section">
         <h2>New Arrivals</h2>
         <p>Explore Fresh Arrivals and Find Your Next Great Read.</p>
@@ -140,9 +127,7 @@
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
                             <input type="hidden" name="book_id" value="{{ $book->id }}">
-                            <button type="submit" class="add-to-cart-btn">
-                                Add to Cart
-                            </button>
+                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                         </form>
                     @else
                         <a href="/login" class="add-to-cart-btn">Add to Cart</a>
@@ -151,7 +136,6 @@
             @endforeach
         </div>
     </section>
-
 
     <!-- Best Selling Section -->
     <section class="new-arrivals-section">
@@ -170,9 +154,7 @@
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
                             <input type="hidden" name="book_id" value="{{ $book->id }}">
-                            <button type="submit" class="add-to-cart-btn">
-                                Add to Cart
-                            </button>
+                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                         </form>
                     @else
                         <a href="/login" class="add-to-cart-btn">Add to Cart</a>
@@ -181,5 +163,4 @@
             @endforeach
         </div>
     </section>
-
 @endsection

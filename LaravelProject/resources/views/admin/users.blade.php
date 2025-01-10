@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Registered Users</h2>
+    <h2 class= "text-2xl font-semibold mb-4">Registered Users</h2>
 
     <!-- Success message -->
     @if(session('success'))

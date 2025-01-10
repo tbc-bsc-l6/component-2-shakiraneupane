@@ -68,35 +68,32 @@ class AuthController extends Controller
     }
 
     // Handle login
-public function login(Request $request)
-{
-    // Validate the login credentials
-    $credentials = $request->only('email', 'password');
+    public function login(Request $request)
+    {
+        // Validate the login credentials
+        $credentials = $request->only('email', 'password');
 
-    // Check if the 'remember' checkbox is checked
-    $remember = $request->has('remember');
+        // Check if the 'remember' checkbox is checked
+        $remember = $request->has('remember');
 
-    // Attempt to authenticate the user with the 'remember' flag
-    if (Auth::attempt($credentials, $remember)) {
-        $user = Auth::user();
+        // Attempt to authenticate the user with the 'remember' flag
+        if (Auth::attempt($credentials, $remember)) {
+            $user = Auth::user();
 
-        // Check if the role matches the intended role
-        if ($user->role != $request->role) {
-            Auth::logout();
-            return redirect()->route('login')->withErrors(['role' => 'The selected role does not match your account role.']);
+            // Check the role and redirect accordingly
+            if ($user->role === 'admin') {
+                // Redirect to the admin dashboard
+                return redirect()->route('admin.dashboard');
+            } else {
+                // Redirect to the homepage
+                return redirect()->route('home');
+            }
         }
 
-        // Redirect based on user role
-        if ($user->role === 'admin') {
-            return redirect()->route('admin.dashboard'); // Redirect to admin dashboard
-        } else {
-            return redirect()->route('home'); // Redirect to customer homepage
-        }
+        // If authentication fails
+        return redirect()->route('login')->withErrors(['email' => 'Invalid Credentials.']);
     }
 
-    // If authentication fails
-    return redirect()->route('login')->withErrors(['email' => 'Invalid Credentials.']);
-}
 
     // Show customer dashboard
     public function customerDashboard()
@@ -112,8 +109,11 @@ public function login(Request $request)
 
     // Handle logout
     public function logout()
-    {
-        Auth::logout(); // Log the user out
-        return redirect('/'); // Redirect to home or login page
-    }
+{
+    Auth::logout(); // Logout the user
+    session()->invalidate(); // Invalidate the session data
+    session()->regenerateToken(); // Regenerate CSRF token
+    return redirect('/');
+}
+
 }

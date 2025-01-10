@@ -3,7 +3,7 @@
 @section('content')
 @section('content')
 <div class="container">
-    <h1>Manage Books</h1>
+    <h1 class= "text-2xl font-semibold mb-4">Manage Books</h1>
 
     @if(session('success'))
         <div class="alert alert-success">

@@ -26,11 +26,11 @@
     <div class="form-group">
         <label for="genre">Genre</label>
         <select name="genre" class="form-control" id="genre" required>
-            <option value="fiction" {{ old('genre', $book->genre) == 'fiction' ? 'selected' : '' }}>Arts & Photography</option>
-            <option value="non-fiction" {{ old('genre', $book->genre) == 'non-fiction' ? 'selected' : '' }}>Lifestyle & Wellness</option>
-            <option value="mystery" {{ old('genre', $book->genre) == 'mystery' ? 'selected' : '' }}>Fiction & literature</option>
-            <option value="romance" {{ old('genre', $book->genre) == 'romance' ? 'selected' : '' }}>History & biography</option>
-            <option value="science-fiction" {{ old('genre', $book->genre) == 'science-fiction' ? 'selected' : '' }}>Kids & Teens</option>
+            <option value="Arts & Photography" {{ old('genre', $book->genre) == 'fiction' ? 'selected' : '' }}>Arts & Photography</option>
+            <option value="Lifestyle & Wellness" {{ old('genre', $book->genre) == 'non-fiction' ? 'selected' : '' }}>Lifestyle & Wellness</option>
+            <option value="Fiction & Literature" {{ old('genre', $book->genre) == 'mystery' ? 'selected' : '' }}>Fiction & literature</option>
+            <option value="History & Biography" {{ old('genre', $book->genre) == 'romance' ? 'selected' : '' }}>History & biography</option>
+            <option value="Kids & Teens" {{ old('genre', $book->genre) == 'science-fiction' ? 'selected' : '' }}>Kids & Teens</option>
         </select>
     </div>
 
