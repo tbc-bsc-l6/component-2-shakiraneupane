@@ -1,323 +1,295 @@
-/* Basic Reset */
+/* Basic Reset: Resets margins, padding, and box-sizing for all elements */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Includes padding and border in the element's total width/height */
 }
 
-
-/* Remove background and make the button transparent */
-button {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Style the icon */
-#toggleIcon {
-    font-size: 24px; /* Adjust size as needed */
-    color: white; /* Dark color for a professional look */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Add a hover effect for better interactivity */
-button:hover #toggleIcon {
-    color: orange; /* Change color on hover (e.g., blue) */
-    transform: scale(1.1); /* Slightly increase the icon size on hover */
-}
-
-
-
-/* Navbar Styling */
+/* Navbar styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #333;
-
+    display: flex; /* Flexbox layout to align items horizontally */
+    justify-content: space-between; /* Space out the elements between left and right */
+    align-items: center; /* Vertically centers items */
+    padding: 2% 5%; /* Padding inside the navbar */
+    background-color: #333; /* Dark background color for the navbar */
 }
 
+/* Logo link */
 .logo a {
-    text-decoration: none;
+    text-decoration: none; /* Removes the underline from the logo link */
 }
 
+/* Main logo styling */
 .main-logo {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #fff;
+    height: 5vw; /* Height based on viewport width for responsiveness */
+    width: 5vw; /* Width based on viewport width for responsiveness */
+    border-radius: 50%; /* Makes the logo a circle */
+    object-fit: cover; /* Ensures the logo covers the entire area without distortion */
+    border: 2px solid #fff; /* White border around the logo */
 }
 
+/* Chapter House text styling */
 .chapter-house {
-    font-size: 1.5rem; /* Professional font size */
-    font-weight: bold;
-    color: #f39c12; /* Eye-catching color, change as needed */
-    text-decoration: none;
-    margin-right: 150px;
+    font-size: 1.5rem; /* Sets font size */
+    font-weight: bold; /* Bold text */
+    color: #f39c12; /* Orange color */
+    text-decoration: none; /* Removes underline */
 }
 
+/* Hover effect for Chapter House link */
 .chapter-house:hover {
-    color: #d35400; /* Hover effect */
+    color: #d35400; /* Darker orange color on hover */
 }
 
+/* Navbar links container */
 .navbar-links ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
+    display: flex; /* Flexbox to arrange links horizontally */
+    list-style: none; /* Removes bullet points from the list */
+    justify-content: center; /* Centers the links */
+    align-items: center; /* Vertically aligns the links */
+    width: 100%; /* Takes up the full width */
 }
 
+/* Navbar link items */
 .navbar-links li {
-    margin: 0 15px;
+    margin: 0 15px; /* Spacing between list items */
     position: relative; /* Added for dropdown positioning */
 }
 
-
+/* Navbar dropdown styling */
 .navbar-links li.dropdown {
-    position: relative;
+    position: relative; /* Allows dropdown to be positioned */
 }
 
-
+/* Navbar link (anchor) styling */
 .navbar-links a {
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size for links */
+    text-decoration: none; /* Removes underline */
+    display: inline-flex; /* Inline block for flexible content */
+    align-items: center; /* Aligns text and icons vertically */
+    justify-content: center; /* Centers text and icons horizontally */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
 }
 
+/* Hover effect for navbar links */
 .navbar-links a:hover {
-
-    transform: scale(1.1); /* Slightly enlarges the icon on hover */
-    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7);
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7); /* Adds a glowing text effect on hover */
 }
 
-
+/* Icon inside navbar link */
 .navbar-links a i {
-    margin: 0;
-    font-size: 22px; /* Larger icon size for a professional look */
-
-
+    margin: 0; /* Removes any margin around the icon */
+    font-size: 22px; /* Increases the icon size for a professional appearance */
 }
 
 
 /* Dropdown Styling */
 .dropdown {
-    position: relative;
+    position: relative; /* Ensures the dropdown menu can be positioned relative to this container */
 }
 
+/* Dropdown Button Styling */
 .dropbtn {
-    text-decoration: none;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    padding: 10px 15px;
-    transition: color 0.3s ease;
+    text-decoration: none; /* Removes underline from the button text */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text color */
+    border: none; /* No border around the button */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate interactivity */
+    font-size: 17px; /* Font size for the button text */
+    padding: 10px 15px; /* Padding inside the button */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
+/* Dropdown Button Hover Effect */
 .dropbtn:hover {
-    color: #ff9800;
-    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7);
+    color: #ff9800; /* Changes text color to orange when hovered */
+    text-shadow: 0 2px 10px rgba(255, 152, 0, 0.7); /* Adds a glowing orange shadow effect on hover */
 }
 
-/* Dropdown Menu */
+
+/* Dropdown Menu Styling */
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #444;
-    min-width: 180px;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    padding: 10px 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none; /* Hides the dropdown by default */
+    position: absolute; /* Positions the dropdown relative to its parent */
+    top: 100%; /* Places the dropdown just below the parent element */
+    left: 0; /* Aligns the dropdown to the left of the parent */
+    background-color: #444; /* Dark background color for the dropdown */
+    min-width: 180px; /* Ensures the dropdown has a minimum width */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow to the dropdown */
+    z-index: 1000; /* Ensures the dropdown appears above other elements */
+    padding: 10px 0; /* Vertical padding */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(10px); /* Starts with a slight downward position */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and upward movement */
 }
 
+/* Dropdown menu link styling */
 .dropdown-menu a {
-    color: #fff;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    color: #fff; /* White text color */
+    padding: 12px 20px; /* Padding around the text */
+    text-decoration: none; /* Removes underline */
+    display: block; /* Makes each item a block element */
+    font-size: 16px; /* Font size for the links */
+    transition: background-color 0.3s ease; /* Smooth background color change on hover */
 }
 
+/* Hover effect for dropdown menu links */
 .dropdown-menu a:hover {
-    background-color: #555;
-    color: #ff9800;
+    background-color: #555; /* Darker background on hover */
+    color: #ff9800; /* Change text color to orange on hover */
 }
 
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+    display: block; /* Makes the dropdown visible on hover */
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Moves the dropdown to its original position */
 }
 
-
-
-/* Initial state of the arrow icon */
+/* Dropdown arrow icon default state */
 .dropbtn i {
-    opacity: 1; /* Icon is visible */
-    transform: translateY(0); /* Default position */
-    transition: transform 0.3s ease, color 0.3s ease;
+    opacity: 1; /* Icon is visible by default */
+    transform: translateY(0); /* Icon starts at its original position */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions for transform and color */
 }
 
-/* Show movement on hover */
+/* Hover effect for the dropdown button's icon */
 .dropbtn:hover i {
-    transform: translateY(-3px); /* Moves the icon upward */
-    color: #ff9800; /* Optional: Change icon color on hover */
+    transform: translateY(-3px); /* Moves the icon upward on hover */
+    color: #ff9800; /* Changes the icon color to orange on hover */
 }
 
-
-
-
-/* Logo inside Home link */
+/* Logo inside the Home link */
 .nav-logo {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-    vertical-align: middle;
+    height: 30px; /* Fixed height for the logo */
+    width: 30px; /* Fixed width for the logo */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    margin-right: 10px; /* Space between the logo and text */
+    vertical-align: middle; /* Vertically aligns the logo with text */
 }
 
-/* Search form styling */
+/* Search form input styling */
 .search-form input {
-    padding: 3px;
-    border-radius: 7px;
-    border: 1px solid #ccc;
+    padding: 3px; /* Padding inside the search input */
+    border-radius: 7px; /* Slightly rounded corners */
+    border: 1px solid #ccc; /* Light border color */
 }
 
+/* Search form button styling */
 .search-form button {
-    padding: 3px 5px;
-    border-radius: 5px;
-    border: none;
-    background-color: #ff9800;
-    color: #fff;
-    cursor: pointer;
+    padding: 3px 5px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    border: none; /* Removes border */
+    background-color: #ff9800; /* Orange background color */
+    color: #fff; /* White text color */
+    cursor: pointer; /* Indicates button is clickable */
 }
 
+/* Hover effect for the search button */
 .search-form button:hover {
-    background-color: #ff5722;
+    background-color: #ff5722; /* Darker orange on hover */
 }
 
-/* Icons */
+/* Icon styling */
 .icon-cart, .icon-heart, .icon-user, .icon-logout {
-    font-size: 20px;
+    font-size: 20px; /* Standard icon size */
 }
 
 
 
 /* Main Content Styling */
 main {
-    padding: 30px;
+    padding: 30px; /* Adds padding around the main content */
 }
 
+/* Footer Styling */
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    font-size: 14px;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Vertical padding */
+    font-size: 14px; /* Smaller font size */
 }
 
+/* Footer Container */
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex; /* Flexbox layout for children */
+    flex-wrap: wrap; /* Allows wrapping of footer items */
+    justify-content: space-between; /* Distributes items with space in between */
+    max-width: 1200px; /* Limits the maximum width */
+    margin: 0 auto; /* Centers the footer container */
+    padding: 0 20px; /* Horizontal padding */
 }
 
+/* Footer Section Styling */
 .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
+    flex: 1; /* Each section takes equal space */
+    min-width: 200px; /* Ensures sections are not too small */
+    margin: 10px; /* Space between sections */
 }
 
+/* Footer Section Header */
 .footer-section h2 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: #ff9800;
-    margin-left: 30px;
+    margin-bottom: 15px; /* Space below the header */
+    font-size: 18px; /* Font size for section titles */
+    color: #ff9800; /* Orange color for headings */
+    margin-left: 30px; /* Left padding */
 }
 
+/* Footer Section Text and Links */
 .footer-section p,
 .footer-section ul li a {
-    color: #fff;
-    line-height: 1.8;
-    text-decoration: none;
+    color: #fff; /* White text for paragraphs and links */
+    line-height: 1.8; /* Spacing between lines */
+    text-decoration: none; /* Removes underline from links */
 }
 
+/* Footer Section List Styling */
 .footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin-left: 10px;
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin-left: 10px; /* Left margin */
 }
 
+/* Footer List Item Styling */
 .footer-section ul li {
-    margin-bottom: 10px;
-    margin-left: 30px;
+    margin-bottom: 10px; /* Space between list items */
+    margin-left: 30px; /* Left margin for list items */
 }
 
+/* Footer Links Hover Effect */
 .footer-section ul li a:hover {
-    color: #ff9800;
+    color: #ff9800; /* Changes color on hover */
 }
 
-
-
+/* Footer Bottom Styling */
 .footer-bottom {
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid #444;
-    margin-top: 20px;
-    font-size: 12px;
+    text-align: center; /* Centers the text */
+    padding: 10px; /* Padding inside the footer bottom */
+    border-top: 1px solid #444; /* Adds a border at the top */
+    margin-top: 20px; /* Space between footer sections and footer bottom */
+    font-size: 12px; /* Smaller font size for footer bottom */
 }
 
-
-
-
+/* Social Icons Styling */
 .social-icons a {
-    text-decoration: none;
-    color: #fff; /* Icon color */
+    text-decoration: none; /* Removes underline */
+    color: #fff; /* White color for icons */
     font-size: 20px; /* Icon size */
-    width: 40px; /* Circle size */
-    height: 40px; /* Circle size */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%; /* Make them circular */
-    transition: all 0.3s ease-in-out; /* Add hover transition */
+    width: 40px; /* Circular size for the icon container */
+    height: 40px; /* Circular size for the icon container */
+    display: flex; /* Flexbox layout for centering */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    border-radius: 50%; /* Makes icons circular */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
-
-/* Hover effect */
+/* Social Icon Hover Effect */
 .social-icons a:hover {
-    transform: scale(1.1); /* Slightly enlarge icon */
-    filter: brightness(1.2); /* Brighten the background color */
+    transform: scale(1.1); /* Slightly enlarges icon on hover */
+    filter: brightness(1.2); /* Brightens the icon's background */
 }
-
-
-
-
-
-

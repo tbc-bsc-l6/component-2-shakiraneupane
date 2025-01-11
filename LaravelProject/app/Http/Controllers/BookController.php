@@ -33,7 +33,7 @@ class BookController extends Controller
             'price' => $request->price,
             'genre' => $request->genre,
             'description' => $request->description,
-            'image_url' => $imagePath, // Store the relative path
+            'image_url' => $imagePath, // Store the relative path of the image
         ]);
 
         // Redirect with success message
@@ -46,6 +46,7 @@ class BookController extends Controller
      */
     public function index()
     {
+        // Retrieve all books from the database
         $books = Book::all();
         return view('admin.products', compact('books'));
     }
@@ -55,6 +56,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
+        // Return the edit form for a specific book
         return view('admin.editBooks', compact('book'));
     }
 
@@ -92,7 +94,7 @@ class BookController extends Controller
             $book->image_url = $imagePath;
         }
 
-        // Save the updated book
+        // Save the updated book record
         $book->save();
 
         // Redirect with success message
@@ -118,16 +120,21 @@ class BookController extends Controller
                          ->with('success', 'Book deleted successfully!');
     }
 
-
-
+    /**
+     * Search for books by title, author, or description.
+     */
     public function search(Request $request)
-{
-    $query = $request->input('query');
-    $books = Book::where('title', 'like', '%' . $query . '%')
-                 ->orWhere('author', 'like', '%' . $query . '%')
-                 ->orWhere('description', 'like', '%' . $query . '%')
-                 ->get();
+    {
+        // Get the search query from the request
+        $query = $request->input('query');
 
-    return view('search', compact('books', 'query'));
-}
+        // Search books by title, author, or description
+        $books = Book::where('title', 'like', '%' . $query . '%')
+                     ->orWhere('author', 'like', '%' . $query . '%')
+                     ->orWhere('description', 'like', '%' . $query . '%')
+                     ->get();
+
+        // Return the search results to the view
+        return view('search', compact('books', 'query'));
+    }
 }

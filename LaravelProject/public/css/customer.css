@@ -1,109 +1,110 @@
+/* Logout Button Icon Styling */
 .logout-btn i {
     font-size: 18px; /* Adjust icon size */
     color: white; /* Make the icon white */
 }
 
-.cart-count{
-    color: #ffffff;
-    margin-top: 10px;
+/* Cart Count Styling */
+.cart-count {
+    color: #ffffff; /* White text color for cart count */
+    margin-top: 10px; /* Add top margin for spacing */
 }
 
 /* Cart Section Styling */
 .cart-section {
-    padding: 10px;
-    background-color: #fdf6e4;
+    padding: 10px; /* Padding around the cart section */
+    background-color: #fdf6e4; /* Light background color */
 }
 
-.cart-section h1{
-    margin-bottom: 10px;
+.cart-section h1 {
+    margin-bottom: 10px; /* Space below the heading */
 }
-
 
 /* Cart Table Styling */
 .cart-table {
-
-    border-collapse: collapse;
-    margin-bottom: 20px;
-
+    border-collapse: collapse; /* Remove space between borders */
+    margin-bottom: 20px; /* Space below the table */
 }
 
-.cart-table th, .cart-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-
-}
-
-.cart-table th {
-    background-color: #f1f1f1;
-}
-
-
-
-.cart-table td {
-    background-color: #ffffff;
-
-}
-
+/* Cart Book Image */
 .cart-book-image {
-    width: 50px;
-    height: auto;
-    border-radius: 5px;
+    width: 50px; /* Set width for book images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
 }
 
+/* Remove Button Styling */
 .btn-remove {
-    background-color: #e74c3c;
-    padding:8px;
+    background-color: #e74c3c; /* Red background for remove button */
+    padding: 8px; /* Padding inside button */
 }
 
-.btn-remove:hover{
-    background-color:#c0392b
+/* Cart Summary Box Styling */
+.cart-summary-box {
+    margin-left: 850px; /* Position cart summary box */
 }
 
-
-.cart-summary-box{
-    margin-left: 850px;
-
-
-}
-
+/* Cart Summary Styling */
 .cart-summary {
-    flex: 0 0 28%; /* Cart summary takes 28% of the space */
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-
+    flex: 0 0 28%; /* Cart summary takes 28% of space */
+    background-color: #fff; /* White background */
+    padding: 15px; /* Padding inside summary */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    width: 300px; /* Fixed width */
 }
 
 .cart-summary h2 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space below the heading */
 }
 
 .cart-summary p {
-    margin: 5px 0;
+    margin: 5px 0; /* Space between paragraphs */
 }
 
+/* Checkout Button Styling */
 .cart-summary .btn-checkout {
-    display: inline-block;
-    background-color:  #007bff;
-    color: white;
-    padding: 5px 5px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 50px;
-    text-align: center;
-    width: 150px;
-    transition: background-color 0.3s;
-    margin-left:50px;
+    display: inline-block; /* Inline block for button */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 5px 5px; /* Padding inside button */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    border-radius: 50px; /* Rounded button */
+    text-align: center; /* Center text */
+    width: 150px; /* Fixed width */
+    transition: background-color 0.3s; /* Smooth color transition */
+    margin-left: 50px; /* Left margin */
 }
 
 .cart-summary .btn-checkout:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
+/* Cart Quantity Control Styling */
+.quantity-control {
+    display: flex; /* Flexbox for aligning buttons and display */
+    align-items: center; /* Vertically center items */
+    gap: 5px; /* Space between items */
+}
 
+.quantity-btn {
+    background-color: #f1f1f1; /* Light gray background */
+    border: 1px solid #ddd; /* Border around buttons */
+    color: #333; /* Dark text */
+    font-size: 16px; /* Font size */
+    width: 30px; /* Button width */
+    height: 30px; /* Button height */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.quantity-btn:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text on hover */
+}
 
 /* Cart Quantity Control Styling */
 .quantity-control {
@@ -113,168 +114,284 @@
 }
 
 .quantity-btn {
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    color: #333;
-    font-size: 16px;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #f1f1f1; /* Light gray background */
+    border: 1px solid #ddd; /* Border around buttons */
+    color: #333; /* Dark text */
+    font-size: 16px; /* Font size */
+    width: 30px; /* Button width */
+    height: 30px; /* Button height */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
 .quantity-btn:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text on hover */
 }
 
+
+/* Quantity Display Styling */
 .quantity-display {
-    width: 40px;
-    height: 30px;
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    font-size: 16px;
-    margin: 0;
+    width: 40px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    text-align: center; /* Center text */
+    border: 1px solid #ddd; /* Border around display */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* White background */
+    font-size: 16px; /* Font size */
+    margin: 0; /* No margin */
 }
 
 
-/* General Section Styling with 3D Border */
+/* General Checkout Section Styling */
 .checkout-section {
-    max-width: 550px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    /* Create a 3D border effect */
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    box-shadow:
-        inset 4px 4px 8px rgba(0, 0, 0, 0.1), /* Inner shadow for depth */
-        0 4px 6px rgba(0, 0, 0, 0.2);        /* Outer shadow for 3D feel */
+    max-width: 500px; /* Max width for checkout section */
+    margin: 30px auto; /* Centered with margin */
+    padding: 20px; /* Padding inside section */
+    background-color: #ffffff; /* White background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family */
+    border: 1px solid #eaeaea; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-/* Optional: Hover Effect for More Interaction */
+/* Hover Effect for Checkout Section */
 .checkout-section:hover {
-    box-shadow:
-        inset 4px 4px 10px rgba(0, 0, 0, 0.15), /* Stronger inner shadow on hover */
-        0 6px 8px rgba(0, 0, 0, 0.3);          /* Stronger outer shadow on hover */
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.15), 0 6px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
 
+/* Checkout Header Styling */
 .checkout-section h1 {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: 600;
+    font-size: 1.8rem; /* Font size for heading */
+    text-align: center; /* Center text */
+    margin-bottom: 20px; /* Space below heading */
+    color: #333; /* Dark text */
+    font-weight: 600; /* Bold font weight */
 }
 
-/* Form Styling */
+
+/* Form Group Styling */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Space below each form group */
 }
 
+/* Label Styling */
 .form-group label {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #555;
-    display: block;
-    margin-bottom: 8px;
+    font-size: 1rem; /* Font size for labels */
+    font-weight: 500; /* Medium font weight */
+    color: #555; /* Medium gray color */
+    display: block; /* Block-level element */
+    margin-bottom: 8px; /* Space below the label */
 }
 
+/* Input Styling */
 .form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    color: #333;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside input */
+    font-size: 1rem; /* Font size */
+    color: #333; /* Dark text */
+    border: 1px solid #dcdcdc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
 }
 
+/* Input Focus Styling */
 .form-group input:focus {
-    border-color: #0073e6;
-    outline: none;
+    border-color: #0073e6; /* Blue border on focus */
+    outline: none; /* Remove outline */
 }
+
 
 /* Table Styling */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 0.95rem;
+    width: 100%; /* Full-width table */
+    border-collapse: collapse; /* Remove space between borders */
+    margin: 20px 0; /* Margin above and below table */
+    font-size: 0.95rem; /* Font size */
 }
 
 table thead {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light gray background for header */
 }
 
 table th {
-    padding: 12px;
-    text-align: left;
-    font-weight: 600;
-    color: #444;
-    border-bottom: 1px solid #ddd;
+    padding: 12px; /* Padding inside table headers */
+    text-align: left; /* Align text to the left */
+    font-weight: 600; /* Bold font weight */
+    color: #444; /* Dark text color */
+    border-bottom: 1px solid #ddd; /* Border below header */
 }
 
 table td {
-    padding: 12px;
-    color: #666;
-    border-bottom: 1px solid #eee;
-    text-align: left;
+    padding: 12px; /* Padding inside table data */
+    color: #666; /* Medium gray text */
+    border-bottom: 1px solid #eee; /* Light border below data */
+    text-align: left; /* Align text to the left */
 }
 
 table tbody tr:hover {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Highlight row on hover */
 }
 
-/* Order Summary */
+/* Order Summary Styling */
 h3 {
-    font-size: 1.2rem;
-    color: #444;
-    margin-top: 20px;
-    font-weight: 600;
+    font-size: 1.2rem; /* Font size */
+    color: #444; /* Dark text color */
+    margin-top: 20px; /* Space above heading */
+    font-weight: 600; /* Bold font weight */
 }
 
 /* Alert Styling */
 .alert {
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+    padding: 15px; /* Padding inside alert */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.95rem; /* Font size */
+    margin-bottom: 20px; /* Space below alert */
 }
 
 .alert-danger {
-    color: #842029;
-    background-color: #f8d7da;
-    border: 1px solid #f5c2c7;
+    color: #842029; /* Red text color */
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c2c7; /* Red border */
 }
 
 /* Button Styling */
 .btn-checkout {
-    display: inline-block;
-    padding: 12px 20px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #0073e6;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 20px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    text-decoration: none;
+    display: inline-block; /* Inline-block for button */
+    padding: 12px 20px; /* Padding inside button */
+    font-size: 1rem; /* Font size */
+    color: #ffffff; /* White text */
+    background-color: #0073e6; /* Blue background */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px; /* Space above button */
+    font-weight: 500; /* Medium font weight */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 100%; /* Full-width button */
+    text-decoration: none; /* Remove underline */
 }
 
 .btn-checkout:hover {
-    background-color: #005bb5;
+    background-color: #005bb5; /* Darker blue on hover */
 }
 
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif; /* Set font to Arial for better readability */
+    background-color: #f5f5f5; /* Light background color for a clean, subtle look */
+    margin: 0; /* Remove default margin to ensure full-width layout */
+    padding: 0; /* Remove default padding for consistent spacing */
+}
+
+/* Customer Profile Container Styling */
+.customer-profile {
+    display: flex; /* Use flexbox to align profile components horizontally */
+    margin: 30px auto; /* Center profile with 30px margin on top and bottom */
+    max-width: 850px; /* Set maximum width to prevent stretching */
+    background: white; /* White background for the profile container */
+    border-radius: 8px; /* Rounded corners for a soft design */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow to lift the container off the page */
+    overflow: hidden; /* Hide anything that overflows the container */
+}
+
+/* Profile Sidebar Styling */
+.profile-sidebar {
+    background-color: #f1f3f5; /* Light gray background for the sidebar */
+    width: 25%; /* Set the sidebar width to 25% */
+    padding: 20px; /* Padding inside the sidebar for spacing */
+    border-right: 1px solid #e9ecef; /* Light border on the right side */
+    text-align: center; /* Center content inside the sidebar */
+}
+
+/* Avatar Styling in Sidebar */
+.avatar {
+    margin-bottom: 20px; /* Space below the avatar image */
+}
+
+.avatar-circle {
+    background-color: #dee2e6; /* Light gray background for the circle */
+    color: #495057; /* Dark text color */
+    width: 80px; /* Set fixed width and height */
+    height: 80px;
+    line-height: 80px; /* Vertically center text inside the circle */
+    border-radius: 50%; /* Create a perfect circle */
+    font-size: 24px; /* Larger font size for the initials */
+    font-weight: bold; /* Bold text for emphasis */
+    margin: 0 auto; /* Center the avatar horizontally */
+}
+
+.avatar h2 {
+    font-size: 18px; /* Font size for the name */
+    font-weight: bold; /* Bold font weight for the name */
+    margin-top: 10px; /* Space above the name */
+}
+
+.avatar p {
+    color: #868e96; /* Subtle gray color for description text */
+    font-size: 14px; /* Smaller font size for description */
+}
+
+/* Sidebar Menu Styling */
+.sidebar-menu {
+    list-style: none; /* Remove default list styling */
+    margin-top: 20px; /* Space between the avatar and menu */
+    text-align: left; /* Align text to the left */
+    padding: 0 20px; /* Add padding for spacing around the menu */
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px; /* Space between menu items */
+    font-size: 16px; /* Standard font size for menu items */
+    color: #495057; /* Dark color for menu item text */
+    cursor: pointer; /* Change cursor to pointer for clickable items */
+}
+
+.sidebar-menu li:hover {
+    color: #343a40; /* Darker text color on hover */
+    font-weight: bold; /* Make the text bold when hovered */
+}
+
+/* Profile Content Styling */
+.profile-content {
+    width: 75%; /* Occupy 75% of the profile container width */
+    padding: 30px; /* Padding inside the content area */
+}
+
+.profile-content h1 {
+    font-size: 24px; /* Larger font size for the main heading */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.profile-content h2 {
+    font-size: 20px; /* Slightly smaller font size for sub-headings */
+    margin-bottom: 5px; /* Space below the sub-heading */
+}
+
+.profile-content p {
+    font-size: 16px; /* Standard font size for paragraph text */
+    margin-bottom: 10px; /* Space between paragraphs */
+    color: #6c757d; /* Subtle gray color for text */
+}
+
+/* Address Card Styling */
+.address-card {
+    border: 1px solid #e9ecef; /* Light border for address cards */
+    padding: 20px; /* Padding inside each address card */
+    border-radius: 8px; /* Rounded corners for address cards */
+    margin-bottom: 15px; /* Space below each address card */
+}
+
+.address-card h3 {
+    font-size: 18px; /* Font size for the card heading */
+    margin-bottom: 5px; /* Space below the heading */
+}
+
+.address-card p {
+    color: #495057; /* Dark text color for address details */
+}

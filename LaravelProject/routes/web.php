@@ -46,7 +46,6 @@ Route::middleware(['admin'])->group(function () {
 
 // Customer Routes (Protected by 'customer' middleware)
 Route::middleware(['customer'])->group(function () {
-    Route::get('/customer/dashboard', [CustomerController::class, 'customerDashboard'])->name('customer.dashboard');
 
     // Cart Management
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');

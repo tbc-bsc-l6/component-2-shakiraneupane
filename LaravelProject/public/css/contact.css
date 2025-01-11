@@ -1,0 +1,185 @@
+/* Global body styles */
+body {
+    background-color: #fdf6e4; /* Light yellow background */
+}
+
+/* Contact Header Styles */
+.contact-header {
+    text-align: center; /* Center align the header */
+    margin-bottom: 40px; /* Space below the header */
+}
+
+.contact-header h1 {
+    font-size: 3.5rem; /* Large title font size */
+    font-weight: 700; /* Bold text */
+    color: #000000; /* Black color */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.contact-header p {
+    font-size: 1.5rem; /* Medium font size */
+    color: #555; /* Dark gray color */
+}
+
+/* Contact Content Layout */
+.contact-content {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space out the items */
+    gap: 50px; /* Space between items */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    margin-left: 100px; /* Left margin */
+}
+
+/* Contact Form Styles */
+.contact-form {
+    flex: 1; /* Make the form flexible */
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 30px; /* Padding inside the form */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the form */
+    margin-bottom: 50px; /* Space below the form */
+    max-width: 500px; /* Max width for the form */
+}
+
+.contact-form h2 {
+    font-size: 2.5rem; /* Larger heading */
+    color: #333; /* Dark gray color */
+    margin-bottom: 20px; /* Space below the heading */
+    font-weight: 600; /* Semi-bold text */
+}
+
+/* Form Input Group Styles */
+.contact-form .form-group {
+    margin-bottom: 20px; /* Space below each input */
+}
+
+/* Label Styles */
+.contact-form label {
+    font-size: 1.2rem; /* Medium font size */
+    color: #555; /* Dark gray */
+    display: block; /* Block-level display */
+    margin-bottom: 8px; /* Space below the label */
+}
+
+/* Input and Textarea Styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding inside inputs */
+    font-size: 1rem; /* Standard font size */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light gray border */
+    margin-top: 6px; /* Space above input */
+    color: #333; /* Dark gray text */
+}
+
+/* Textarea Styling */
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resize */
+}
+
+/* Submit Button Styling */
+.contact-form .submit-btn {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    border: none; /* Remove default border */
+    padding: 12px 20px; /* Padding for the button */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Contact Info Section */
+.contact-info h2 {
+    font-size: 2rem; /* Heading size */
+    font-weight: bold; /* Bold text */
+    color: #2c3e50; /* Dark blue-gray color */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center aligned */
+}
+
+.contact-info p {
+    font-size: 1.1rem; /* Slightly smaller font size */
+    color: #555; /* Dark gray */
+    line-height: 1.6; /* Line height for better readability */
+    text-align: center; /* Center aligned text */
+    margin: 8px 0; /* Margin between paragraphs */
+}
+
+.contact-info .address p {
+    font-size: 1.1rem; /* Similar to other paragraph */
+    color: #34495e; /* Dark blue color */
+    margin-bottom: 12px; /* Space below the paragraph */
+}
+
+.contact-info .address p strong {
+    color: #34495e; /* Dark blue color for strong text */
+}
+
+.contact-info .address a {
+    color: #34495e; /* Dark blue color */
+    text-decoration: underline; /* Underlined text */
+    color: #1abc9c; /* Light green color for links */
+}
+
+/* Weather API Section Styles */
+.weather-section {
+    background: linear-gradient(to bottom, #2e466e, #1d2c47); /* Gradient background from top to bottom */
+    color: #fff; /* White text */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    width: 400px; /* Fixed width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    font-family: 'Arial', sans-serif; /* Font style */
+    margin: 20px auto; /* Center aligned */
+    height: 400px; /* Fixed height */
+}
+
+.weather-section form {
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Space between elements */
+}
+
+.weather-section input[type="text"] {
+    padding: 8px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove focus outline */
+    margin-top: 20px; /* Space above the input */
+    color: black; /* Black text */
+}
+
+.weather-section button {
+    padding: 10px; /* Padding for the button */
+    background-color: #FF9913; /* Orange background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* White text */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.weather-section button:hover {
+    background-color: #FF6E00; /* Darker orange on hover */
+}
+
+/* Weather Information Section */
+.weather-info {
+    margin-top: 30px; /* Space above the weather info */
+    text-align: left; /* Left aligned text */
+}
+
+.weather-info h2 {
+    font-size: 20px; /* Font size for subheading */
+    margin-bottom: 20px; /* Space below the subheading */
+}
+
+.weather-info p {
+    margin: 5px 0; /* Space between paragraphs */
+    margin-top: 10px; /* Space above paragraphs */
+}
+
+.weather-info strong {
+    color: #f1c40f; /* Highlighted text color */
+}

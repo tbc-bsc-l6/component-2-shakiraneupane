@@ -8,12 +8,15 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
-
+    /**
+     * Display the checkout page with the user's cart items.
+     */
     public function index()
     {
-        // Retrieve cart items for the logged-in user
+        // Retrieve the cart items for the logged-in user
         $cartItems = Cart::where('user_id', Auth::id())->get();
 
+        // If the cart is empty, redirect the user back to the cart page with an error message
         if ($cartItems->isEmpty()) {
             return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
         }
@@ -21,28 +24,32 @@ class CheckoutController extends Controller
         // Pass the cart items to the checkout view
         return view('customer.checkout', compact('cartItems'));
     }
+
+    /**
+     * Process the checkout, create an order, and clear the user's cart.
+     */
     public function processCheckout(Request $request)
     {
-        // Get cart items and shipping address
+        // Get cart items and shipping address from the request
         $cartItems = Cart::where('user_id', Auth::id())->get();
         $shippingAddress = $request->input('shipping_address');
 
+        // If the cart is empty, redirect to the cart page with an error message
         if ($cartItems->isEmpty()) {
             return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
         }
 
-        // Create a new order
+        // Create a new order instance
         $order = new Order();
-        $order->user_id = Auth::id();
-        $order->shipping_address = $shippingAddress;
-        $order->total_amount = $cartItems->sum(fn($item) => $item->book->price * $item->quantity);
-        $order->save();
-
+        $order->user_id = Auth::id(); // Associate the order with the current user
+        $order->shipping_address = $shippingAddress; // Set the shipping address
+        $order->total_amount = $cartItems->sum(fn($item) => $item->book->price * $item->quantity); // Calculate the total amount based on cart items
+        $order->save(); // Save the order to the database
 
         // Clear the user's cart after placing the order
         Cart::where('user_id', Auth::id())->delete();
 
-        // Redirect to the confirmation page
+        // Redirect to the order confirmation page with the order ID
         return redirect()->route('order.confirmation')->with('order_id', $order->id);
     }
 }

@@ -1,4 +1,5 @@
 @extends('layout')
+
 @section('title', 'Home')
 
 @section('content')
@@ -6,12 +7,15 @@
     <section>
         <div class="slider-container">
             <div class="slider">
+                <!-- Slider Item 1 -->
                 <div class="slider-item">
                     <img src="/images/book1.jpg" alt="Book Image 1">
                 </div>
+                <!-- Slider Item 2 -->
                 <div class="slider-item">
                     <img src="/images/book2.jpg" alt="Book Image 2">
                 </div>
+                <!-- Slider Item 3 -->
                 <div class="slider-item">
                     <img src="/images/book3.jpg" alt="Book Image 3">
                 </div>
@@ -30,45 +34,48 @@
         </div>
     </section>
 
-
-
-   <!-- Genres Section -->
-   <section class="genres-section">
-    <h2>Genres</h2>
-    <p>Browse Our Extensive Collection of Books Across Different Genres.</p>
-    <div class="genres-grid">
-        <div class="genre-item">
-            <a href="{{ route('genre.show', ['genre' => 'arts']) }}">
-                <i class="fas fa-palette"></i>
-                <span>Arts & Photography</span>
-            </a>
+    <!-- Genres Section -->
+    <section class="genres-section">
+        <h2>Genres</h2>
+        <p>Browse Our Extensive Collection of Books Across Different Genres.</p>
+        <div class="genres-grid">
+            <!-- Genre: Arts & Photography -->
+            <div class="genre-item">
+                <a href="{{ route('genre.show', ['genre' => 'arts']) }}">
+                    <i class="fas fa-palette"></i>
+                    <span>Arts & Photography</span>
+                </a>
+            </div>
+            <!-- Genre: Lifestyle and Wellness -->
+            <div class="genre-item">
+                <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">
+                    <i class="fas fa-running"></i>
+                    <span>Lifestyle and Wellness</span>
+                </a>
+            </div>
+            <!-- Genre: Fiction and Literature -->
+            <div class="genre-item">
+                <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">
+                    <i class="fas fa-theater-masks"></i>
+                    <span>Fiction and Literature</span>
+                </a>
+            </div>
+            <!-- Genre: History & Biography -->
+            <div class="genre-item">
+                <a href="{{ route('genre.show', ['genre' => 'history']) }}">
+                    <i class="fas fa-book-open"></i>
+                    <span>History & Biography</span>
+                </a>
+            </div>
+            <!-- Genre: Kids and Teens -->
+            <div class="genre-item">
+                <a href="{{ route('genre.show', ['genre' => 'kids']) }}">
+                    <i class="fas fa-child"></i>
+                    <span>Kids and Teens</span>
+                </a>
+            </div>
         </div>
-        <div class="genre-item">
-            <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">
-                <i class="fas fa-running"></i>
-                <span>Lifestyle and Wellness</span>
-            </a>
-        </div>
-        <div class="genre-item">
-            <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">
-                <i class="fas fa-theater-masks"></i>
-                <span>Fiction and Literature</span>
-            </a>
-        </div>
-        <div class="genre-item">
-            <a href="{{ route('genre.show', ['genre' => 'history']) }}">
-                <i class="fas fa-book-open"></i>
-                <span>History & Biography</span>
-            </a>
-        </div>
-        <div class="genre-item">
-            <a href="{{ route('genre.show', ['genre' => 'kids']) }}">
-                <i class="fas fa-child"></i>
-                <span>Kids and Teens</span>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Filter Sidebar Section -->
     <section class="filter-sidebar-section flex mb-8">
@@ -107,6 +114,7 @@
             </form>
         </div>
 
+        <!-- Sidebar Image -->
         <img src="/images/bestbook2024.png" alt="Best Book 2024" class="home-img">
     </section>
 
@@ -122,7 +130,7 @@
                     <p>by {{ $book->author }}</p>
                     <span>Rs. {{ $book->price }}</span>
 
-                    <!-- Add to Cart Button -->
+                    <!-- Add to Cart Button (Authenticated users only) -->
                     @auth
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
@@ -149,7 +157,7 @@
                     <p>by {{ $book->author }}</p>
                     <span>Rs. {{ $book->price }}</span>
 
-                    <!-- Add to Cart Button -->
+                    <!-- Add to Cart Button (Authenticated users only) -->
                     @auth
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf

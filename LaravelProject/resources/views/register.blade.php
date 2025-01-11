@@ -1,15 +1,19 @@
 @extends('layout')
+
 @section('title', 'Register')
+
 @section('content')
 
     <div class="auth-container">
         <!-- Registration Form -->
         <div class="registration-form">
-            <h2 class = "text-2xl font-semibold mb-4">Register</h2>
+            <h2 class="text-2xl font-semibold mb-4">Register</h2>
 
+            <!-- Form to Submit Registration Details -->
             <form action="{{ route('register.submit') }}" method="POST">
                 @csrf
 
+                <!-- Name Input -->
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" value="{{ old('name') }}" required>
@@ -19,6 +23,7 @@
                     @enderror
                 </div>
 
+                <!-- Address Input -->
                 <div class="form-group">
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" placeholder="Enter your address" value="{{ old('address') }}" required>
@@ -28,6 +33,7 @@
                     @enderror
                 </div>
 
+                <!-- Email Input -->
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" value="{{ old('email') }}" required>
@@ -37,6 +43,7 @@
                     @enderror
                 </div>
 
+                <!-- Password Input -->
                 <div class="form-group">
                     <label for="password">Password</label>
                     <div class="password-container">
@@ -51,6 +58,7 @@
                     @enderror
                 </div>
 
+                <!-- Confirm Password Input -->
                 <div class="form-group">
                     <label for="password_confirmation">Confirm Password</label>
                     <div class="password-container">
@@ -66,17 +74,19 @@
                 </div>
 
                 <!-- Agree to Terms and Conditions -->
-            <div class="form-checkbox">
-                <div class="form-item">
-                    <label>
-                        <input type="checkbox" name="agree_terms" required> I agree to the terms and conditions</a>
-                    </label>
-                    @error('agree_terms')
-                        <div class="error">{{ $message }}</div>
-                    @enderror
+                <div class="form-checkbox">
+                    <div class="form-item">
+                        <label>
+                            <input type="checkbox" name="agree_terms" required> I agree to the terms and conditions
+                        </label>
+                        <!-- Show error for agree_terms if validation fails -->
+                        @error('agree_terms')
+                            <div class="error">{{ $message }}</div>
+                        @enderror
+                    </div>
                 </div>
-            </div>
 
+                <!-- Submit Button -->
                 <button type="submit" class="btn">Register</button>
             </form>
 
@@ -86,4 +96,5 @@
             </p>
         </div>
     </div>
+
 @endsection

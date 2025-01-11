@@ -1,163 +1,176 @@
+/* Body styling */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set the font to Arial */
+    background-color: #f4f4f9; /* Light gray background */
+    color: #333; /* Dark text color for better readability */
 }
 
+/* Dashboard container: flex layout for sidebar and main content */
 .dashboard {
-    display: flex;
-    height: 100vh;
+    display: flex; /* Use flexbox to create a row layout */
+    height: 100vh; /* Full height of the viewport */
 }
 
+/* Sidebar styling */
 .sidebar {
-    width: 250px;
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #2c3e50; /* Dark background color */
+    color: white; /* White text color */
+    padding: 20px; /* Padding inside sidebar */
 }
 
+/* Sidebar logo styling */
 .sidebar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 1.5rem; /* Font size for the logo */
+    font-weight: bold; /* Bold text for logo */
+    margin-bottom: 20px; /* Margin below the logo */
+    text-align: center; /* Center the logo text */
 }
 
+/* Sidebar navigation list styling */
 .sidebar nav ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
 }
 
+/* Sidebar navigation list item styling */
 .sidebar nav ul li {
-    margin: 15px 0;
+    margin: 15px 0; /* Margin between items */
 }
 
+/* Sidebar navigation link styling */
 .sidebar nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-top:30px;
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Padding inside links */
+    display: block; /* Block display to fill the parent container */
+    border-radius: 5px; /* Rounded corners for the link */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    margin-top: 30px; /* Margin at the top of the link */
 }
 
+/* Sidebar navigation link hover and active state styling */
 .sidebar nav ul li a:hover, .sidebar nav ul li a.active {
-    background-color: #34495e;
+    background-color: #34495e; /* Change background color on hover or when active */
 }
 
+/* Main content section styling */
 .main-content {
-    flex: 1;
-    padding: 20px;
-    background-color: #ecf0f1;
-    overflow-y: auto;
+    flex: 1; /* Allow the main content to fill the remaining space */
+    padding: 20px; /* Padding inside main content */
+    background-color: #ecf0f1; /* Light background for main content */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
 }
 
+/* Header section styling */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 2px solid #bdc3c7;
+    display: flex; /* Flexbox for aligning header elements */
+    justify-content: space-between; /* Space between header elements */
+    align-items: center; /* Align items vertically in the center */
+    padding: 10px 0; /* Padding at the top and bottom */
+    border-bottom: 2px solid #bdc3c7; /* Light border at the bottom of header */
 }
 
+/* User info section inside the header */
 .header .user-info {
-    display: flex;
-    align-items: center;
+    display: flex; /* Flexbox for aligning user info elements */
+    align-items: center; /* Align user info vertically in the center */
 }
 
+/* Username styling inside the header */
 .header .user-info .username {
-    margin-right: 15px;
-    font-weight: bold;
+    margin-right: 15px; /* Margin to the right of the username */
+    font-weight: bold; /* Bold text for the username */
 }
 
+/* Logout button styling */
 .header .logout-btn {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #e74c3c; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
+/* Logout button hover effect */
 .header .logout-btn:hover {
-    background-color: #c0392b;
+    background-color: #c0392b; /* Darker red background on hover */
 }
 
 /*-----------------------products-section page--------------------------*/
 /* Admin Panel Table Styles */
+/* Container styling */
 .container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    max-width: 1000px; /* Maximum width of the container */
+    margin: 30px auto; /* Center the container horizontally and add top/bottom margin */
+    padding: 20px; /* Padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners for the container */
 }
 
+/* Heading styling */
 h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+    text-align: center; /* Center the heading text */
+    color: #333; /* Dark text color */
+    margin-bottom: 30px; /* Margin below the heading */
 }
 
-
-/* Ensures that images inside table cells do not overflow */
+/* Styling for images inside table cells */
 td img {
-    width: 30px; /* Set a fixed maximum width for the image */
-    height: 50px; /* Maintain aspect ratio */
-    border-radius: 8px; /* Optional: adds rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
-    object-fit: contain; /* Ensure the image is fully visible within its container */
+    width: 30px; /* Set a fixed width for images */
+    height: 50px; /* Set a fixed height to maintain aspect ratio */
+    border-radius: 8px; /* Optional: adds rounded corners to images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    object-fit: contain; /* Ensure image is fully visible within the cell */
 }
 
-
-
+/* Button styling */
 button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 1px;
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    margin-top: 1px; /* Small top margin */
 }
 
+/* Styling for links inside buttons */
 button a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* White text color */
+    font-weight: bold; /* Bold text */
 }
 
+/* Edit button styling */
 .edit {
-    background-color: #f0ad4e; /* Orange color */
-    border-radius: 5px;
-    padding: 5px 10px;
+    background-color: #f0ad4e; /* Orange background */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside button */
 }
 
+/* Hover effect for edit button */
 .edit:hover {
-    background-color: #ec971f; /* Darker orange for hover */
+    background-color: #ec971f; /* Darker orange for hover effect */
 }
 
-
-/* Remove default form styles */
+/* Styling for delete form (inline with button) */
 .delete-form {
-    display: inline-block;  /* Makes the form inline with the button */
-    margin: 0;              /* Remove any margin */
-    padding: 0;             /* Remove any padding */
-    border: none;          /* Remove border from the form */
-
+    display: inline-block; /* Inline block to align with button */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
 }
 
-/* Style the delete button */
+/* Delete button styling */
 .delete {
     background-color: #d32f2f; /* Red background */
     color: white; /* White text */
     border: none; /* Remove default border */
-    padding: 5px 10px; /* Adjust padding for smaller size */
+    padding: 5px 10px; /* Adjust padding */
     border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
-
-
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
 /* Hover effect for delete button */
@@ -165,315 +178,319 @@ button a {
     background-color: #c62828; /* Darker red on hover */
 }
 
-
+/* Add button styling */
 .add-btn {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    padding: 12px 24px; /* Padding inside button */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+    display: inline-flex; /* Inline flexbox for alignment */
+    align-items: center; /* Vertically align icon and text */
+    justify-content: center; /* Center the content */
+    text-decoration: none; /* Remove underline */
 }
 
+/* Icon inside add button */
 .add-btn i {
     margin-right: 8px; /* Space between icon and text */
 }
 
-/* Hover Effect */
+/* Hover effect for add button */
 .add-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); /* Slightly scale the button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
 
-/*--------------------------------Add books page---------------------------------*/
+/*--------------------------------- Add books page --------------------------------- */
+
+/* Body styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Set a modern font */
+    background-color: #f4f6f9; /* Light background color */
+    padding: 20px; /* Padding around the content */
 }
 
+/* Heading for add books page */
 h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
+    font-size: 24px; /* Larger font size */
+    font-weight: 600; /* Semi-bold font */
+    margin-bottom: 20px; /* Margin below heading */
+    text-align: center; /* Center the heading */
+    color: #333; /* Dark text color */
 }
 
-/* Form container */
+/* Form container styling */
 form {
-    max-width: 450px; /* Smaller width */
-    margin: 0 auto;
-    padding: 30px; /* Reduced padding */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Set a smaller max-width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 30px; /* Padding inside the form */
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Form group */
+/* Form group styling */
 .form-group {
-    margin-bottom: 20px; /* Reduced margin */
+    margin-bottom: 20px; /* Space between form elements */
 }
 
-/* Labels */
+/* Label styling */
 label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 8px;
-    display: block;
+    font-size: 14px; /* Smaller font size */
+    font-weight: 500; /* Medium font weight */
+    color: #555; /* Dark gray color */
+    margin-bottom: 8px; /* Space below labels */
+    display: block; /* Block display for labels */
 }
 
-/* Inputs and select */
+/* Input and select field styling */
 .form-control {
-    height: 40px; /* Reduced height */
-    padding: 8px 12px; /* Reduced padding */
-    font-size: 14px; /* Slightly smaller font size */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    width: 100%;
-    transition: border-color 0.3s;
+    height: 40px; /* Height of the input/select fields */
+    padding: 8px 12px; /* Padding inside fields */
+    font-size: 14px; /* Font size inside fields */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border color */
+    box-sizing: border-box; /* Include padding in width/height */
+    width: 100%; /* Full width of the parent */
+    transition: border-color 0.3s; /* Smooth transition for border color */
 }
 
-
+/* Textarea field styling */
 textarea.form-control {
-    height: 100px; /* Reduced height */
-    resize: vertical;
+    height: 100px; /* Height of the textarea */
+    resize: vertical; /* Allow vertical resizing */
 }
 
+/* Select field styling */
 select.form-control {
-    height: 40px; /* Reduced height */
+    height: 40px; /* Height of the select field */
 }
 
-/* File input */
+/* File input styling */
 input[type="file"].form-control {
-    height: auto;
-    padding: 8px 12px;
+    height: auto; /* Auto height for file input */
+    padding: 8px 12px; /* Padding inside the file input */
 }
 
-/* Submit button */
+/* Submit button styling */
 button[type="submit"] {
-    width: 100%;
-    padding: 10px; /* Reduced padding */
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the button */
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* White text */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for hover */
 }
 
+/* Hover effect for submit button */
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-/*search form*/
-/* Basic styling for the search form */
+/* Search form styling */
 .search-form {
-    display: inline-block;  /* Makes the form inline with the button */
-    margin: 0;              /* Remove any margin */
-    padding: 0;             /* Remove any padding */
-    border: none;      /* Remove border from the form */
-    margin-bottom: 10px;
+    display: inline-block; /* Inline block for form */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    margin-bottom: 10px; /* Bottom margin */
 }
 
-/* Styling the search input */
+/* Search input field styling */
 .search-input {
-    padding: 4px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 200px; /* Adjust width as needed */
-    outline: none;
-    transition: border-color 0.3s ease;
+    padding: 4px; /* Padding inside the input */
+    font-size: 14px; /* Font size */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    width: 200px; /* Width of the input */
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-
+/* Wrapper for search input */
 .search-wrapper {
-    position: relative;
-    width: 100%;
+    position: relative; /* Position for search icon */
+    width: 100%; /* Full width */
 }
 
-
+/* Search icon styling */
 .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 15px;
-    color: #454545;
+    position: absolute; /* Absolute positioning inside wrapper */
+    right: 10px; /* Right alignment */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    font-size: 15px; /* Icon size */
+    color: #454545; /* Dark gray color */
 }
 
-
-/*description*/
-.description-short {
-    font-size: 13px;
-    color: #333;
+/* Description text styling */
+.description-short, .description-full {
+    font-size: 13px; /* Smaller font size */
+    color: #333; /* Dark text color */
 }
 
-.description-full {
-    font-size: 13px;
-    color: #333;
-    margin-top: 5px;
-}
-
+/* "See more" link styling */
 .see-more {
-    color: #007bff;
-    text-decoration: none;
-    margin-top: 5px;
+    color: #007bff; /* Blue text color */
+    text-decoration: none; /* Remove underline */
+    margin-top: 5px; /* Space at the top */
 }
 
+/* Hover effect for "see more" link */
 .see-more:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
 
-/*for orders page*/
+/*-------------------------------For orders page----------------------------------*/
 /* General Styling */
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7fc;
+    font-family: Arial, sans-serif; /* Set Arial font for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f4f7fc; /* Set a light background color */
 }
 
-/* Page Container */
+/* Page Container styling for the order details section */
 .order-details {
-    background-color: white;
-    padding: 20px;
-    margin: 30px auto;
-    max-width: 900px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background-color: white; /* White background for the container */
+    padding: 20px; /* Padding inside the container */
+    margin: 30px auto; /* Center the container horizontally with margin */
+    max-width: 900px; /* Set a maximum width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for the container */
 }
 
+/* Heading inside the order-details container */
 .order-details h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 24px; /* Font size for main heading */
+    color: #333; /* Dark text color */
+    margin-bottom: 20px; /* Space below the heading */
 }
 
+/* Subheading inside the order-details container */
 .order-details h3 {
-    font-size: 20px;
-    color: #444;
-    margin-top: 20px;
+    font-size: 20px; /* Font size for subheading */
+    color: #444; /* Slightly lighter text color */
+    margin-top: 20px; /* Space above the subheading */
 }
 
+/* Paragraph styling inside order-details */
 .order-details p {
-    font-size: 16px;
-    color: #555;
-    margin: 10px 0;
+    font-size: 16px; /* Font size for text paragraphs */
+    color: #555; /* Slightly lighter gray color for text */
+    margin: 10px 0; /* Margin above and below paragraphs */
 }
 
+/* Bold text inside order-details */
 .order-details strong {
-    font-weight: bold;
+    font-weight: bold; /* Make the text bold */
 }
 
-/* Table Styling */
+/* Table styling for the order details */
 table.table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
+    width: 100%; /* Set the table to fill the width of its container */
+    margin-top: 20px; /* Space above the table */
+    border-collapse: collapse; /* Collapse table borders */
 }
 
+/* Styling for table headers and cells */
 table.table th,
 table.table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
+    padding: 12px; /* Padding inside table cells */
+    text-align: left; /* Left-align the text in cells */
+    border: 1px solid #ddd; /* Light gray border around cells */
 }
 
+/* Header cell styling */
 table.table th {
-    background-color: #e7e7e7;
-    color: #333;
+    background-color: #e7e7e7; /* Light gray background for table headers */
+    color: #333; /* Dark text color for headers */
 }
 
+/* Data cell styling */
 table.table td {
-    background-color: #fff;
-    color: #555;
+    background-color: #fff; /* White background for data cells */
+    color: #555; /* Slightly lighter gray text color */
 }
 
-/* Success Message */
+/* Success message styling */
 .alert.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-size: 16px;
+    background-color: #d4edda; /* Light green background for success messages */
+    color: #155724; /* Dark green text color */
+    padding: 10px; /* Padding around the message */
+    margin-bottom: 20px; /* Space below the message */
+    border-radius: 5px; /* Rounded corners for the alert box */
+    font-size: 16px; /* Font size for the message */
 }
 
-/* Button Styling */
+/* Button styling for primary actions */
 .btn.btn-primary {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    display: inline-block;
-    margin-top: 30px;
+    background-color: #007bff; /* Blue background for the button */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding inside the button */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-size: 16px; /* Font size for button text */
+    display: inline-block; /* Make the button inline-block */
+    margin-top: 30px; /* Space above the button */
 }
 
+/* Hover effect for primary button */
 .btn.btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue background on hover */
 }
 
 
-/* Dashboard Stats Section */
+/*------------------------------ Dashboard Stats Section-------------------------- */
+/* Stats container styling */
 .stats {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px; /* Spacing between stat items */
-    margin-top: 30px;
-    margin-bottom: 30px;
-
+    display: flex; /* Use flexbox layout for arranging items */
+    justify-content: space-between; /* Space out items evenly with maximum space between */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    gap: 20px; /* Add spacing between stat items */
+    margin-top: 30px; /* Space above the stats container */
+    margin-bottom: 30px; /* Space below the stats container */
 }
 
+/* Individual stat item styling */
 .stat-item {
-    flex: 1;
-    min-width: 300px; /* Ensures items don't shrink too small */
-    background: linear-gradient(145deg, #f0f3f5, #d9dee2); /* Soft gradient for background */
-    padding: 25px;
-    border-radius: 12px; /* Softer, more rounded corners */
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation on hover */
-    cursor: pointer; /* Indicates interactivity */
-    border: 1px solid #e0e6ed; /* Light border to define item edges */
+    flex: 1; /* Allow the item to grow and take up available space */
+    min-width: 300px; /* Prevent the item from becoming too small on smaller screens */
+    background: linear-gradient(145deg, #f0f3f5, #d9dee2); /* Soft gradient background for a subtle effect */
+    padding: 25px; /* Add padding inside the stat item */
+    border-radius: 12px; /* Rounded corners for a soft, modern look */
+    display: flex; /* Use flexbox to align content inside the item */
+    align-items: center; /* Vertically center the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation for transform and shadow on hover */
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+    border: 1px solid #e0e6ed; /* Light border to define edges of the stat item */
 }
 
-
+/* Stat information heading styling */
 .stat-info h3 {
-    margin: 0;
-    font-size: 2rem; /* Larger, more prominent text */
-    font-weight: 600; /* Semi-bold text for better emphasis */
-    color: #34495e; /* Dark blue-gray for headings */
-    line-height: 1.3; /* Slight line-height for better spacing */
+    margin: 0; /* Remove margin for better spacing */
+    font-size: 2rem; /* Larger font size for prominence */
+    font-weight: 600; /* Semi-bold font for emphasis */
+    color: #34495e; /* Dark blue-gray color for the heading */
+    line-height: 1.3; /* Slight line height for better readability */
 }
 
+/* Stat information paragraph styling */
 .stat-info p {
-    margin: 5px 0 0; /* Adjusted margin for better spacing */
-    color: #7f8c8d; /* Soft gray for description */
-
+    margin: 5px 0 0; /* Adjust margin for spacing between elements */
+    color: #7f8c8d; /* Soft gray color for the description text */
 }
 
-
-/* Styling for Icons */
+/* Icon styling inside the stat item */
 .stat-item i {
-    font-size: 3rem;
-    color: #2c3e50; /* Elegant teal color */
-    margin-right: 20px;
+    font-size: 3rem; /* Large font size for icons */
+    color: #2c3e50; /* Elegant teal color for the icon */
+    margin-right: 20px; /* Space between icon and text */
 }
-
-
-
-
-

@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h2 class= "text-2xl font-semibold mb-4">Contact Messages</h2>
+        <!-- Page Title -->
+        <h2 class="text-2xl font-semibold mb-4">Contact Messages</h2>
+
+        <!-- Contact Messages Table -->
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -14,6 +17,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Loop through each contact message -->
                 @foreach($contacts as $contact)
                     <tr>
                         <td>{{ $contact->id }}</td>
@@ -26,7 +30,7 @@
             </tbody>
         </table>
 
-            {{ $contacts->links() }}
-
+        <!-- Pagination Links -->
+        {{ $contacts->links() }}
     </div>
 @endsection
