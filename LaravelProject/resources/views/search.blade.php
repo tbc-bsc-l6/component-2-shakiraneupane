@@ -14,7 +14,7 @@
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
                     <h2><a href="{{ route('book.show', $book->id) }}">{{ $book->title }}</a></h2>
                     <p>Author: {{ $book->author }}</p>
-                    <p>{{ Str::limit($book->description, 100) }}</p>
+
 
                     <!-- Add to Cart Button -->
                     <form action="{{ route('cart.add', $book->id) }}" method="POST" class="add-to-cart-form">

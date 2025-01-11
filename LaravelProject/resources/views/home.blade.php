@@ -41,37 +41,37 @@
         <div class="genres-grid">
             <!-- Genre: Arts & Photography -->
             <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'arts']) }}">
+                <a href="{{ route('genre.show', ['genre' => 'Arts & Photography']) }}">
                     <i class="fas fa-palette"></i>
                     <span>Arts & Photography</span>
                 </a>
             </div>
             <!-- Genre: Lifestyle and Wellness -->
             <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">
+                <a href="{{ route('genre.show', ['genre' => 'Lifestyle & Wellness']) }}">
                     <i class="fas fa-running"></i>
-                    <span>Lifestyle and Wellness</span>
+                    <span>Lifestyle & Wellness</span>
                 </a>
             </div>
             <!-- Genre: Fiction and Literature -->
             <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">
+                <a href="{{ route('genre.show', ['genre' => 'Fiction  & Literature']) }}">
                     <i class="fas fa-theater-masks"></i>
-                    <span>Fiction and Literature</span>
+                    <span>Fiction & Literature</span>
                 </a>
             </div>
             <!-- Genre: History & Biography -->
             <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'history']) }}">
+                <a href="{{ route('genre.show', ['genre' => 'History & Biography']) }}">
                     <i class="fas fa-book-open"></i>
                     <span>History & Biography</span>
                 </a>
             </div>
             <!-- Genre: Kids and Teens -->
             <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'kids']) }}">
+                <a href="{{ route('genre.show', ['genre' => 'Kids & Teens']) }}">
                     <i class="fas fa-child"></i>
-                    <span>Kids and Teens</span>
+                    <span>Kids & Teens</span>
                 </a>
             </div>
         </div>
@@ -87,11 +87,11 @@
                     <label for="genre" class="text-sm block mb-1">Genre</label>
                     <select name="genre" id="genre" class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md">
                         <option value="">All Genres</option>
-                        <option value="fiction" {{ request('genre') == 'fiction' ? 'selected' : '' }}>Fiction</option>
-                        <option value="history" {{ request('genre') == 'history' ? 'selected' : '' }}>History</option>
-                        <option value="lifestyle" {{ request('genre') == 'lifestyle' ? 'selected' : '' }}>Lifestyle</option>
-                        <option value="arts" {{ request('genre') == 'arts' ? 'selected' : '' }}>Arts</option>
-                        <option value="kids" {{ request('genre') == 'kids' ? 'selected' : '' }}>Kids</option>
+                        <option value="Fiction & Literature" {{ request('genre') == 'fiction' ? 'selected' : '' }}>Fiction & Literature</option>
+                        <option value="History & Biography" {{ request('genre') == 'history' ? 'selected' : '' }}>History & Biography</option>
+                        <option value="Lifestyle & Wellness" {{ request('genre') == 'lifestyle' ? 'selected' : '' }}>Lifestyle & Wellness</option>
+                        <option value="Arts & Photography" {{ request('genre') == 'arts' ? 'selected' : '' }}>Arts & Photography</option>
+                        <option value="Kids & Teens" {{ request('genre') == 'kids' ? 'selected' : '' }}>Kids & Teens</option>
                     </select>
                 </div>
 

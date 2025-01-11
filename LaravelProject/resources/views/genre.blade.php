@@ -51,10 +51,10 @@
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
                             <input type="hidden" name="book_id" value="{{ $book->id }}">
-                            <button type="submit" class="add-to-cart">Add to Cart</button>
+                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
                         </form>
                     @else
-                        <button><a href="/login" class="add-to-cart">Add to Cart</a></button>
+                        <a href="/login" class="add-to-cart-btn">Add to Cart</a>
                     @endauth
                 </div>
             @endforeach

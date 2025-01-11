@@ -11,7 +11,7 @@ class GenreController extends Controller
  public function show(Request $request, $genre)
     {
         // List of valid genres
-        $validGenres = ['fiction', 'kids', 'arts', 'history', 'lifestyle'];
+        $validGenres = ['Fiction & Literature', 'Lifestyle & Wellness', 'Arts & Photography', 'History & Biography', 'Kids & Teens'];
 
         // Check if the genre exists in the list
         if (!in_array($genre, $validGenres)) {

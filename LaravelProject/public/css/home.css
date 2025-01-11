@@ -199,12 +199,14 @@ body {
     margin-top: 40px; /* Margin at the top */
 }
 
+
 /* New Arrivals Section Title */
 .new-arrivals-section h2 {
-    font-size: 24px; /* Font size for the title */
+    font-size: 28px; /* Font size for the title */
     color: #000; /* Default title color */
     margin-bottom: 10px; /* Margin below the title */
     font-weight: bold; /* Bold title */
+
 }
 
 /* New Arrivals Section Paragraph */
@@ -220,11 +222,13 @@ body {
     justify-content: center; /* Centers the grid */
     gap: 20px; /* Space between the books */
     flex-wrap: wrap; /* Allows wrapping for small screens */
+
 }
 
 /* Book Item Style */
 .new-arrivals-section .book-item {
-    width: 180px; /* Width of each book item */
+    width: 17%; /* Width of each book item */
+    background-color: #fdf6e4;
     text-align: center; /* Centers the content */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow around each book item */
@@ -238,28 +242,20 @@ body {
     border-radius: 10px; /* Rounded corners */
 }
 
-/* Book Title and Description in New Arrivals */
-.new-arrivals-section .book-item h3,
-.new-arrivals-section .book-item p {
+/* Book Title  in New Arrivals */
+.new-arrivals-section .book-item h3
+ {
     font-size: 14px; /* Font size for title and description */
+    color: #000; /* Text color */
+    font-weight: bold;
+}
+
+/* Book Description in New Arrivals */
+.new-arrivals-section .book-item p {
+    font-size: 12px; /* Font size for title and description */
     color: #000; /* Text color */
 }
 
-/* Add to Cart Button in New Arrivals */
-.new-arrivals-section .book-item button {
-    background-color: #007bff; /* Blue button color */
-    color: white; /* White text */
-    padding: 8px 15px; /* Padding inside the button */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 14px; /* Font size */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.new-arrivals-section .book-item button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
 
 /* Add to Cart Button */
 .add-to-cart-btn {
@@ -267,13 +263,14 @@ body {
     background-color: #007bff; /* Blue color */
     color: #ffffff; /* White text */
     font-size: 14px; /* Font size */
-    padding: 10px 10px; /* Padding inside the button */
-    border: none; /* No border */
+    padding: 9px 9px; /* Padding inside the button */
+    width: 80%;
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     text-align: center; /* Center the text */
     text-decoration: none; /* Removes underline */
     transition: background-color 0.3s, transform 0.2s; /* Hover effects */
+
 }
 
 .add-to-cart-btn:hover {
@@ -290,7 +287,7 @@ body {
     margin-top: 20px; /* Margin at the top of the list */
 }
 
-/* Individual Book Item */
+/* Search page Book Item */
 .book-item {
     width: 200px; /* Fixed width for each book item */
     padding: 15px; /* Padding inside each book item */

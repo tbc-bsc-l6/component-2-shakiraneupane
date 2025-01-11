@@ -50,11 +50,11 @@
                             Books <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="{{ route('genre.show', ['genre' => 'arts']) }}">Arts & Photography</a>
-                            <a href="{{ route('genre.show', ['genre' => 'lifestyle']) }}">Lifestyle & Wellness</a>
-                            <a href="{{ route('genre.show', ['genre' => 'fiction']) }}">Fiction & Literature</a>
-                            <a href="{{ route('genre.show', ['genre' => 'history']) }}">History & Biography</a>
-                            <a href="{{ route('genre.show', ['genre' => 'kids']) }}">Kids & Teens</a>
+                            <a href="{{ route('genre.show', ['genre' => 'Arts & Photography']) }}">Arts & Photography</a>
+                            <a href="{{ route('genre.show', ['genre' => 'Lifestyle & Wellness']) }}">Lifestyle & Wellness</a>
+                            <a href="{{ route('genre.show', ['genre' => 'Fiction & Literature']) }}">Fiction & Literature</a>
+                            <a href="{{ route('genre.show', ['genre' => 'History & Biography']) }}">History & Biography</a>
+                            <a href="{{ route('genre.show', ['genre' => 'Kids & Teens']) }}">Kids & Teens</a>
                         </div>
                     </div>
 
