@@ -9,7 +9,6 @@
     <link href="/css/layout.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 
@@ -91,7 +90,7 @@
                         </li>
                     @else
                         <!-- If not logged in, show Login link -->
-                        <li><a href="/login" title="Login"><i class="fas fa-user-circle"></i></a></li>
+                        <li><a href="/register" title="Register"><i class="fas fa-user-circle"></i></a></li>
                     @endauth
 
                 </ul>

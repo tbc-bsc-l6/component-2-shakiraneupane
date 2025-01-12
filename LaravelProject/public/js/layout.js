@@ -45,17 +45,14 @@ setInterval(() => {
 updateSlidePosition();
 
 
-//login page
+//Registration page
+// Function to toggle password visibility
 function togglePassword(id) {
     var passwordField = document.getElementById(id);
-    var icon = passwordField.nextElementSibling;
-
     if (passwordField.type === "password") {
         passwordField.type = "text";
-        icon.innerHTML = '<i class="fas fa-eye-slash"></i>'; // Change to 'eye-slash' when password is visible
     } else {
         passwordField.type = "password";
-        icon.innerHTML = '<i class="fas fa-eye"></i>'; // Change back to 'eye' when password is hidden
     }
 }
 

@@ -49,4 +49,12 @@ class ProfileController extends Controller
     }
 
 
+    public function destroy(Request $request)
+    {
+        // Redirect to the confirm password page before deleting the account
+        return redirect()->route('password.confirm');
+    }
+
+
+
 }
