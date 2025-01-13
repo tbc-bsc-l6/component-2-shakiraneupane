@@ -11,6 +11,7 @@
         <div class="book-list">
             @foreach ($books as $book)
                 <div class="book-item">
+                    <a href="{{ route('home.show', ['id' => $book->id]) }}">
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
                     <h2><a href="{{ route('book.show', $book->id) }}">{{ $book->title }}</a></h2>
                     <p>Author: {{ $book->author }}</p>

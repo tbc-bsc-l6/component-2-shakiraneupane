@@ -2,12 +2,10 @@
 
 // Importing necessary controllers and classes
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WeatherController;
@@ -28,6 +26,9 @@ use App\Http\Controllers\Auth\ConfirmablePasswordController;
 
 // Public Routes (No Middleware)
 Route::get('/', [HomeController::class, 'home'])->name('home'); // Homepage
+Route::get('/home/{id}', [HomeController::class, 'show'])->name('home.show');
+
+
 Route::get('/contact', [WeatherController::class, 'index'])->name('contact'); // Contact page
 
 // Admin Routes (Protected by 'admin' middleware)
@@ -79,21 +80,6 @@ Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.s
 Route::get('/search', [BookController::class, 'search'])->name('search'); // Search books
 Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show'); // View single book
 
-// Test email route (No Middleware)
-Route::get('/test-email', function () {
-    $details = [
-        'title' => 'Test Email from Laravel',
-        'body' => 'This is a test email to verify the configuration.'
-    ];
-
-    // Send test email
-    Mail::raw($details['body'], function ($message) use ($details) {
-        $message->to('sharmashakira47@gmail.com') // Replace with your email to receive the test email
-                ->subject($details['title']);
-    });
-
-    return 'Test email sent!';
-});
 
 // Authentication Routes
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register'); // Registration form
@@ -123,3 +109,6 @@ Route::middleware('auth')->group(function () {
 // Confirm Password Route
 Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm'); // Confirm password form
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']); // Store confirmed password
+
+
+

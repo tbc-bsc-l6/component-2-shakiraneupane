@@ -36,6 +36,7 @@
             <!-- Loop Through Books -->
             @foreach($books as $book)
                 <div class="book-item">
+                    <a href="{{ route('home.show', ['id' => $book->id]) }}">
                     <!-- Book Image -->
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
 

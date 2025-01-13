@@ -39,4 +39,11 @@ class HomeController extends Controller
     return view('home', compact('newArrivals', 'bestSellers', 'filteredBooks'));
 }
 
+public function show($id)
+{
+    $book = Book::findOrFail($id); // Retrieve the book by ID
+    return view('book-details', compact('book'));
+}
+
+
 }

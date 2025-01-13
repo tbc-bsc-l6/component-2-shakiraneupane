@@ -28,7 +28,6 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Address</th>
                 <th>Role</th>
                 <th>Actions</th>
             </tr>
@@ -40,7 +39,6 @@
                     <td>{{ $user->id }}</td> <!-- Display User ID -->
                     <td>{{ $user->name }}</td> <!-- Display User Name -->
                     <td>{{ $user->email }}</td> <!-- Display User Email -->
-                    <td>{{ $user->address }}</td> <!-- Display User Address -->
                     <td>{{ $user->role }}</td> <!-- Display User Role -->
                     <td>
                         <!-- Delete Button: Allows admin to delete a user -->

@@ -137,4 +137,7 @@ class BookController extends Controller
         // Return the search results to the view
         return view('search', compact('books', 'query'));
     }
+
+
+
 }

@@ -233,8 +233,8 @@ table td {
     text-align: left; /* Align text to the left */
 }
 
-table tbody tr:hover {
-    background-color: #f9f9f9; /* Highlight row on hover */
+table tbody tr {
+    background-color: #ffffff; /* Highlight row on hover */
 }
 
 /* Order Summary Styling */

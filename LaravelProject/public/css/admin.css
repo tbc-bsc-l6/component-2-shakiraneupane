@@ -161,6 +161,7 @@ button a {
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
     border: none; /* Remove border */
+    margin-top:10px;
 }
 
 /* Delete button styling */

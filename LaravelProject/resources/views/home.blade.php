@@ -125,6 +125,7 @@
         <div class="books-grid">
             @foreach($newArrivals as $book)
                 <div class="book-item">
+                    <a href="{{ route('home.show', ['id' => $book->id]) }}">
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
                     <h3>{{ $book->title }}</h3>
                     <p>by {{ $book->author }}</p>
@@ -152,6 +153,7 @@
         <div class="books-grid">
             @foreach($bestSellers as $book)
                 <div class="book-item">
+                    <a href="{{ route('home.show', ['id' => $book->id]) }}">
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
                     <h3>{{ $book->title }}</h3>
                     <p>by {{ $book->author }}</p>
