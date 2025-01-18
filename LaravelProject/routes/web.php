@@ -78,7 +78,7 @@ Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.s
 
 // Search Route
 Route::get('/search', [BookController::class, 'search'])->name('search'); // Search books
-Route::get('/book/{id}', [BookController::class, 'show'])->name('book.show'); // View single book
+Route::get('/book/{book}', [BookController::class, 'show'])->name('book.show');
 
 
 // Authentication Routes
@@ -109,6 +109,22 @@ Route::middleware('auth')->group(function () {
 // Confirm Password Route
 Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm'); // Confirm password form
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']); // Store confirmed password
+
+
+
+
+
+
+use App\Http\Controllers\ReviewController;
+
+
+
+// Route for storing a review for a specific book
+Route::post('/review/{bookId}', [ReviewController::class, 'store'])->name('review.store');
+
+
+
+
 
 
 

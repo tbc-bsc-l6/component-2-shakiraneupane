@@ -24,7 +24,7 @@
                         <td>{{ $contact->name }}</td>
                         <td>{{ $contact->email }}</td>
                         <td>{{ $contact->message }}</td>
-                        <td>{{ $contact->created_at->format('d M Y, h:i A') }}</td>
+                        <td>{{ $contact->created_at->format('d M Y') }}</td>
                     </tr>
                 @endforeach
             </tbody>

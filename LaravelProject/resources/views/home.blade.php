@@ -129,7 +129,7 @@
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
                     <h3>{{ $book->title }}</h3>
                     <p>by {{ $book->author }}</p>
-                    <span>Rs. {{ $book->price }}</span>
+                    <span>$ {{ $book->price }}</span>
 
                     <!-- Add to Cart Button (Authenticated users only) -->
                     @auth
@@ -157,7 +157,7 @@
                     <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
                     <h3>{{ $book->title }}</h3>
                     <p>by {{ $book->author }}</p>
-                    <span>Rs. {{ $book->price }}</span>
+                    <span>$ {{ $book->price }}</span>
 
                     <!-- Add to Cart Button (Authenticated users only) -->
                     @auth
@@ -173,4 +173,7 @@
             @endforeach
         </div>
     </section>
+
+
+
 @endsection

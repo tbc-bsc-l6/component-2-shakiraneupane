@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmation</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body style="background-color: #f9f9f9; font-family: Arial, sans-serif; color: #555555; margin: 0; padding: 20px;">
 
-<body class="bg-gray-100">
-
-    <!-- Order Confirmation Section -->
-    <div class="max-w-2xl mx-auto my-10 p-8 bg-gray-50 rounded-xl shadow-lg font-sans text-gray-700">
-
-        <!-- Main Heading -->
-        <h1 class="text-4xl font-bold text-[#2b3a55] text-center mb-6">Order Confirmed!</h1>
-
-        <!-- Thank you message with user name -->
-        <p class="text-lg text-gray-600 text-center mb-8">Thank you for your order, {{ Auth::user()->name }}.</p>
-
-        <!-- Order Details Section -->
-        <h3 class="text-2xl font-semibold text-[#2b3a55] border-b-4 border-[#2b3a55] pb-2 mb-6">Order Details</h3>
-
-        <!-- Order Details Table -->
-        <table class="w-full text-left border-collapse">
-            <!-- Order ID Row -->
-            <tr class="border-b">
-                <th class="px-4 py-2 font-medium text-[#2b3a55]">Order ID</th>
-                <td class="px-4 py-2">{{ $order->id }}</td>
-            </tr>
-
-            <!-- Total Price Row -->
-            <tr class="border-b">
-                <th class="px-4 py-2 font-medium text-[#2b3a55]">Total Price</th>
-                <td class="px-4 py-2">Rs. {{ $order->total_amount }}</td>
-            </tr>
-
-            <!-- Shipping Address Row -->
-            <tr class="border-b">
-                <th class="px-4 py-2 font-medium text-[#2b3a55]">Shipping Address</th>
-                <td class="px-4 py-2">{{ $order->shipping_address }}</td>
-            </tr>
-        </table>
-
-        <!-- Shipping Information -->
-        <p class="text-lg text-gray-600 text-center mt-6 mb-8">Your order will be shipped shortly. We’ll notify you once it’s on the way!</p>
-
-        <!-- Button to go back to Home -->
-        <a href="{{ route('home') }}" class="inline-block bg-[#2b3a55] text-white py-3 px-6 rounded-lg text-lg font-semibold text-center w-full hover:bg-[#1f2c44] transition-colors">Go to Home</a>
-    </div>
+    <!-- Wrapper Table -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 20px;">
+        <tr>
+            <td align="center">
+                <!-- Header -->
+                <h1 style="font-size: 24px; color: #2b3a55; margin: 0;">Order Confirmed!</h1>
+                <p style="font-size: 16px; color: #777777; margin: 8px 0 20px;">Thank you for your order, {{ Auth::user()->name }}.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!-- Order Details -->
+                <h3 style="font-size: 20px; color: #2b3a55; border-bottom: 2px solid #2b3a55; padding-bottom: 8px; margin: 0 0 16px;">Order Details</h3>
+                <table width="100%" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+                    <tr>
+                        <th align="left" style="color: #2b3a55; padding: 8px; border-bottom: 1px solid #dddddd;">Order ID</th>
+                        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">{{ $order->id }}</td>
+                    </tr>
+                    <tr>
+                        <th align="left" style="color: #2b3a55; padding: 8px; border-bottom: 1px solid #dddddd;">Total Price</th>
+                        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">Rs. {{ $order->total_amount }}</td>
+                    </tr>
+                    <tr>
+                        <th align="left" style="color: #2b3a55; padding: 8px; border-bottom: 1px solid #dddddd;">Shipping Address</th>
+                        <td style="padding: 8px; border-bottom: 1px solid #dddddd;">{{ $order->shipping_address }}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <p style="font-size: 16px; color: #777777; margin: 16px 0;">Your order will be shipped shortly. We’ll notify you once it’s on the way!</p>
+                <a href="{{ route('home') }}" style="display: inline-block; background-color: #2b3a55; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-size: 16px;">Go to Home</a>
+            </td>
+        </tr>
+    </table>
 
 </body>
-
 </html>

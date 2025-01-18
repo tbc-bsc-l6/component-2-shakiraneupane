@@ -73,6 +73,8 @@
                         @endauth
                     </li>
 
+
+
                     <!-- Customer Profile or Login -->
                     @auth
                         <!-- If logged in, show Profile and Logout options -->

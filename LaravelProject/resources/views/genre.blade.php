@@ -45,7 +45,7 @@
                     <p>by {{ $book->author }}</p>
 
                     <!-- Book Price -->
-                    <span>Rs. {{ number_format($book->price, 2) }}</span>
+                    <span>$ {{ number_format($book->price, 2) }}</span>
 
                     <!-- Add to Cart Button -->
                     @auth

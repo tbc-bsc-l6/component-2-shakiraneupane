@@ -194,7 +194,6 @@ body {
 /* New Arrivals Section */
 .new-arrivals-section {
     text-align: center; /* Centers the text */
-    font-family: Arial, sans-serif; /* Font family */
     color: #333; /* Text color */
     margin-top: 40px; /* Margin at the top */
 }
@@ -359,7 +358,112 @@ h1 {
 }
 
 
+/* Review Section */
+.latest-reviews-section h2 {
+    font-size: 28px; /* Setting the font size for the section title */
+    font-weight: bold; /* Making the section title bold */
+    text-align: center; /* Centering the title */
+    color: #333; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below the title */
+    text-transform: uppercase; /* Transforming the text to uppercase */
+    letter-spacing: 1px; /* Adding spacing between letters */
+    margin-top: 40px; /* Space above the title */
+}
 
+.latest-reviews-section p {
+    text-align: center; /* Centering the paragraph text */
+    font-size: 16px; /* Font size for the paragraph */
+    color: #777; /* Lighter color for the paragraph text */
+    margin-bottom: 40px; /* Space below the paragraph */
+}
 
+/* Grid Layout for Reviews */
+.reviews-grid {
+    display: grid; /* Using grid layout for the reviews */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Automatically adjust the number of columns based on screen size */
+    gap: 20px; /* Space between the review items */
+    justify-items: center; /* Centering each review item */
+}
 
+/* Individual Review Item */
+.review-item {
+    padding: 15px; /* Adding padding inside each review card */
+    background-color: #fff; /* White background for the review cards */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    max-width: 350px; /* Maximum width for each review card */
+    text-align: center; /* Centering the content inside the card */
+    display: flex; /* Using flexbox for layout */
+    flex-direction: column; /* Aligning content vertically */
+    justify-content: space-between; /* Distributing space between content */
+    height: 100%; /* Ensuring the card fills its container height */
+}
+
+.review-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.review-item h3 {
+    font-size: 22px; /* Font size for the review title */
+    font-weight: 600; /* Semi-bold weight for the review title */
+    color: #333; /* Dark color for the review title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.review-item p {
+    font-size: 14px; /* Font size for the review description */
+    color: #555; /* Darker gray color for the review text */
+    line-height: 1.6; /* Increasing line height for readability */
+    margin-bottom: 15px; /* Space below the review description */
+}
+
+.review-item .review-rating {
+    font-size: 16px; /* Font size for the rating */
+    font-weight: 700; /* Bold weight for the rating */
+    color: #f39c12; /* Gold color for ratings */
+    margin-bottom: 15px; /* Space below the rating */
+}
+
+.review-item small {
+    font-size: 12px; /* Smaller font size for additional text */
+    color: #aaa; /* Light gray color for less important text */
+    font-style: italic; /* Italicizing the text */
+}
+
+.review-item .review-text {
+    font-size: 16px; /* Font size for the full review text */
+    color: #444; /* Dark gray color for the review text */
+    line-height: 1.5; /* Line height for readability */
+    margin-top: 10px; /* Space above the review text */
+}
+
+/* Button Styles for Sliding */
+button.prev, button.next {
+    position: absolute; /* Positioning the buttons absolutely within the container */
+    top: 50%; /* Vertically centering the buttons */
+    transform: translateY(-50%); /* Adjusting the position to center the buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White color for the text on the buttons */
+    border: none; /* Removing the border */
+    font-size: 24px; /* Font size for the button text */
+    padding: 15px; /* Padding inside the buttons */
+    cursor: pointer; /* Changing the cursor to pointer to indicate clickable */
+    border-radius: 50%; /* Circular buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    z-index: 10; /* Ensuring the buttons appear above other content */
+}
+
+button.prev {
+    left: 10px; /* Positioning the 'previous' button on the left */
+}
+
+button.next {
+    right: 10px; /* Positioning the 'next' button on the right */
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
 

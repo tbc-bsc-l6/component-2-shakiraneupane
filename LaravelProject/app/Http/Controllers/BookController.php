@@ -11,6 +11,15 @@ class BookController extends Controller
     /**
      * Store a new book in the database.
      */
+
+     // app/Http/Controllers/BookController.php
+
+public function show(Book $book)
+{
+    // Return the book details view
+    return view('book-details', compact('book'));
+}
+
     public function store(Request $request)
     {
         // Validate the form input
@@ -137,6 +146,7 @@ class BookController extends Controller
         // Return the search results to the view
         return view('search', compact('books', 'query'));
     }
+
 
 
 

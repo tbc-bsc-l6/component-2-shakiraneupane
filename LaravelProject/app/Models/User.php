@@ -53,4 +53,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);  // Define the relationship (one user has many orders)
     }
+
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

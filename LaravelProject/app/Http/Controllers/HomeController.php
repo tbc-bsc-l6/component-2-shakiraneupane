@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Models\Review;
 
 class HomeController extends Controller
 {
@@ -32,8 +33,11 @@ class HomeController extends Controller
     // Apply the same filters to New Arrivals
     $newArrivals = $query->latest()->take(5)->get();  // Get the 5 most recent filtered books
 
+
     // Apply the same filters to Best Sellers
     $bestSellers = $query->orderBy('sales_count', 'desc')->take(5)->get();  // Get the top 5 filtered best-selling books
+
+
 
     // Pass the data to the view
     return view('home', compact('newArrivals', 'bestSellers', 'filteredBooks'));

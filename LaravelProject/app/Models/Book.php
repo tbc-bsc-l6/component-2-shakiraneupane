@@ -18,4 +18,9 @@ class Book extends Model
         'image_url',
         'sales_count'
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
