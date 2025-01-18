@@ -38,9 +38,15 @@ class HomeController extends Controller
     $bestSellers = $query->orderBy('sales_count', 'desc')->take(5)->get();  // Get the top 5 filtered best-selling books
 
 
+    // Fetch the latest 5 reviews for the home page
+    $latestReviews = Review::with('book', 'user') // Get reviews with associated book and user
+    ->latest()
+    ->take(6) // Limit to the latest 6 reviews
+    ->get();
+
 
     // Pass the data to the view
-    return view('home', compact('newArrivals', 'bestSellers', 'filteredBooks'));
+    return view('home', compact('newArrivals', 'bestSellers', 'filteredBooks', 'latestReviews'));
 }
 
 public function show($id)

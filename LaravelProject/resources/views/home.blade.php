@@ -174,6 +174,19 @@
         </div>
     </section>
 
-
-
+<!-- Latest Reviews Section -->
+<section class="latest-reviews-section">
+    <h2><strong> Reviews</strong></h2>
+    <p>Check out the latest reviews from our readers!</p>
+    <div class="reviews-grid">
+        @foreach($latestReviews as $review)
+            <div class="review-item">
+                <h3>{{ $review->book->title }}</h3>
+                <p><strong>by</strong> {{ $review->book->author }}</p>
+                <p class="review-rating"><strong>Rating:</strong> {{ $review->rating }} / 5</p>
+                <p><small>Reviewed by {{ $review->user->name }} - {{ $review->created_at->diffForHumans() }}</small></p>
+            </div>
+        @endforeach
+    </div>
+</section>
 @endsection
