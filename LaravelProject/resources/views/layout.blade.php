@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 
-    <!-- Tailwind CSS (Optional, if you want to use Tailwind in your custom styles) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Font Awesome Icons for UI -->

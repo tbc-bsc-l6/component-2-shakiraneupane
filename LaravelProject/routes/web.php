@@ -12,9 +12,7 @@ use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\OrderConfirmationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactsController;
-use Illuminate\Support\Facades\Mail;
-
-// Authentication Controllers
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
@@ -109,14 +107,6 @@ Route::middleware('auth')->group(function () {
 // Confirm Password Route
 Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm'); // Confirm password form
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']); // Store confirmed password
-
-
-
-
-
-
-use App\Http\Controllers\ReviewController;
-
 
 
 // Route for storing a review for a specific book

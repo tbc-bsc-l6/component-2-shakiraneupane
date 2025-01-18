@@ -2,7 +2,7 @@
 /* Toggle button for showing/hiding password */
 .toggle-password {
     position: absolute;
-    right: 10px; /* Position it at the right */
+    right: 10px;
     top: 50%;
     transform: translateY(-50%); /* Vertically center the button */
     cursor: pointer;
@@ -11,12 +11,12 @@
 
 /* Toggle password icon styling */
 .toggle-password i {
-    font-size: 16px; /* Icon size */
+    font-size: 16px;
     margin-top:20px;
 }
 
 /* Toggle password button hover effect */
 .toggle-password:hover {
-    color: #0056b3; /* Change color on hover */
+    color: #0056b3;
 }
 

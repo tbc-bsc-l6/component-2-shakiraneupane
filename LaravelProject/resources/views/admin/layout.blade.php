@@ -11,10 +11,10 @@
     <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Bootstrap (for responsive design and UI components) -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Tailwind CSS (for utility-based styling) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
@@ -39,12 +39,6 @@
             </nav>
         </aside>
 
-        <!-- Hamburger Icon for Small Screens (Mobile View) -->
-        <div class="lg:hidden p-4">
-            <button class="hamburger-icon text-3xl text-gray-800" onclick="toggleSidebar()">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
 
         <!-- Main Content -->
         <main class="main-content flex-1 p-4">
@@ -65,15 +59,6 @@
         @csrf <!-- CSRF Token for Security -->
     </form>
 
-    <!-- Script to Toggle Sidebar Visibility -->
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('hidden');
-        }
-    </script>
 
-    <!-- Link to Admin Custom JavaScript File -->
-    <script src="/js/admin.js"></script>
 </body>
 </html>

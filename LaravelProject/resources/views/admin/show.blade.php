@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Page Title: Order Details -->
-    <h1>Order Details</h1>
+    <h1><strong> Order Details</strong></h1>
 
     <!-- Display success message if any (e.g., after an action like updating an order) -->
     @if(session('success'))
