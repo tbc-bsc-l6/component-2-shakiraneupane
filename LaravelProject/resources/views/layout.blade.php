@@ -73,6 +73,23 @@
                     </li>
 
 
+                    <!-- Wishlist Icon with Wishlist Count -->
+<li>
+    @auth
+        <a href="{{ route('wishlist.index') }}" class="wishlist-link">
+            <i class="fas fa-heart"></i>
+            <span class="wishlist-count">
+                {{ \App\Models\Wishlist::where('user_id', Auth::id())->count() }}
+            </span>
+        </a>
+    @else
+        <a href="{{ route('login') }}" class="wishlist-link">
+            <i class="fas fa-heart"></i>
+        </a>
+    @endauth
+</li>
+
+
 
                     <!-- Customer Profile or Login -->
                     @auth
