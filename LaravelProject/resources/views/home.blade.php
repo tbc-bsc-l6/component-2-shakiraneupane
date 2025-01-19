@@ -55,7 +55,7 @@
             </div>
             <!-- Genre: Fiction and Literature -->
             <div class="genre-item">
-                <a href="{{ route('genre.show', ['genre' => 'Fiction  & Literature']) }}">
+                <a href="{{ route('genre.show', ['genre' => 'Fiction & Literature']) }}">
                     <i class="fas fa-theater-masks"></i>
                     <span>Fiction & Literature</span>
                 </a>
@@ -126,21 +126,33 @@
             @foreach($newArrivals as $book)
                 <div class="book-item">
                     <a href="{{ route('home.show', ['id' => $book->id]) }}">
-                    <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
-                    <h3>{{ $book->title }}</h3>
-                    <p>by {{ $book->author }}</p>
-                    <span>$ {{ $book->price }}</span>
+                        <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
+                        <h3>{{ $book->title }}</h3>
+                        <p>by {{ $book->author }}</p>
+                        <span>$ {{ $book->price }}</span>
 
-                    <!-- Add to Cart Button (Authenticated users only) -->
-                    @auth
-                        <form action="{{ route('cart.add') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="book_id" value="{{ $book->id }}">
-                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
-                        </form>
-                    @else
-                        <a href="/login" class="add-to-cart-btn">Add to Cart</a>
-                    @endauth
+                        <!-- Add to Cart Button (Authenticated users only) -->
+                        @auth
+                            <form action="{{ route('cart.add') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="book_id" value="{{ $book->id }}">
+                                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">Add to Cart</button>
+                            </form>
+
+                            <!-- Add to Wishlist Button (Authenticated users only) -->
+                            <form action="{{ route('wishlist.store', $book->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                <input type="hidden" name="book_id" value="{{ $book->id }}">
+                                <button type="submit" class="bg-transparent border-none cursor-pointer p-2 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <i class="fas fa-heart text-red-500 text-2xl transition-colors duration-300 hover:text-red-600"></i>
+                                </button>
+                            </form>
+
+                        @else
+                            <a href="/login" class="add-to-cart-btn">Add to Cart</a>
+                            <a href="/login" class="wishlist-btn"></a>
+                        @endauth
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -154,39 +166,53 @@
             @foreach($bestSellers as $book)
                 <div class="book-item">
                     <a href="{{ route('home.show', ['id' => $book->id]) }}">
-                    <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
-                    <h3>{{ $book->title }}</h3>
-                    <p>by {{ $book->author }}</p>
-                    <span>$ {{ $book->price }}</span>
+                        <img src="{{ Storage::url($book->image_url) }}" alt="{{ $book->title }}">
+                        <h3>{{ $book->title }}</h3>
+                        <p>by {{ $book->author }}</p>
+                        <span>$ {{ $book->price }}</span>
 
-                    <!-- Add to Cart Button (Authenticated users only) -->
-                    @auth
+                        <!-- Add to Cart Button (Authenticated users only) -->
+                        @auth
                         <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
                             <input type="hidden" name="book_id" value="{{ $book->id }}">
-                            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200">
+                                Add to Cart
+                            </button>
                         </form>
-                    @else
-                        <a href="/login" class="add-to-cart-btn">Add to Cart</a>
-                    @endauth
+
+                        <!-- Add to Wishlist Button (Authenticated users only) -->
+                        <form action="{{ route('wishlist.store', $book->id) }}" method="POST" class="inline-block ml-2">
+                            @csrf
+                            <input type="hidden" name="book_id" value="{{ $book->id }}">
+                            <button type="submit" class="bg-transparent border-none cursor-pointer p-2 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <i class="fas fa-heart text-red-500 text-2xl transition-colors duration-300 hover:text-red-600"></i>
+                            </button>
+                        </form>
+
+
+                        @else
+                            <a href="/login" class="add-to-cart-btn">Add to Cart</a>
+                        @endauth
+                    </a>
                 </div>
             @endforeach
         </div>
     </section>
 
-<!-- Latest Reviews Section -->
-<section class="latest-reviews-section">
-    <h2><strong> Reviews</strong></h2>
-    <p>Check out the latest reviews from our readers!</p>
-    <div class="reviews-grid">
-        @foreach($latestReviews as $review)
-            <div class="review-item">
-                <h3>{{ $review->book->title }}</h3>
-                <p><strong>by</strong> {{ $review->book->author }}</p>
-                <p class="review-rating"><strong>Rating:</strong> {{ $review->rating }} / 5</p>
-                <p><small>Reviewed by {{ $review->user->name }} - {{ $review->created_at->diffForHumans() }}</small></p>
-            </div>
-        @endforeach
-    </div>
-</section>
+    <!-- Latest Reviews Section -->
+    <section class="latest-reviews-section">
+        <h2><strong>Reviews</strong></h2>
+        <p>Check out the latest reviews from our readers!</p>
+        <div class="reviews-grid">
+            @foreach($latestReviews as $review)
+                <div class="review-item">
+                    <h3>{{ $review->book->title }}</h3>
+                    <p><strong>by</strong> {{ $review->book->author }}</p>
+                    <p class="review-rating"><strong>Rating:</strong> {{ $review->rating }} / 5</p>
+                    <p><small>Reviewed by {{ $review->user->name }} - {{ $review->created_at->diffForHumans() }}</small></p>
+                </div>
+            @endforeach
+        </div>
+    </section>
 @endsection

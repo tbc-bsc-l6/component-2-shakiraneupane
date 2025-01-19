@@ -10,6 +10,12 @@
     margin-top: 10px; /* Add top margin for spacing */
 }
 
+.wishlist-count{
+    color: #ffffff; /* White text color for cart count */
+    margin-top: 10px; /* Add top margin for spacing */
+
+}
+
 /* Cart Section Styling */
 .cart-section {
     padding: 10px; /* Padding around the cart section */
@@ -395,3 +401,4 @@ body {
 .address-card p {
     color: #495057; /* Dark text color for address details */
 }
+

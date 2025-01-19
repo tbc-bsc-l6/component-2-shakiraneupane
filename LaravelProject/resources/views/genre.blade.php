@@ -57,6 +57,19 @@
                     @else
                         <a href="/login" class="add-to-cart-btn">Add to Cart</a>
                     @endauth
+
+
+                    <!-- Wishlist Button -->
+                    @auth
+                    <form action="{{ route('wishlist.store', $book->id) }}" method="POST" class="ml-4 inline-block">
+                        @csrf
+                        <input type="hidden" name="book_id" value="{{ $book->id }}">
+                        <button type="submit" class="bg-transparent border-none cursor-pointer p-2 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <i class="fas fa-heart text-red-500 text-2xl transition-colors duration-300 hover:text-red-600"></i> <!-- Wishlist icon -->
+                        </button>
+                    </form>
+
+                @endauth
                 </div>
             @endforeach
         @endif

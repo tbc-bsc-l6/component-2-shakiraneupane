@@ -28,13 +28,22 @@
                 </p>
             </div>
 
-            <!-- Add to Cart Button (Authenticated users only) -->
+            <!-- Add to Cart and Add to Wishlist Buttons (Authenticated users only) -->
             @auth
-                <form action="{{ route('cart.add') }}" method="POST" class="mt-6">
+                <form action="{{ route('cart.add') }}" method="POST" class="mt-6 inline-block">
                     @csrf
                     <input type="hidden" name="book_id" value="{{ $book->id }}">
                     <button type="submit" class="w-full md:w-auto py-3 px-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">
                         Add to Cart
+                    </button>
+                </form>
+
+                <!-- Add to Wishlist Button -->
+                <form action="{{ route('wishlist.store', $book->id) }}" method="POST" class="mt-6 inline-block ml-2">
+                    @csrf
+                    <input type="hidden" name="book_id" value="{{ $book->id }}">
+                    <button type="submit" class="bg-transparent border-none cursor-pointer p-2 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        <i class="fas fa-heart text-red-500 text-2xl transition-colors duration-300 hover:text-red-600"></i>
                     </button>
                 </form>
 
@@ -63,6 +72,9 @@
             @else
                 <a href="/login" class="w-full md:w-auto py-3 px-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 transform hover:scale-105 mt-6 inline-block">
                     Add to Cart
+                </a>
+                <a href="/login" class="w-full md:w-auto py-3 px-6 bg-transparent border-2 border-gray-600 text-gray-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105 mt-6 inline-block">
+                    Add to Wishlist
                 </a>
             @endauth
         </div>

@@ -21,6 +21,8 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\WishlistController;
+
 
 // Public Routes (No Middleware)
 Route::get('/', [HomeController::class, 'home'])->name('home'); // Homepage
@@ -54,6 +56,8 @@ Route::middleware(['customer'])->group(function () {
     Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add'); // Add item to cart
     Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update'); // Update cart item
     Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Remove item from cart
+
+
 
     // Profile Routes
     Route::get('/customer/profile', [ProfileController::class, 'show'])->name('customer.profile'); // View customer profile
@@ -114,16 +118,22 @@ Route::post('/review/{bookId}', [ReviewController::class, 'store'])->name('revie
 
 
 
-use App\Http\Controllers\WishlistController;
+
+
+
+
+
+
+
+
 
 Route::middleware(['auth'])->group(function () {
+    // Show the user's wishlist
     Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
-    Route::post('wishlist/{productId}', [WishlistController::class, 'store'])->name('wishlist.store');
-    Route::delete('wishlist/{productId}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
+
+    // Add a book to the wishlist (POST request)
+    Route::post('wishlist/{bookId}', [WishlistController::class, 'store'])->name('wishlist.store');
+
+    // Remove a book from the wishlist (DELETE request)
+    Route::delete('wishlist/{bookId}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
 });
-
-
-
-
-
-
