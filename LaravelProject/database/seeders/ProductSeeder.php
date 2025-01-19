@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
         ]);
 
         Book::create([
-            'title' => 'To kill a MockingBird',
+            'title' => 'To Kill a MockingBird',
             'author' => 'Stephen Alter',
             'price' => 100,
             'genre' => 'Fiction & Literature',
