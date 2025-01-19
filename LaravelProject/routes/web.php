@@ -114,6 +114,14 @@ Route::post('/review/{bookId}', [ReviewController::class, 'store'])->name('revie
 
 
 
+use App\Http\Controllers\WishlistController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+    Route::post('wishlist/{productId}', [WishlistController::class, 'store'])->name('wishlist.store');
+    Route::delete('wishlist/{productId}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
+});
+
 
 
 
