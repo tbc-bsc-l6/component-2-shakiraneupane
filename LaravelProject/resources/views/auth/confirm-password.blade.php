@@ -5,7 +5,7 @@
     </div>
 
     <!-- Form for password confirmation -->
-    <form method="POST" action="{{ route('password.confirm') }}">
+    <form method="POST" action="">
         @csrf <!-- CSRF protection for form submission -->
 
         <!-- Password input field -->

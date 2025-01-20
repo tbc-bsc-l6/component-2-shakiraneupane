@@ -23,12 +23,9 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\WishlistController;
 
-
 // Public Routes (No Middleware)
 Route::get('/', [HomeController::class, 'home'])->name('home'); // Homepage
 Route::get('/home/{id}', [HomeController::class, 'show'])->name('home.show');
-
-
 Route::get('/contact', [WeatherController::class, 'index'])->name('contact'); // Contact page
 
 // Admin Routes (Protected by 'admin' middleware)
@@ -57,12 +54,9 @@ Route::middleware(['customer'])->group(function () {
     Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update'); // Update cart item
     Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove'); // Remove item from cart
 
-
-
     // Profile Routes
     Route::get('/customer/profile', [ProfileController::class, 'show'])->name('customer.profile'); // View customer profile
     Route::put('/customer/profile', [ProfileController::class, 'update'])->name('profile.update'); // Update profile
-    Route::delete('/customer/profile', [ProfileController::class, 'destroy'])->name('profile.destroy'); // Delete profile
 
     // Checkout Routes
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index'); // Checkout page
@@ -70,6 +64,15 @@ Route::middleware(['customer'])->group(function () {
 
     // Order Confirmation Page
     Route::get('/order-confirmation', [OrderConfirmationController::class, 'showConfirmationPage'])->name('order.confirmation'); // Order confirmation
+
+    // Show the user's wishlist
+    Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+
+    // Add a book to the wishlist (POST request)
+    Route::post('wishlist/{bookId}', [WishlistController::class, 'store'])->name('wishlist.store');
+
+    // Remove a book from the wishlist (DELETE request)
+    Route::delete('wishlist/{bookId}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
 });
 
 // Creating dynamic route for genres (No Middleware)
@@ -81,7 +84,6 @@ Route::post('/contacts', [ContactsController::class, 'store'])->name('contacts.s
 // Search Route
 Route::get('/search', [BookController::class, 'search'])->name('search'); // Search books
 Route::get('/book/{book}', [BookController::class, 'show'])->name('book.show');
-
 
 // Authentication Routes
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register'); // Registration form
@@ -111,29 +113,8 @@ Route::middleware('auth')->group(function () {
 // Confirm Password Route
 Route::get('/confirm-password', [ConfirmablePasswordController::class, 'show'])->name('password.confirm'); // Confirm password form
 Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']); // Store confirmed password
-
+Route::delete('/account/delete', [ConfirmablePasswordController::class, 'show'])->name('account.delete');
+Route::post('/account/delete', [ConfirmablePasswordController::class, 'store'])->name('account.delete');
 
 // Route for storing a review for a specific book
 Route::post('/review/{bookId}', [ReviewController::class, 'store'])->name('review.store');
-
-
-
-
-
-
-
-
-
-
-
-
-Route::middleware(['auth'])->group(function () {
-    // Show the user's wishlist
-    Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
-
-    // Add a book to the wishlist (POST request)
-    Route::post('wishlist/{bookId}', [WishlistController::class, 'store'])->name('wishlist.store');
-
-    // Remove a book from the wishlist (DELETE request)
-    Route::delete('wishlist/{bookId}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
-});
